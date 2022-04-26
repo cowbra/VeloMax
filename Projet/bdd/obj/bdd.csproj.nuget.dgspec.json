@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hugos\\source\\repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {}
+    "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hugos\\source\\repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {
+    "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hugos\\source\\repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
+        "projectUniqueName": "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
         "projectName": "bdd",
-        "projectPath": "C:\\Users\\hugos\\source\\repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
+        "projectPath": "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
         "packagesPath": "C:\\Users\\hugos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hugos\\source\\repos\\cowbra\\bdd\\Projet\\bdd\\obj\\",
+        "outputPath": "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            },
+            "Renci.SshNet.Async": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
+            "SSH.NET": {
+              "target": "Package",
+              "version": "[2020.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
