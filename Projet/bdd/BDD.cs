@@ -21,6 +21,7 @@ public class BDD
         this.database = "VeloMax";
         this.username = "projet_bdd";
         this.password = "Hugo13Lounes03Hugo!";
+        this.mySqlConnection = null;
 
     }
 
@@ -32,15 +33,20 @@ public class BDD
         this.database = "VeloMax";
         this.username = username;
         this.password = password;
+        this.mySqlConnection = null;
     }
 
     #region Parametres_Attributs
-
     public bool Connected
 	{
 		get { return this.connected; }
 		set { this.connected = value; }
 	}
+
+    public MySqlConnection? MySqlConnection
+    {
+        get { return this.mySqlConnection; }
+    }
     #endregion
 
     public void Connect()
@@ -54,6 +60,14 @@ public class BDD
                 this.connected = true;
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+    }
+
+    public void Disconnect()
+    {
+        if (this.connected)
+        {
+            this.mySqlConnection?.Close();
         }
     }
 }
