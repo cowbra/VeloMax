@@ -35,7 +35,8 @@ namespace bdd
         private void button1_Click(object sender, EventArgs e)
         {
             string[] Listlibelle = { "1","2","3","4"};
-            if (textBox1.Text == "") MessageBox.Show("Entrez le N° Siret de l'entreprise !");
+            int i;
+            if (textBox1.Text == "" || int.TryParse(textBox1.Text, out i)==false) MessageBox.Show("Entrez le N° Siret de l'entreprise !");
             else if (textBox2.Text == "") MessageBox.Show("Entrez le nom de l'entreprise !");
             else if (textBox3.Text == "") MessageBox.Show("Entrez le contact de l'entreprise !");
             else if (textBox4.Text == "") MessageBox.Show("Entrez l'Adresse de l'entreprise !");
