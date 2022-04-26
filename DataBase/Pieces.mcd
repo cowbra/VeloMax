@@ -1,0 +1,14 @@
+ACHAT_BICYCLETTE, 0N Commande, 0N Bicyclette: NombreArticles,DateLivraison
+Bicyclette:ID_Bicyclette,Nom_Bicyclette,Grandeur_Bicyclette,Prix_Bicyclette,Type_Bicyclette,DateIntroduction_Bicyclette,DateFin_Bicyclette
+ASSEMBLER_PAR, 1N Bicyclette, 0N Piece
+Fournisseur: Siret_Fournisseur, NomEntreprise_Fournisseur,Contact_Fournisseur, Adresse_Fournisseur, Libelle_Fournisseur
+
+Commande:ID_Commande,Date_Commande,AdresseLivraison_Commande
+ACHAT_PIECE, 0N Commande, 0N Piece:NombreArticles,DateLivraison
+Piece: NumProduit_Piece, Description_Piece, DateDebut_Piece,DateFin_Piece
+FOURNIT, 0N Fournisseur, 0N Piece: Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur
+
+EFFECTUE, 11 Commande, 0N Client
+Client:ID_Client,Type_Client,Tel_Client,Courriel_Client,Adresse_Client,Nom_Client,Prenom_Client,NumFidelio_Client,NomCompagnie_Client,RemiseCompagnie_Client
+POSSEDE, 01 Client, 0N Fidelio: DateDebut_Fidelio,DateFinFidelio
+Fidelio: NumProgramme_Fidelio,Description_Fidelio,Cout_Fidelio,Duree_Fidelio,Rabais_Fidelio
