@@ -47,3 +47,33 @@ C:\Users\hugos\source\repos\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.
 C:\Users\hugos\source\repos\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.application
 C:\Users\hugos\source\repos\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.NewVille.resources
 C:\Users\hugos\source\repos\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.ModifierCommande.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\ProblemeTransConnect.exe.config
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\ProblemeTransConnect.exe.manifest
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\ProblemeTransConnect.application
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\ProblemeTransConnect.exe
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\ProblemeTransConnect.pdb
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\Renci.SshNet.Async.dll
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\Renci.SshNet.dll
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\Renci.SshNet.xml
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\bin\Debug\Renci.SshNet.Async.xml
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.csproj.AssemblyReference.cache
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.csproj.SuggestedBindingRedirects.cache
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.Menu.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.MenuCommande.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.MenuClient.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.MenuSalarie.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.ModifierCommande.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.ModifierSalarie.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.Modifier.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.NewCommande.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.NewClient.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.NewSalarie.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.NewVille.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.Properties.Resources.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.csproj.GenerateResource.cache
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.csproj.CoreCompileInputs.cache
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.exe.manifest
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.application
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.csproj.CopyComplete
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.exe
+C:\Users\hugos\Source\Repos\cowbra\bdd\TransConnect Sem5 Projet Emma\ProblemeTransConnect\obj\Debug\ProblemeTransConnect.pdb
