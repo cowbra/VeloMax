@@ -26,5 +26,12 @@ namespace bdd
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MenuFournisseur fournisseur = new MenuFournisseur();
+            this.Hide();
+            fournisseur.Show();
+        }
     }
 }
