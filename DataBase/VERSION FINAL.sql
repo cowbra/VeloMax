@@ -23,7 +23,7 @@ CREATE TABLE `FIDELIO` (
 );
 
 CREATE TABLE `FOURNISSEUR` (
- `Siret_Fournisseur` int(30) NOT NULL,
+ `Siret_Fournisseur` bigint NOT NULL,
  `NomEntreprise_Fournisseur` varchar(255) NOT NULL,
  `Contact_Fournisseur` varchar(255) NOT NULL,
  `Adresse_Fournisseur` varchar(255) NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE `ASSEMBLER_PAR` (
 );
 
 CREATE TABLE `FOURNIT` (
- `Siret_Fournisseur` int(30) NOT NULL,
+ `Siret_Fournisseur` bigint NOT NULL,
  `NumProduit_Piece` int(30) NOT NULL,
  `Nom_Fournisseur` varchar(255) NOT NULL,
  `NumProduit_Fournisseur` int(30) NOT NULL,
