@@ -73,9 +73,11 @@
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.Location = new System.Drawing.Point(12, 88);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(765, 286);
+            this.listView1.Size = new System.Drawing.Size(776, 286);
             this.listView1.TabIndex = 8;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -84,6 +86,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 50;
             // 
             // columnHeader2
             // 
@@ -92,14 +95,17 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Tel";
+            this.columnHeader3.Width = 80;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "E-mail";
+            this.columnHeader4.Width = 120;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Adresse";
+            this.columnHeader5.Width = 120;
             // 
             // columnHeader6
             // 
@@ -116,10 +122,12 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "Compagnie";
+            this.columnHeader9.Width = 80;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Remise Compagnie";
+            this.columnHeader10.Width = 70;
             // 
             // button2
             // 
@@ -158,19 +166,20 @@
             this.modifierToolStripMenuItem,
             this.supprimerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifierToolStripMenuItem.Text = "Modifier";
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
+            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
             // MenuClient
             // 

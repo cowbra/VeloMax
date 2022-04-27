@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewCommande));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
@@ -76,7 +77,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -132,6 +132,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Créer une Commande";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.IndianRed;
+            this.label17.Location = new System.Drawing.Point(22, 201);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(152, 15);
+            this.label17.TabIndex = 29;
+            this.label17.Text = "Au format jj/mm/aaaa !";
             // 
             // label12
             // 
@@ -298,6 +309,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(252, 22);
             this.textBox4.TabIndex = 12;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox3
             // 
@@ -567,17 +579,6 @@
             this.button3.Text = "Actualiser (Afficher chauffeurs disponibles à la date entrée)";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.IndianRed;
-            this.label17.Location = new System.Drawing.Point(22, 201);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(152, 15);
-            this.label17.TabIndex = 29;
-            this.label17.Text = "Au format jj/mm/aaaa !";
             // 
             // NewCommande
             // 
