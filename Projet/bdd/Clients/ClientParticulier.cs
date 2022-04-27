@@ -15,7 +15,7 @@ namespace bdd
 		#region Attributs
 		protected string prenom;
 		protected int numFidelio;
-		protected DateTime dateDebFidelio;
+		protected string? dateDebFidelio;
 		#endregion
 
 		#region Constructeur
@@ -28,7 +28,7 @@ namespace bdd
 		}
 
 		// Client particulier avec programme fidelio
-		public ClientParticulier(string tel, string email, string adresse, string nom, string prenom, int numFidelio, DateTime dateDebFidelio) : base(tel, email, adresse, nom)
+		public ClientParticulier(string tel, string email, string adresse, string nom, string prenom, int numFidelio, string dateDebFidelio) : base(tel, email, adresse, nom)
 		{
 			this.prenom = prenom;
 			this.numFidelio = numFidelio;
@@ -59,7 +59,7 @@ namespace bdd
                 {
 					requete = new MySqlCommand("INSERT INTO CLIENT(Type_Client,Tel_Client,Courriel_Client,Adresse_Client,Nom_Client,Prenom_Client,NumProgramme_Fidelio,DateDebut_Fidelio) VALUES(@Type_Client,@Tel_Client,@Courriel_Client,@Adresse_Client,@Nom_Client,@Prenom_Client,@NumProgramme_Fidelio,@DateDebut_Fidelio)", DATABASE.MySqlConnection);
 					requete.Parameters.AddWithValue("@NumProgramme_Fidelio", this.numFidelio);
-					requete.Parameters.AddWithValue("@DateDebut_Fidelio", this.dateDebFidelio.ToString("yyyy-MM-dd"));
+					requete.Parameters.AddWithValue("@DateDebut_Fidelio", this.dateDebFidelio);
 				}
 				requete.Parameters.AddWithValue("@Type_Client", this.type);
 				requete.Parameters.AddWithValue("@Tel_Client", this.tel);

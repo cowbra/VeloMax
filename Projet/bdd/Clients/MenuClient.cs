@@ -62,7 +62,7 @@ namespace bdd
                         string Prenom = Lire["Prenom_Client"].ToString();
 #pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
 #pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-                        string Fidelio = Lire["NumProgramme_Fidelio "].ToString();
+                        string Fidelio = Lire["NumProgramme_Fidelio"].ToString();
 #pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
 #pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string Compagnie = Lire["NomCompagnie_Client"].ToString();
