@@ -37,6 +37,7 @@ namespace bdd
             string[] Listlibelle = { "1","2","3","4"};
             long i;
             if (textBox1.Text == "" || Int64.TryParse(textBox1.Text, out i)==false) MessageBox.Show("Entrez le N° Siret de l'entreprise !");
+            else if (textBox1.Text.Length<14||Convert.ToInt64(textBox1.Text) <0 || Convert.ToInt64(textBox1.Text)>99999999999999) MessageBox.Show("Entrez un N° de Siret valide (14 chiffres) !");
             else if (textBox2.Text == "") MessageBox.Show("Entrez le nom de l'entreprise !");
             else if (textBox3.Text == "") MessageBox.Show("Entrez le contact de l'entreprise !");
             else if (textBox4.Text == "") MessageBox.Show("Entrez l'Adresse de l'entreprise !");
