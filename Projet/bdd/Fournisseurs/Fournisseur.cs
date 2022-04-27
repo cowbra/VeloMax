@@ -11,14 +11,14 @@ namespace bdd
     public class Fournisseur
     {
         #region Attributs
-        protected string siret;
+        protected Int64 siret;
         protected string nomEntreprise;
         protected string contact;
         protected string adresse;
         protected string libelle;
         #endregion
 
-        public Fournisseur(string siret, string nomEntreprise, string contact,string adresse, string libelle)
+        public Fournisseur(Int64 siret, string nomEntreprise, string contact,string adresse, string libelle)
         {
             this.siret = siret;
             this.nomEntreprise = nomEntreprise;

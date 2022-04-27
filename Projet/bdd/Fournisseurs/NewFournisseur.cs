@@ -35,15 +35,15 @@ namespace bdd
         private void button1_Click(object sender, EventArgs e)
         {
             string[] Listlibelle = { "1","2","3","4"};
-            int i;
-            if (textBox1.Text == "" || int.TryParse(textBox1.Text, out i)==false) MessageBox.Show("Entrez le N° Siret de l'entreprise !");
+            long i;
+            if (textBox1.Text == "" || Int64.TryParse(textBox1.Text, out i)==false) MessageBox.Show("Entrez le N° Siret de l'entreprise !");
             else if (textBox2.Text == "") MessageBox.Show("Entrez le nom de l'entreprise !");
             else if (textBox3.Text == "") MessageBox.Show("Entrez le contact de l'entreprise !");
             else if (textBox4.Text == "") MessageBox.Show("Entrez l'Adresse de l'entreprise !");
             else if (textBox5.Text == "" || Listlibelle.Contains(textBox5.Text) == false) MessageBox.Show("Entrez le libelle de l'entreprise ! (1,2,3 ou 4)");
             else
             {
-                Fournisseur f = new Fournisseur(textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
+                Fournisseur f = new Fournisseur(Convert.ToInt64(textBox1.Text), textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);
                 if (f.AddToBdd())
                 {
                     MessageBox.Show("Fournisseur créé avec succès !");
