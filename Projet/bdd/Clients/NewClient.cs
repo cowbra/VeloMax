@@ -22,7 +22,7 @@ namespace bdd
 
         private void NewClient_Load(object sender, EventArgs e)
         {
-
+            listBox1.SelectedIndex = 0;
         }
         private void ShowFidelio()
         {
@@ -114,7 +114,6 @@ namespace bdd
                 radioButton2.Enabled = false;
                 radioButton1.Visible = false;
                 radioButton2.Visible = false;
-                MessageBox.Show("Veuillez sélectionner le type de Client !");
             }
         }
 
@@ -154,9 +153,11 @@ namespace bdd
             string[] ListFidelio = { "1", "2", "3", "4" };
             int i;
             int j;
-            if (listBox1.SelectedItem.Equals("Particulier"))
+            if (listBox1.SelectedIndex == 0) MessageBox.Show("Double-cliquez sur le type du client pour le sélectionner.");
+            else if (listBox1.SelectedItem.Equals("Particulier"))
             {
                 if (textBox5.Text == "") MessageBox.Show("Entrez le Prénom du client!");
+                else if (!radioButton1.Checked && !radioButton2.Checked) MessageBox.Show("Indiquez si le client adhère à un programme Fidélio !");
                 if (radioButton1.Checked)
                 {
                     if (textBox7.Text == "" || int.TryParse(textBox1.Text, out i) == false) MessageBox.Show("Entrez un N° Fidélio valide ! (1,2,3 ou 4)");
@@ -164,6 +165,7 @@ namespace bdd
                     else if (textBox8.Text == "") MessageBox.Show("Entrez la date d'inscription au programme Fidélio du client!");
                     else problem = false;
                 }
+                if (radioButton2.Checked && textBox5.Text != "") problem = false;
             }
                 
             else if (listBox1.SelectedItem.Equals("Entreprise"))
@@ -174,8 +176,7 @@ namespace bdd
                 else if (Convert.ToInt16(textBox6.Text)<0 || Convert.ToInt16(textBox6.Text)>100) MessageBox.Show("Entrez un pourcentage de remise valide !");
                 else { problem = false; }
             }
-            if (listBox1.SelectedItem.Equals("Double cliquez sur le type de client ci-dessous")) MessageBox.Show("Sélectionnez le type de client ! !");
-            else if (textBox1.Text == "") MessageBox.Show("Entrez le N° de téléphone du client!");
+            if (textBox1.Text == "") MessageBox.Show("Entrez le N° de téléphone du client!");
             else if (textBox2.Text == "") MessageBox.Show("Entrez l'E-mail du client !");
             else if (textBox3.Text == "") MessageBox.Show("Entrez l'Adresse du client !");
             else if (textBox4.Text == "") MessageBox.Show("Entrez le Nom du client !");

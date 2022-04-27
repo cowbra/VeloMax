@@ -52,7 +52,7 @@ namespace bdd
 				MySqlCommand requete = new MySqlCommand();
 				if (this.numFidelio == 0)
                 {
-					requete = new MySqlCommand("INSERT INTO CLIENT(Type_Client,Tel_Client,Courriel_Client,Adresse_Client,Nom_Client,Prenom_Client) VALUES(@Type_Client,@Tel_Client,@Courriel_Client,@Adresse_Client,@Nom_Client,@Prenom_Client,)", DATABASE.MySqlConnection);
+					requete = new MySqlCommand("INSERT INTO CLIENT(Type_Client,Tel_Client,Courriel_Client,Adresse_Client,Nom_Client,Prenom_Client) VALUES(@Type_Client,@Tel_Client,@Courriel_Client,@Adresse_Client,@Nom_Client,@Prenom_Client)", DATABASE.MySqlConnection);
 
 				}
 				else

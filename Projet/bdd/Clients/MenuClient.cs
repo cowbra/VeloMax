@@ -107,5 +107,24 @@ namespace bdd
         {
             Actualiser();
         }
+
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DATABASE.Connected)// on verifie que la connexion est bien effective
+            {
+                if (listView1.SelectedItems.Count > 0)
+                {
+                    ListViewItem element = listView1.SelectedItems[0];
+                    string ID = element.SubItems[0].Text;
+                    MySqlCommand mySqlCommand = new MySqlCommand("DELETE FROM CLIENT WHERE ID_Client=@id", DATABASE.MySqlConnection);
+                    mySqlCommand.Parameters.AddWithValue("@id", ID);
+                    mySqlCommand.ExecuteNonQuery();
+                    element.Remove();
+                    mySqlCommand.Parameters.Clear();
+                }
+                MessageBox.Show("Client supprimé avec succès.");
+            }
+            else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression du client"); }
+        }
     }
 }
