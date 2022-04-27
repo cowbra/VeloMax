@@ -41,6 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -200,5 +201,6 @@
         private TextBox textBox1;
         private Button button1;
         private Button button2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
