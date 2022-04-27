@@ -109,5 +109,10 @@ namespace bdd
         {
 
         }
+
+        private void MenuClient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
