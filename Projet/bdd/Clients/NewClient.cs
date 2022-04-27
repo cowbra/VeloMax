@@ -171,7 +171,7 @@ namespace bdd
             else if (listBox1.SelectedItem.Equals("Entreprise"))
             {
                 if (textBox5.Text == "") MessageBox.Show("Entrez le Nom de la Compagnie !");
-                else if (textBox5.Text == "") MessageBox.Show("Entrez le pourcentage de remise de la Compagnie !");
+                else if (textBox6.Text == "") MessageBox.Show("Entrez le pourcentage de remise de la Compagnie !");
                 else if(int.TryParse(textBox6.Text, out j) == false) MessageBox.Show("Entrez un pourcentage de remise valide !");
                 else if (Convert.ToInt16(textBox6.Text)<0 || Convert.ToInt16(textBox6.Text)>100) MessageBox.Show("Entrez un pourcentage de remise valide !");
                 else { problem = false; }
