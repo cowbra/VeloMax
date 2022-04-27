@@ -98,22 +98,27 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Siret";
+            this.columnHeader1.Width = 120;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Nom";
+            this.columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Contact";
+            this.columnHeader3.Width = 120;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Adresse";
+            this.columnHeader4.Width = 160;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Libelle";
+            this.columnHeader5.Width = 120;
             // 
             // contextMenuStrip1
             // 
