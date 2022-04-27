@@ -74,6 +74,7 @@
             this.columnHeader9,
             this.columnHeader10});
             this.listView1.Location = new System.Drawing.Point(12, 88);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(765, 286);
             this.listView1.TabIndex = 8;

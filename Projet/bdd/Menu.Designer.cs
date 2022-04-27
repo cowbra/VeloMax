@@ -103,8 +103,8 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(308, 84);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "Pour l\'instant seul le boutton Quitter fonctionne, LOL\nJe vais commencer par vous" +
-    " montrer comment gérer le  lien avec la bdd avec le menu fournisseurs";
+            this.richTextBox1.Text = "Creation fournisseurs et menu client opératioonnels\nCreation de client menu en co" +
+    "urs\n";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Menu
