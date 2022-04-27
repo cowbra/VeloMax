@@ -1,9 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\TransConnect Sem5 Projet Emma",
+    "\\Projet",
+    "\\Projet\\bdd",
+    "\\Projet\\bdd\\Clients",
     "\\TransConnect Sem5 Projet Emma\\ProblemeTransConnect"
   ],
-  "SelectedNode": "\\TransConnect Sem5 Projet Emma\\ProblemeTransConnect\\MenuSalarie.cs",
+  "SelectedNode": "\\Projet\\bdd\\Clients\\MenuClient.cs",
   "PreviewInSolutionExplorer": false
 }

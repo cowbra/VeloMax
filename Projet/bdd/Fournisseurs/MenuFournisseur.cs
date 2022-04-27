@@ -39,6 +39,7 @@ namespace bdd
         {
             NewFournisseur newf = new NewFournisseur();
             newf.ShowDialog();
+            Actualiser();
         }
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)

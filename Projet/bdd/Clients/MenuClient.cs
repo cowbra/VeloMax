@@ -96,6 +96,7 @@ namespace bdd
         {
             NewClient newc = new NewClient();
             newc.ShowDialog();
+            Actualiser();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,6 +126,26 @@ namespace bdd
                 MessageBox.Show("Client supprimé avec succès.");
             }
             else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression du client"); }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+                Actualiser("SELECT * FROM CLIENT WHERE Type_Client = 'Particulier'");
+            }
+            else Actualiser();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+                Actualiser("SELECT * FROM CLIENT WHERE Type_Client = 'Entreprise'");
+            }
+            else Actualiser();
         }
     }
 }
