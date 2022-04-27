@@ -1,9 +1,7 @@
---SUPPRESSION DE LA BDD SI EXISTANTE PUIS CREATION
 DROP DATABASE IF EXISTS `VeloMax` ;
 CREATE DATABASE `VeloMax`;
 USE `VeloMax`;
 
---CREATION DE NOS TABLES
 CREATE TABLE `BICYCLETTE` (
  `ID_Bicyclette` int(30) NOT NULL AUTO_INCREMENT,
  `Nom_Bicyclette` varchar(255) NOT NULL,
@@ -107,7 +105,6 @@ CREATE TABLE `FOURNIT` (
  FOREIGN KEY (`Siret_Fournisseur`) REFERENCES `FOURNISSEUR` (`Siret_Fournisseur`)
 );
 
---INSERTION DES VALEURS
 INSERT INTO `FIDELIO` (`NumProgramme_Fidelio`, `Description_Fidelio`, `Cout_Fidelio`, `Duree_Fidelio`, `Rabais_Fidelio`) VALUES
 (1, 'Fidélio', 15, 1, 0.05),
 (2, 'Fidélio Or', 25, 2, 0.08),
@@ -124,3 +121,4 @@ INSERT INTO `CLIENT` (`ID_Client`, `Type_Client`, `Tel_Client`, `Courriel_Client
 (1, 'Particulier', '0685324585', 'hugo@test.fr', '41 rue Jobin\r\n13003 Marseille', 'bob', 'hugo', NULL, NULL, 1, '2022-04-07', NULL),
 (2, 'Particulier', '0632544489', 'rufus@gmail.com', '19 rue des Augustins\r\n33000 Bordeaux', 'Chemine', 'Rufus', NULL, NULL, 4, '2022-04-14', NULL),
 (3, 'Entreprise', '0147855472', 'Dekatlon@free.fr', '108, rue de rhodes\r\n34000 Montpellier', 'Ben', NULL, 'RentaBikke', 0.1, NULL, NULL, NULL);
+
