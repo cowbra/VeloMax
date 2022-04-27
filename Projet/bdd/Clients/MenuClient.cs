@@ -96,6 +96,7 @@ namespace bdd
         {
             NewClient newc = new NewClient();
             newc.ShowDialog();
+            Actualiser();
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)

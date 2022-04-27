@@ -160,7 +160,7 @@ namespace bdd
                 else if (!radioButton1.Checked && !radioButton2.Checked) MessageBox.Show("Indiquez si le client adhère à un programme Fidélio !");
                 if (radioButton1.Checked)
                 {
-                    if (textBox7.Text == "" || int.TryParse(textBox1.Text, out i) == false) MessageBox.Show("Entrez un N° Fidélio valide ! (1,2,3 ou 4)");
+                    if (textBox7.Text == "" || int.TryParse(textBox7.Text, out i) == false) MessageBox.Show("Entrez un N° Fidélio valide ! (1,2,3 ou 4)");
                     else if (ListFidelio.Contains(textBox7.Text) == false) MessageBox.Show("Entrez un N° Fidélio valide ! (1,2,3 ou 4)");
                     else if (textBox8.Text == "") MessageBox.Show("Entrez la date d'inscription au programme Fidélio du client!");
                     else problem = false;
