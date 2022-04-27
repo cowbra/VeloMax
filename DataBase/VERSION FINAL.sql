@@ -7,7 +7,7 @@ USE `VeloMax`;
 CREATE TABLE `BICYCLETTE` (
  `ID_Bicyclette` int(30) NOT NULL AUTO_INCREMENT,
  `Nom_Bicyclette` varchar(255) NOT NULL,
- `Grandeur_Bicyclette` int(30) NOT NULL,
+ `Grandeur_Bicyclette` enum('Adultes','Jeunes','Hommes','Dames','Filles','Garçons') NOT NULL,
  `Prix_Bicyclette` double NOT NULL,
  `Type_Bicyclette` enum('VTT','Course','Classique','BMX') NOT NULL,
  `DateIntroduction_Bicyclette` date NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE `BICYCLETTE` (
 CREATE TABLE `FIDELIO` (
  `NumProgramme_Fidelio` int(30) NOT NULL AUTO_INCREMENT,
  `Description_Fidelio` varchar(255) NOT NULL,
- `Cout_Fidelio` double NOT NULL,
+ `Cout_Fidelio` int(30) NOT NULL,
  `Duree_Fidelio` int(30) NOT NULL,
  `Rabais_Fidelio` double NOT NULL,
  PRIMARY KEY (`NumProgramme_Fidelio`)
@@ -49,8 +49,8 @@ CREATE TABLE `CLIENT` (
  `Adresse_Client` varchar(255) NOT NULL,
  `Nom_Client` varchar(255) NOT NULL,
  `Prenom_Client` varchar(255) DEFAULT NULL,
- `NomCompagnie_Client` int(30) DEFAULT NULL,
- `RemiseCompagnie_Client` int(30) DEFAULT NULL,
+ `NomCompagnie_Client` varchar(255) DEFAULT NULL,
+ `RemiseCompagnie_Client` double DEFAULT NULL,
  `NumProgramme_Fidelio` int(30) DEFAULT NULL,
  `DateDebut_Fidelio` date DEFAULT NULL,
  `DateFin_Fidelio` date DEFAULT NULL,
