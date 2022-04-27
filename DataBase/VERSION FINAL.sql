@@ -33,7 +33,7 @@ CREATE TABLE `FOURNISSEUR` (
 
 CREATE TABLE `PIECE` (
  `NumProduit_Piece` int(30) NOT NULL AUTO_INCREMENT,
- `Description_Piece` varchar(255) NOT NULL,
+ `Description_Piece` enum('Cadre','Guidon','Freins','Selle','Dérailleur Avant','Dérailleur Arrière','Roue Avant','Roue Arrière','Réflecteurs','Pédalier','Ordinateur','Panier') NOT NULL,
  `DateDebut_Piece` date NOT NULL,
  `DateFin_Piece` date NOT NULL,
  PRIMARY KEY (`NumProduit_Piece`)
