@@ -29,3 +29,5 @@ C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.g
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\ref\bdd.dll
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuFournisseur.resources
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewFournisseur.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuClient.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewClient.resources

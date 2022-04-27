@@ -30,6 +30,7 @@ namespace bdd
         private void button2_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();
+            DATABASE.Disconnect();
             this.Close();
             menu.Show();
         }
@@ -106,6 +107,11 @@ namespace bdd
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuClient_Load(object sender, EventArgs e)
         {
 
         }

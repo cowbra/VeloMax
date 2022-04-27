@@ -33,5 +33,12 @@ namespace bdd
             this.Hide();
             fournisseur.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MenuClient client = new MenuClient();
+            this.Hide();
+            client.Show();
+        }
     }
 }
