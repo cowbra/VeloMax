@@ -120,6 +120,18 @@ for each row begin
 end$$
 DELIMITER ;
 
+DELIMITER $$
+create trigger FOURNIT_NomFournisseur
+before insert on FOURNIT
+for each row begin
+  declare NomF Varchar(255);
+
+  select NomEntreprise_Fournisseur into NomF from FOURNISSEUR
+  where Siret_Fournisseur = NEW.Siret_Fournisseur;
+  set NEW.Nom_Fournisseur = NomF;
+end$$
+DELIMITER ;
+
 INSERT INTO `FIDELIO` (`NumProgramme_Fidelio`, `Description_Fidelio`, `Cout_Fidelio`, `Duree_Fidelio`, `Rabais_Fidelio`) VALUES
 (1, 'Fidélio', 15, 1, 0.05),
 (2, 'Fidélio Or', 25, 2, 0.08),
