@@ -105,6 +105,21 @@ CREATE TABLE `FOURNIT` (
  FOREIGN KEY (`Siret_Fournisseur`) REFERENCES `FOURNISSEUR` (`Siret_Fournisseur`)
 );
 
+DELIMITER $$
+create trigger CLIENT_DateFin_Fidelio
+before insert on CLIENT
+for each row begin
+  declare duree int(11);
+
+  IF NEW.NumProgramme_Fidelio IS NOT NULL
+  THEN
+    select Duree_Fidelio into duree from FIDELIO
+    where NumProgramme_Fidelio = NEW.NumProgramme_Fidelio;
+    set NEW.DateFin_Fidelio = DATE_ADD(NEW.DateDebut_Fidelio, INTERVAL duree YEAR);
+  END IF;
+end$$
+DELIMITER ;
+
 INSERT INTO `FIDELIO` (`NumProgramme_Fidelio`, `Description_Fidelio`, `Cout_Fidelio`, `Duree_Fidelio`, `Rabais_Fidelio`) VALUES
 (1, 'Fidélio', 15, 1, 0.05),
 (2, 'Fidélio Or', 25, 2, 0.08),
