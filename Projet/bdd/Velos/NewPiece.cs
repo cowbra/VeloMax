@@ -21,6 +21,12 @@ namespace bdd
         {
             InitializeComponent();
             DATABASE.Connect();
+            loadData();
+        }
+        private void loadData()
+        {
+            listeSiret.Clear();
+            listePieces.Clear();
             MySqlCommand mySqlCommand = new MySqlCommand("SELECT Identifiant_Piece FROM PIECE", DATABASE.MySqlConnection);
             using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
             {
@@ -32,6 +38,7 @@ namespace bdd
 #pragma warning restore CS8604 // Existence possible d'un argument de référence null.
                 }
             }
+
             MySqlCommand mySqlCommand2 = new MySqlCommand("SELECT Siret_Fournisseur FROM FOURNISSEUR", DATABASE.MySqlConnection);
             using (MySqlDataReader Lire = mySqlCommand2.ExecuteReader())
             {
@@ -42,8 +49,8 @@ namespace bdd
 #pragma warning restore CS8604 // Existence possible d'un argument de référence null.
                 }
             }
-        }
 
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -51,8 +58,8 @@ namespace bdd
             else if (textBox1.Text == "" && radioButton2.Checked) MessageBox.Show("Entrez l'identifiant de la pièce créée !");
             else if (listBox1.SelectedIndex == 0 && radioButton2.Checked) MessageBox.Show("Sélectionnez le type de Pièce !");
             else if (listBox2.SelectedIndex == 0 && radioButton1.Checked) MessageBox.Show("Sélectionnez l'identifiant du modèle de Pièce !");
-            else if (textBox6.Text == "Date1") MessageBox.Show("Entrez la date d'introduction de la pièce sur le marché !");
-            else if (textBox7.Text == "Date2") MessageBox.Show("Entrez la date de fin de production de la pièce !");
+            else if (textBox6.Text == "Date1" && radioButton2.Checked) MessageBox.Show("Entrez la date d'introduction de la pièce sur le marché !");
+            else if (textBox7.Text == "Date2" && radioButton2.Checked) MessageBox.Show("Entrez la date de fin de production de la pièce !");
             else if (textBox3.Text == "") MessageBox.Show("Entrez l'identifiant du produit dans le catalogue Fournisseur !");
             else if (textBox4.Text == "") MessageBox.Show("Entrez le prix unitaire de la pièce !");
             else if (textBox5.Text == "") MessageBox.Show("Entrez le délai d'approvisionnement de la pièce via ce fournisseur !");
@@ -89,6 +96,7 @@ namespace bdd
                     {
                         NewFournisseur newf = new NewFournisseur();
                         newf.ShowDialog();
+                        loadData();
                     }
                 }
 
@@ -114,6 +122,7 @@ namespace bdd
                     if (lien.AddToBdd())
                     {
                         MessageBox.Show("Pièce reliée au fournisseur avec succès !");
+                        DATABASE.Disconnect();
                         this.Close();
                     }
                     // On laisse la fenetre de creation de fournisseur ouverte pour retenter une connexion à la bdd
@@ -125,8 +134,6 @@ namespace bdd
             if (listePieces.Contains(textBox1.Text) && radioButton2.Checked){
                 MessageBox.Show("Cet identifiant de pièce existe déjà !");
             }
-
-            
 
         }
 
@@ -151,6 +158,16 @@ namespace bdd
 
                 listBox2.Enabled = false;
                 listBox2.Visible = false;
+
+                label3.Visible = true;
+                label3.Enabled = true;
+                label5.Visible = true;
+                label5.Enabled = true;
+
+                dateTimePicker1.Enabled=true;
+                dateTimePicker1.Visible = true;
+                dateTimePicker2.Enabled = true;
+                dateTimePicker2.Visible = true;
             }
         }
 
@@ -179,6 +196,16 @@ namespace bdd
 
                 listBox2.Enabled = true;
                 listBox2.Visible = true;
+
+                label3.Visible = false;
+                label3.Enabled = false;
+                label5.Visible = false;
+                label5.Enabled = false;
+
+                dateTimePicker1.Enabled = false;
+                dateTimePicker1.Visible = false;
+                dateTimePicker2.Enabled = false;
+                dateTimePicker2.Visible = false;
             }
         }
 

@@ -300,6 +300,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(433, 55);
             this.textBox1.Name = "textBox1";
@@ -318,22 +319,26 @@
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Location = new System.Drawing.Point(433, 240);
             this.dateTimePicker2.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(388, 25);
             this.dateTimePicker2.TabIndex = 29;
+            this.dateTimePicker2.Visible = false;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Enabled = false;
             this.label5.Location = new System.Drawing.Point(3, 240);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(289, 23);
             this.label5.TabIndex = 28;
             this.label5.Text = "La Date de fin de production de la Pièce";
+            this.label5.Visible = false;
             // 
             // label4
             // 
@@ -347,22 +352,26 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Location = new System.Drawing.Point(433, 184);
             this.dateTimePicker1.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(388, 25);
             this.dateTimePicker1.TabIndex = 26;
+            this.dateTimePicker1.Visible = false;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Enabled = false;
             this.label3.Location = new System.Drawing.Point(3, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(349, 23);
             this.label3.TabIndex = 24;
             this.label3.Text = "La Date d\'introduction de la Pièce sur le marché";
+            this.label3.Visible = false;
             // 
             // label2
             // 
