@@ -1,4 +1,4 @@
-﻿namespace bdd.Velos
+﻿namespace bdd
 {
     partial class MenuGestion
     {
@@ -61,6 +61,7 @@
             this.Controls.Add(this.button1);
             this.Name = "MenuGestion";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MenuGestion_Load);
             this.ResumeLayout(false);
 
         }

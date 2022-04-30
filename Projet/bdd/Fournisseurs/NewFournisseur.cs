@@ -7,14 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace bdd
 {
     public partial class NewFournisseur : Form
     {
+        BDD DATABASE = new BDD();
+        // Liste pour verifier si la clé primaire est déjà enregistré dans la bdd
+        List<string> listeSiret = new List<string>();
         public NewFournisseur()
         {
             InitializeComponent();
+            DATABASE.Connect();
+            MySqlCommand mySqlCommand = new MySqlCommand("SELECT Siret_Fournisseur FROM FOURNISSEUR", DATABASE.MySqlConnection);
+            using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+            {
+                while (Lire.Read())
+                {
+#pragma warning disable CS8604 // Existence possible d'un argument de référence null.
+                    listeSiret.Add(Lire["Siret_Fournisseur"].ToString());
+#pragma warning restore CS8604 // Existence possible d'un argument de référence null.
+                }
+            }
         }
 
         private void NewFournisseur_Load(object sender, EventArgs e)
@@ -42,6 +57,10 @@ namespace bdd
             else if (textBox3.Text == "") MessageBox.Show("Entrez le contact de l'entreprise !");
             else if (textBox4.Text == "") MessageBox.Show("Entrez l'Adresse de l'entreprise !");
             else if (textBox5.Text == "" || Listlibelle.Contains(textBox5.Text) == false) MessageBox.Show("Entrez le libelle de l'entreprise ! (1,2,3 ou 4)");
+            else if (listeSiret.Contains(textBox1.Text))
+            {
+                MessageBox.Show("Ce numéro de SIRET est déjà enregistré !");
+            }
             else
             {
                 Fournisseur f = new Fournisseur(Convert.ToInt64(textBox1.Text), textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text);

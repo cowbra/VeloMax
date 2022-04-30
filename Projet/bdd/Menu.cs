@@ -9,7 +9,9 @@ namespace bdd
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MenuGestion gestion = new MenuGestion();
+            this.Hide();
+            gestion.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
