@@ -141,11 +141,23 @@ INSERT INTO `FIDELIO` (`NumProgramme_Fidelio`, `Description_Fidelio`, `Cout_Fide
 INSERT INTO `FOURNISSEUR` (`Siret_Fournisseur`, `NomEntreprise_Fournisseur`, `Contact_Fournisseur`, `Adresse_Fournisseur`, `Libelle_Fournisseur`) VALUES
 (39982698100017, 'BricoVelo', 'bricovelo@velo.com', '14 rue Victor Hugo, Argentan', '1'),
 (67822698100036, 'VeloFabrik', 'velofabrik@gmail.com', '4 rue Carnot, Lille', '3'),
-(43282695524021, 'Bikeshop', 'bikeshop@gmail.com', '6 rue André, Paris', '12'),
-(27382698187536, 'PiecesFabrique', 'piecesfabrique@gmail.com', '9 avenue Richelieu, Caen', '4');
+
+(43282695524021, 'Bikeshop', 'bikeshop@gmail.com', '6 rue André, Paris', '2'),
+(27382698187536, 'PiecesFabrique', 'piecesfabrique@gmail.com', '9 avenue Richelieu, Caen', '4'),
+(27589698100017, 'Bikebuy', 'bikebuy@velo.com', '8 Avenue General Lecler, Calais', '1'),
+(64189454720036, '2roues', '2roues@gmail.com', '45 rue du temple, Nogent', '2'),
+(64126254620004, 'roadsport', 'roadsport@gmail.com', '6 rue St Louis, Paris', '2'),
+(87551075487408, 'roadtogo', 'roadtogo@gmail.com', '2 avenue de la piscine, Caen', '4');
+
+INSERT INTO `CLIENT` (`ID_Client`, `Type_Client`, `Tel_Client`, `Courriel_Client`, `Adresse_Client`, `Nom_Client`, `Prenom_Client`, `NomCompagnie_Client`, `RemiseCompagnie_Client`, `NumProgramme_Fidelio`, `DateDebut_Fidelio`, `DateFin_Fidelio`) VALUES
+(1, 'Particulier', '0685324585', 'hugo@test.fr', '41 rue Jobin\r\n13003 Marseille', 'bob', 'hugo', NULL, NULL, 3, '2022-04-07', NULL),
+(2, 'Particulier', '0632544489', 'rufus@gmail.com', '19 rue des Augustins\r\n33000 Bordeaux', 'Chemine', 'Rufus', NULL, NULL, 4, '2022-04-14', NULL),
+(3, 'Entreprise', '0147855472', 'Dekatlon@free.fr', '108, rue de rhodes\r\n34000 Montpellier', 'Ben', NULL, 'Dekatlon', 0.1, NULL, NULL, NULL),
+(4, 'Entreprise', '0346580184', '1tersport@gmail.com', '14, rue de joncquilles\r\n34000 Lille', 'Philippe', NULL, '1tersp0rt', 0.15, NULL, NULL, NULL),
+(5, 'Entreprise', '0784949901', 'g0sp0rt@gmail.com', '4, rue Carnot \r\n34000 Paris', 'Emmanuel', NULL, 'g0sp0rt', 0.12, NULL, NULL, NULL),
+(6, 'Particulier', '0978440144', 'pierre@test.fr', '7 rue de l eglise\r\n13003 Cambray', 'Thalis', 'Pierre', NULL, NULL, 1, '2022-01-03', NULL);
 
 INSERT INTO `CLIENT` (`ID_Client`, `Type_Client`, `Tel_Client`, `Courriel_Client`, `Adresse_Client`, `Nom_Client`, `Prenom_Client`, `NomCompagnie_Client`, `RemiseCompagnie_Client`, `NumProgramme_Fidelio`, `DateDebut_Fidelio`, `DateFin_Fidelio`) VALUES
 (1, 'Particulier', '0685324585', 'hugo@test.fr', '41 rue Jobin\r\n13003 Marseille', 'bob', 'hugo', NULL, NULL, 1, '2022-04-07', NULL),
 (2, 'Particulier', '0632544489', 'rufus@gmail.com', '19 rue des Augustins\r\n33000 Bordeaux', 'Chemine', 'Rufus', NULL, NULL, 4, '2022-04-14', NULL),
 (3, 'Entreprise', '0147855472', 'Dekatlon@free.fr', '108, rue de rhodes\r\n34000 Montpellier', 'Ben', NULL, 'RentaBikke', 0.1, NULL, NULL, NULL);
-
