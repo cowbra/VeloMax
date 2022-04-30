@@ -35,6 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -80,7 +82,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(316, 82);
+            this.label1.Location = new System.Drawing.Point(298, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(204, 50);
             this.label1.TabIndex = 4;
@@ -103,9 +105,20 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(308, 84);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "Creation fournisseurs et menu client opératioonnels\nCreation de client menu en co" +
-    "urs\n";
+            this.richTextBox1.Text = "Squlette de fournisseur et clients terminés. Pieces en cours. Reste vélo et comma" +
+    "ndes\n";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::bdd.Properties.Resources.velo_de_montagne;
+            this.pictureBox1.Location = new System.Drawing.Point(264, 209);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(292, 258);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Menu
             // 
@@ -113,6 +126,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 614);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label1);
@@ -123,6 +137,7 @@
             this.HelpButton = true;
             this.Name = "Menu";
             this.Text = "VéloMax";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,5 +152,6 @@
         private Label label1;
         private Button button5;
         private RichTextBox richTextBox1;
+        private PictureBox pictureBox1;
     }
 }

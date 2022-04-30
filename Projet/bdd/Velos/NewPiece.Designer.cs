@@ -201,9 +201,10 @@
             this.listBox2.ItemHeight = 23;
             this.listBox2.Items.AddRange(new object[] {
             "Double-cliquez sur un élément pour le sélectionner"});
-            this.listBox2.Location = new System.Drawing.Point(433, 55);
+            this.listBox2.Location = new System.Drawing.Point(433, 33);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(388, 27);
+            this.listBox2.ScrollAlwaysVisible = true;
+            this.listBox2.Size = new System.Drawing.Size(388, 73);
             this.listBox2.TabIndex = 42;
             // 
             // listBox1
@@ -226,8 +227,9 @@
             "Pédalier",
             "Ordinateur",
             "Panier"});
-            this.listBox1.Location = new System.Drawing.Point(433, 111);
+            this.listBox1.Location = new System.Drawing.Point(433, 129);
             this.listBox1.Name = "listBox1";
+            this.listBox1.ScrollAlwaysVisible = true;
             this.listBox1.Size = new System.Drawing.Size(388, 27);
             this.listBox1.TabIndex = 41;
             this.listBox1.Visible = false;

@@ -115,18 +115,34 @@ namespace bdd
                         if (piece.AddToBdd()) MessageBox.Show("Pièce créée avec succès !");
                         else MessageBox.Show("Erreur de Connexion avec la Base de données.");
                         idPiece = textBox1.Text.ToUpper();
-
                     }
 
-                    Fourni lien = new Fourni(siret, idPiece, quantite, delai, prix, numFour);
-                    if (lien.AddToBdd())
+                    string req = "SELECT COUNT(1) FROM FOURNIT WHERE Siret_Fournisseur = @siret AND Identifiant_Piece = @id";
+                    MySqlCommand requete = new MySqlCommand(req, DATABASE.MySqlConnection);
+                    requete.Parameters.AddWithValue("@siret", siret);
+                    requete.Parameters.AddWithValue("@id", idPiece);
+                    string resultat = "";
+                    using (MySqlDataReader Lire = requete.ExecuteReader())
                     {
-                        MessageBox.Show("Pièce reliée au fournisseur avec succès !");
-                        DATABASE.Disconnect();
-                        this.Close();
+                        while (Lire.Read())
+                        {
+                            resultat = Lire.GetString(0);
+                        }
                     }
-                    // On laisse la fenetre de creation de fournisseur ouverte pour retenter une connexion à la bdd
-                    else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+                    if (Convert.ToInt32(resultat) >0) MessageBox.Show("Ce fournisseur vend déjà cette pièce !");
+                    else
+                    {
+                        Fourni lien = new Fourni(siret, idPiece, quantite, delai, prix, numFour);
+                        if (lien.AddToBdd())
+                        {
+                            MessageBox.Show("Pièce reliée au fournisseur avec succès !");
+                            DATABASE.Disconnect();
+                            this.Close();
+                        }
+                        // On laisse la fenetre de creation de fournisseur ouverte pour retenter une connexion à la bdd
+                        else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+                    }
+                    
                 }
             }
 
@@ -171,16 +187,6 @@ namespace bdd
             }
         }
 
-        private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton1.Checked)
@@ -209,20 +215,11 @@ namespace bdd
             }
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
@@ -246,6 +243,25 @@ namespace bdd
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void checkedListBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
