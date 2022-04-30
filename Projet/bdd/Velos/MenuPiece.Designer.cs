@@ -64,10 +64,10 @@
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listView1.Location = new System.Drawing.Point(12, 178);
+            this.listView1.Location = new System.Drawing.Point(12, 98);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(868, 345);
+            this.listView1.Size = new System.Drawing.Size(868, 425);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -120,7 +120,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 125);
+            this.button3.Location = new System.Drawing.Point(12, 60);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(151, 32);
             this.button3.TabIndex = 8;
