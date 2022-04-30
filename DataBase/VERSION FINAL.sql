@@ -32,11 +32,11 @@ CREATE TABLE `FOURNISSEUR` (
 );
 
 CREATE TABLE `PIECE` (
- `NumProduit_Piece` int(30) NOT NULL AUTO_INCREMENT,
+ `Identifiant_Piece` varchar(15) NOT NULL,
  `Description_Piece` enum('Cadre','Guidon','Freins','Selle','Dérailleur Avant','Dérailleur Arrière','Roue Avant','Roue Arrière','Réflecteurs','Pédalier','Ordinateur','Panier') NOT NULL,
  `DateDebut_Piece` date NOT NULL,
  `DateFin_Piece` date NOT NULL,
- PRIMARY KEY (`NumProduit_Piece`)
+ PRIMARY KEY (`Identifiant_Piece`)
 );
 
 CREATE TABLE `CLIENT` (
@@ -79,29 +79,29 @@ CREATE TABLE `ACHAT_BICYCLETTE` (
 
 CREATE TABLE `ACHAT_PIECE` (
  `ID_Commande` int(30) NOT NULL,
- `NumProduit_Piece` int(30) NOT NULL,
+ `Identifiant_Piece` varchar(15) NOT NULL,
  `NombreArticles` int(30) NOT NULL,
  `DateLivraison` date NOT NULL,
- FOREIGN KEY (`NumProduit_Piece`) REFERENCES `PIECE` (`NumProduit_Piece`),
+ FOREIGN KEY (`Identifiant_Piece`) REFERENCES `PIECE` (`Identifiant_Piece`),
  FOREIGN KEY (`ID_Commande`) REFERENCES `COMMANDE` (`ID_Commande`)
 );
 
 CREATE TABLE `ASSEMBLER_PAR` (
  `ID_Bicyclette` int(30) NOT NULL,
- `NumProduit_Piece` int(30) NOT NULL,
- FOREIGN KEY (`NumProduit_Piece`) REFERENCES `PIECE` (`NumProduit_Piece`),
+ `Identifiant_Piece` varchar(15) NOT NULL,
+ FOREIGN KEY (`Identifiant_Piece`) REFERENCES `PIECE` (`Identifiant_Piece`),
  FOREIGN KEY (`ID_Bicyclette`) REFERENCES `BICYCLETTE` (`ID_Bicyclette`)
 );
 
 CREATE TABLE `FOURNIT` (
  `Siret_Fournisseur` bigint NOT NULL,
- `NumProduit_Piece` int(30) NOT NULL,
+ `Identifiant_Piece` varchar(15) NOT NULL,
  `Nom_Fournisseur` varchar(255) NOT NULL,
  `NumProduit_Fournisseur` int(30) NOT NULL,
  `Prix_Fournisseur` double NOT NULL,
  `Quantite_Fournisseur` int(30) NOT NULL,
  `Delai_Fournisseur` int(30) NOT NULL,
- FOREIGN KEY (`NumProduit_Piece`) REFERENCES `PIECE` (`NumProduit_Piece`),
+ FOREIGN KEY (`Identifiant_Piece`) REFERENCES `PIECE` (`Identifiant_Piece`),
  FOREIGN KEY (`Siret_Fournisseur`) REFERENCES `FOURNISSEUR` (`Siret_Fournisseur`)
 );
 
