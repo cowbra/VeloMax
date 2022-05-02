@@ -138,7 +138,6 @@ namespace bdd
 
 
                 int taille = listView1.Items.Count;
-                //string quantite = "";
                 string requiem = "SELECT SUM(Quantite_Fournisseur) FROM FOURNIT WHERE Identifiant_Piece=@id";
                 MySqlCommand requete = new MySqlCommand(requiem, DATABASE.MySqlConnection);
 
