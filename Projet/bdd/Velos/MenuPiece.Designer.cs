@@ -44,6 +44,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +74,7 @@
             this.listView1.Location = new System.Drawing.Point(12, 98);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(644, 425);
+            this.listView1.Size = new System.Drawing.Size(752, 425);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -154,10 +158,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox4);
+            this.groupBox1.Controls.Add(this.checkBox3);
+            this.groupBox1.Controls.Add(this.checkBox2);
+            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Location = new System.Drawing.Point(685, 98);
+            this.groupBox1.Font = new System.Drawing.Font("Vollkorn Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(770, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(357, 296);
+            this.groupBox1.Size = new System.Drawing.Size(396, 296);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrer";
@@ -165,18 +174,61 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(17, 38);
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(6, 51);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(83, 19);
+            this.checkBox1.Size = new System.Drawing.Size(54, 17);
             this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.Text = "Cadre";
             this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(127, 21);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "N\'afficher que les :";
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox2.Location = new System.Drawing.Point(85, 51);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(60, 17);
+            this.checkBox2.TabIndex = 2;
+            this.checkBox2.Text = "Guidon";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox3.Location = new System.Drawing.Point(178, 51);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(54, 17);
+            this.checkBox3.TabIndex = 3;
+            this.checkBox3.Text = "Freins";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox4.Location = new System.Drawing.Point(263, 51);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(49, 17);
+            this.checkBox4.TabIndex = 4;
+            this.checkBox4.Text = "Selle";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // MenuPiece
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1054, 596);
+            this.ClientSize = new System.Drawing.Size(1178, 612);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -212,5 +264,9 @@
         private Label label1;
         private GroupBox groupBox1;
         private CheckBox checkBox1;
+        private CheckBox checkBox4;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
+        private Label label2;
     }
 }

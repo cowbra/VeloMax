@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Projet",
+    "\\Projet\\bdd",
+    "\\Projet\\bdd\\Velos"
   ],
-  "SelectedNode": "\\bdd.sln",
+  "SelectedNode": "\\Projet\\bdd\\Velos\\MenuPiece.cs",
   "PreviewInSolutionExplorer": false
 }

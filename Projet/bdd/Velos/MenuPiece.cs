@@ -26,6 +26,8 @@ namespace bdd
             /// <summary>
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
+
+            List<string> idPIECE = new List<string>();
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
                 listView1.Items.Clear();
@@ -36,6 +38,9 @@ namespace bdd
                     {
 #pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string id = Lire["Identifiant_Piece"].ToString();
+#pragma warning disable CS8604 // Existence possible d'un argument de référence null.
+                        idPIECE.Add(id);
+#pragma warning restore CS8604 // Existence possible d'un argument de référence null.
 #pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
 #pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string type = Lire["Description_Piece"].ToString();
@@ -52,20 +57,20 @@ namespace bdd
 
 
 
-                int compteur = 0;
-                MySqlCommand mysqlQuantite = new MySqlCommand("SELECT Identifiant_Piece,SUM(Quantite_Fournisseur) AS Quantite_total FROM FOURNIT GROUP BY Identifiant_Piece", DATABASE.MySqlConnection);
-                using (MySqlDataReader Lire = mysqlQuantite.ExecuteReader())
+
+                int taille = listView1.Items.Count;
+                //string quantite = "";
+                string requiem = "SELECT SUM(Quantite_Fournisseur) FROM FOURNIT WHERE Identifiant_Piece=@id";
+                MySqlCommand requete = new MySqlCommand(requiem, DATABASE.MySqlConnection);
+
+                for (int i = 0; i < taille; i++)
                 {
-                    while (Lire.Read())
-                    {
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-                        string quantite = Lire["Quantite_total"].ToString();
-                        listView1.Items[compteur].SubItems[4].Text = quantite;
-                        compteur++;
+                    requete.Parameters.AddWithValue("@id", idPIECE[i]);
 
-
-                    }
+                    listView1.Items[i].SubItems[4].Text = Convert.ToString((decimal)(requete.ExecuteScalar()));
+                    requete.Parameters.Clear();
                 }
+                
             }
         }
 
