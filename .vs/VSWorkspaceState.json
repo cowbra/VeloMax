@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Projet",
+    "\\Projet\\bdd",
+    "\\Projet\\bdd\\Clients",
+    "\\Projet\\bdd\\Velos"
   ],
-  "SelectedNode": "\\bdd.sln",
+  "SelectedNode": "\\Projet\\bdd\\BDD.cs",
   "PreviewInSolutionExplorer": false
 }
