@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using System.Data;
+﻿using MySql.Data.MySqlClient;
 
 namespace bdd
 {
@@ -18,7 +12,7 @@ namespace bdd
         protected string libelle;
         #endregion
 
-        public Fournisseur(Int64 siret, string nomEntreprise, string contact,string adresse, string libelle)
+        public Fournisseur(Int64 siret, string nomEntreprise, string contact, string adresse, string libelle)
         {
             this.siret = siret;
             this.nomEntreprise = nomEntreprise;

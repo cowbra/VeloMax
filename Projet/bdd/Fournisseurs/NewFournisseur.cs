@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace bdd
 {
@@ -25,9 +16,7 @@ namespace bdd
             {
                 while (Lire.Read())
                 {
-#pragma warning disable CS8604 // Existence possible d'un argument de référence null.
                     listeSiret.Add(Lire["Siret_Fournisseur"].ToString());
-#pragma warning restore CS8604 // Existence possible d'un argument de référence null.
                 }
             }
         }
@@ -49,10 +38,10 @@ namespace bdd
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string[] Listlibelle = { "1","2","3","4"};
+            string[] Listlibelle = { "1", "2", "3", "4" };
             long i;
-            if (textBox1.Text == "" || Int64.TryParse(textBox1.Text, out i)==false) MessageBox.Show("Entrez le N° Siret de l'entreprise !");
-            else if (textBox1.Text.Length<14||Convert.ToInt64(textBox1.Text) <0 || Convert.ToInt64(textBox1.Text)>99999999999999) MessageBox.Show("Entrez un N° de Siret valide (14 chiffres) !");
+            if (textBox1.Text == "" || Int64.TryParse(textBox1.Text, out i) == false) MessageBox.Show("Entrez le N° Siret de l'entreprise !");
+            else if (textBox1.Text.Length < 14 || Convert.ToInt64(textBox1.Text) < 0 || Convert.ToInt64(textBox1.Text) > 99999999999999) MessageBox.Show("Entrez un N° de Siret valide (14 chiffres) !");
             else if (textBox2.Text == "") MessageBox.Show("Entrez le nom de l'entreprise !");
             else if (textBox3.Text == "") MessageBox.Show("Entrez le contact de l'entreprise !");
             else if (textBox4.Text == "") MessageBox.Show("Entrez l'Adresse de l'entreprise !");
@@ -75,7 +64,7 @@ namespace bdd
                     // On laisse la fenetre de creation de fournisseur ouverte pour retenter une connexion à la bdd
                 }
 
-                }
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
