@@ -16,12 +16,6 @@
     <Compile Update="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Velos\NewVelo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Velos\MenuVelo.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Velos\NewPiece.cs">
       <SubType>Form</SubType>
     </Compile>
