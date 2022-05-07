@@ -47,6 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,8 +60,6 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.button2 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -271,6 +271,25 @@
             this.groupBox2.Text = "Programme Fidélio Client";
             this.groupBox2.Visible = false;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 317);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(196, 16);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "Date début du Programme :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(6, 45);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(237, 16);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Liste des programmes Fidélio :";
+            // 
             // textBox8
             // 
             this.textBox8.Enabled = false;
@@ -306,6 +325,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(146, 22);
             this.textBox7.TabIndex = 1;
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // listView1
             // 
@@ -356,25 +376,6 @@
             this.button2.Text = "Retour";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(6, 45);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(237, 16);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Liste des programmes Fidélio :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 317);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(196, 16);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "Date début du Programme :";
             // 
             // NewClient
             // 
