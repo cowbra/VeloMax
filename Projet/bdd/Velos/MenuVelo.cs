@@ -26,9 +26,12 @@ namespace bdd
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            NewVelo velo = new NewVelo();
+            velo.ShowDialog();
+            //Actualiser();
         }
 
+        
         private void button2_Click(object sender, EventArgs e)
         {
             Menu menu = new Menu();

@@ -26,9 +26,11 @@ namespace bdd
             /// <summary>
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
+
+        #region REQUETE
             string requeteSQL = "SELECT Identifiant_Piece, Description_Piece, DateDebut_Piece, DateFin_Piece, SUM(Quantite_Fournisseur) AS Quantite_Total_Piece FROM PIECE NATURAL JOIN FOURNIT";
 
-            #region requetes_Filtrees
+            #region requetes_Filtres
             int compteur = 0;
             if (checkBox1.Checked|| checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked || checkBox6.Checked || checkBox7.Checked || checkBox8.Checked || checkBox9.Checked || checkBox10.Checked || checkBox11.Checked || checkBox12.Checked)
             {
@@ -109,6 +111,21 @@ namespace bdd
             #endregion
 
             requeteSQL += " GROUP BY Identifiant_Piece";
+
+            //REQUETE QUANTITE FIlTRE
+            #region quantity check
+            if (textBox1.Text != "")
+            {
+                int i;
+                if (int.TryParse(textBox1.Text, out i) == false) MessageBox.Show("Entrez une quantité valide !");
+                else if (Convert.ToInt16(textBox1.Text) < 0) MessageBox.Show("Entrez une quantité valide !");
+                else
+                {
+                    requeteSQL += " HAVING Quantite_Total_Piece >=" + textBox1.Text;
+                }
+            }
+            #endregion
+
             //Requetes pour TRI
             #region TRI SQL
             if (checkBox22.Checked || checkBox23.Checked || checkBox24.Checked )
@@ -117,23 +134,27 @@ namespace bdd
                 requeteSQL += " ORDER BY ";
                 if (checkBox24.Checked)
                 {
-                    requeteSQL += "Quantite_Total_Piece";
+                    requeteSQL += "Quantite_Total_Piece DESC";
                     compteur++;
                 }
                 if (checkBox23.Checked)
                 {
-                    if (compteur>0) requeteSQL += ",DateDebut_Piece";
-                    else requeteSQL += "DateDebut_Piece";
+                    if (compteur>0) requeteSQL += ",DateDebut_Piece DESC";
+                    else requeteSQL += "DateDebut_Piece DESC";
                     compteur++;
                 }
                 if (checkBox22.Checked)
                 {
-                    if (compteur > 0) requeteSQL += ",DateFin_Piece";
-                    else requeteSQL += "DateFin_Piece";
+                    if (compteur > 0) requeteSQL += ",DateFin_Piece DESC";
+                    else requeteSQL += "DateFin_Piece DESC";
                     compteur++;
                 }
             }
             #endregion
+
+        #endregion
+
+
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
                 listView1.Items.Clear();
@@ -175,6 +196,8 @@ namespace bdd
             menu.Show();
         }
         #region Actualiser_filtre
+
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             Actualiser();
@@ -269,6 +292,16 @@ namespace bdd
         private void checkBox22_CheckedChanged(object sender, EventArgs e)
         {
             Actualiser();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Actualiser();
+        }
+
+        private void afficherSockFournisseursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
