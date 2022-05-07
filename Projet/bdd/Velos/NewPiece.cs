@@ -32,10 +32,8 @@ namespace bdd
             {
                 while (Lire.Read())
                 {
-#pragma warning disable CS8604 // Existence possible d'un argument de référence null.
                     listePieces.Add(Lire["Identifiant_Piece"].ToString());
                     listBox2.Items.Add(Lire["Identifiant_Piece"].ToString());
-#pragma warning restore CS8604 // Existence possible d'un argument de référence null.
                 }
             }
 
@@ -44,9 +42,7 @@ namespace bdd
             {
                 while (Lire.Read())
                 {
-#pragma warning disable CS8604 // Existence possible d'un argument de référence null.
                     listeSiret.Add(Lire["Siret_Fournisseur"].ToString());
-#pragma warning restore CS8604 // Existence possible d'un argument de référence null.
                 }
             }
 

@@ -21,12 +21,13 @@ namespace bdd
             Actualiser();
         }
 
-        private void Actualiser(string requeteSQL = "SELECT * FROM PIECE")
+        private void Actualiser()
         {
             /// <summary>
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
-            /// 
+            string requeteSQL = "SELECT Identifiant_Piece, Description_Piece, DateDebut_Piece, DateFin_Piece, SUM(Quantite_Fournisseur) AS Quantite_Total_Piece FROM PIECE NATURAL JOIN FOURNIT";
+
             #region requetes_Filtrees
             int compteur = 0;
             if (checkBox1.Checked|| checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked || checkBox6.Checked || checkBox7.Checked || checkBox8.Checked || checkBox9.Checked || checkBox10.Checked || checkBox11.Checked || checkBox12.Checked)
@@ -107,8 +108,32 @@ namespace bdd
             }
             #endregion
 
-
-            List<string> idPIECE = new List<string>();
+            requeteSQL += " GROUP BY Identifiant_Piece";
+            //Requetes pour TRI
+            #region TRI SQL
+            if (checkBox22.Checked || checkBox23.Checked || checkBox24.Checked )
+            {
+                compteur = 0;
+                requeteSQL += " ORDER BY ";
+                if (checkBox24.Checked)
+                {
+                    requeteSQL += "Quantite_Total_Piece";
+                    compteur++;
+                }
+                if (checkBox23.Checked)
+                {
+                    if (compteur>0) requeteSQL += ",DateDebut_Piece";
+                    else requeteSQL += "DateDebut_Piece";
+                    compteur++;
+                }
+                if (checkBox22.Checked)
+                {
+                    if (compteur > 0) requeteSQL += ",DateFin_Piece";
+                    else requeteSQL += "DateFin_Piece";
+                    compteur++;
+                }
+            }
+            #endregion
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
                 listView1.Items.Clear();
@@ -117,36 +142,13 @@ namespace bdd
                 {
                     while (Lire.Read())
                     {
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string id = Lire["Identifiant_Piece"].ToString();
-#pragma warning disable CS8604 // Existence possible d'un argument de référence null.
-                        idPIECE.Add(id);
-#pragma warning restore CS8604 // Existence possible d'un argument de référence null.
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string type = Lire["Description_Piece"].ToString();
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string date1 = Lire["DateDebut_Piece"].ToString();
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-                        string date2 = Lire["DateFin_Piece"].ToString();
-
-                        listView1.Items.Add(new ListViewItem(new[] { id, type, date1, date2,null}));
+                        string date2 = Lire["DateFin_Piece"].ToString(); 
+                        string quantity = Lire["Quantite_Total_Piece"].ToString();
+                        listView1.Items.Add(new ListViewItem(new[] { id, type, date1, date2, quantity }));
                     }
-                }
-
-
-                int taille = listView1.Items.Count;
-                string requiem = "SELECT SUM(Quantite_Fournisseur) FROM FOURNIT WHERE Identifiant_Piece=@id";
-                MySqlCommand requete = new MySqlCommand(requiem, DATABASE.MySqlConnection);
-
-                for (int i = 0; i < taille; i++)
-                {
-                    requete.Parameters.AddWithValue("@id", idPIECE[i]);
-
-                    listView1.Items[i].SubItems[4].Text = Convert.ToString((decimal)(requete.ExecuteScalar()));
-                    requete.Parameters.Clear();
                 }
             }
         }
@@ -247,6 +249,26 @@ namespace bdd
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox24_CheckedChanged(object sender, EventArgs e)
+        {
+            Actualiser();
+        }
+
+        private void checkBox23_CheckedChanged(object sender, EventArgs e)
+        {
+            Actualiser();
+        }
+
+        private void checkBox22_CheckedChanged(object sender, EventArgs e)
+        {
+            Actualiser();
         }
     }
 }

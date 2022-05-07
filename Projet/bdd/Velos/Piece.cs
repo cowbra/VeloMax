@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 
 namespace bdd
@@ -19,7 +14,7 @@ namespace bdd
         #endregion
 
         // Constructeur client particulier
-        public Piece(string idPiece,string typePiece, string dateIntroduction, string dateFin)
+        public Piece(string idPiece, string typePiece, string dateIntroduction, string dateFin)
         {
             this.idPiece = idPiece;
             this.typePiece = typePiece;

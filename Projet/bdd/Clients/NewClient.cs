@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace bdd
 {
@@ -37,22 +28,11 @@ namespace bdd
                 {
                     while (Lire.Read())
                     {
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string ID = Lire["NumProgramme_Fidelio"].ToString();
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string DESC = Lire["Description_Fidelio"].ToString();
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string COUT = Lire["Cout_Fidelio"].ToString();
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string DUREE = Lire["Duree_Fidelio"].ToString();
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-#pragma warning disable CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
                         string RABAIS = Lire["Rabais_Fidelio"].ToString();
-#pragma warning restore CS8600 // Conversion de littéral ayant une valeur null ou d'une éventuelle valeur null en type non-nullable.
-
                         listView1.Items.Add(new ListViewItem(new[] { ID, DESC, COUT, DUREE, RABAIS }));
                     }
                 }
@@ -138,7 +118,7 @@ namespace bdd
         {
             //textBox8.Text = dateTimePicker1.Value.ToString();
             string[] subsDate = dateTimePicker1.Value.ToShortDateString().Split('/');
-            string dateTrans = subsDate[2] +"-"+ subsDate[1] + "-" + subsDate[0];
+            string dateTrans = subsDate[2] + "-" + subsDate[1] + "-" + subsDate[0];
             textBox8.Text = dateTrans;
         }
 
@@ -149,7 +129,7 @@ namespace bdd
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool problem=true;
+            bool problem = true;
             string[] ListFidelio = { "1", "2", "3", "4" };
             int i;
             int j;
@@ -167,13 +147,13 @@ namespace bdd
                 }
                 if (radioButton2.Checked && textBox5.Text != "") problem = false;
             }
-                
+
             else if (listBox1.SelectedItem.Equals("Entreprise"))
             {
                 if (textBox5.Text == "") MessageBox.Show("Entrez le Nom de la Compagnie !");
                 else if (textBox6.Text == "") MessageBox.Show("Entrez le pourcentage de remise de la Compagnie !");
-                else if(int.TryParse(textBox6.Text, out j) == false) MessageBox.Show("Entrez un pourcentage de remise valide !");
-                else if (Convert.ToInt16(textBox6.Text)<0 || Convert.ToInt16(textBox6.Text)>100) MessageBox.Show("Entrez un pourcentage de remise valide !");
+                else if (int.TryParse(textBox6.Text, out j) == false) MessageBox.Show("Entrez un pourcentage de remise valide !");
+                else if (Convert.ToInt16(textBox6.Text) < 0 || Convert.ToInt16(textBox6.Text) > 100) MessageBox.Show("Entrez un pourcentage de remise valide !");
                 else { problem = false; }
             }
             if (textBox1.Text == "") MessageBox.Show("Entrez le N° de téléphone du client!");
@@ -209,7 +189,7 @@ namespace bdd
                     }
                     #endregion
 
-                    if (c!= null && c.AddToBdd())
+                    if (c != null && c.AddToBdd())
                     {
                         MessageBox.Show("Client créé avec succès !");
                         this.Close();
@@ -222,7 +202,7 @@ namespace bdd
 
                 }
             }
-            
+
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
