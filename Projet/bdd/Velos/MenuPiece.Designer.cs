@@ -62,7 +62,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 529);
+            this.button1.Location = new System.Drawing.Point(908, 527);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(134, 57);
             this.button1.TabIndex = 0;
@@ -146,7 +146,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(887, 541);
+            this.button2.Location = new System.Drawing.Point(12, 539);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(155, 45);
             this.button2.TabIndex = 6;
@@ -182,7 +182,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(683, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 296);
+            this.groupBox1.Size = new System.Drawing.Size(359, 203);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrer";

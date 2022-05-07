@@ -72,3 +72,5 @@ C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.P
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuGestion.resources
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuPiece.resources
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewPiece.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuVelo.resources
+C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewVelo.resources
