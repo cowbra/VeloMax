@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Cowbra\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {}
+    "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Cowbra\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {
+    "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Cowbra\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
+        "projectUniqueName": "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
         "projectName": "bdd",
-        "projectPath": "C:\\Users\\Cowbra\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
-        "packagesPath": "C:\\Users\\Cowbra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Cowbra\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\obj\\",
+        "projectPath": "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\bdd.csproj",
+        "packagesPath": "C:\\Users\\hugos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hugos\\Source\\Repos\\cowbra\\bdd\\Projet\\bdd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Cowbra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hugos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
