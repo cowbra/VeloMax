@@ -337,5 +337,10 @@ namespace bdd
                 }
             }
         }
+
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

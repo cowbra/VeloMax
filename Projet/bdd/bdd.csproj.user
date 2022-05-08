@@ -16,22 +16,22 @@
     <Compile Update="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Velos\StockFournisseurVelo.cs">
+    <Compile Update="Inventaire\Velos\StockFournisseurVelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Velos\NewVelo.cs">
+    <Compile Update="Inventaire\Velos\NewVelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Velos\MenuVelo.cs">
+    <Compile Update="Inventaire\Velos\MenuVelo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Velos\NewPiece.cs">
+    <Compile Update="Inventaire\Pieces\NewPiece.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Velos\MenuPiece.cs">
+    <Compile Update="Inventaire\Pieces\MenuPiece.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Velos\MenuGestion.cs">
+    <Compile Update="Inventaire\MenuGestion.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

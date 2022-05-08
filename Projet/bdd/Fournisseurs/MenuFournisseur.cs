@@ -49,13 +49,14 @@ namespace bdd
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Êtes - vous sûr de vouloir supprimer définitivement ce Fournisseur ? Toutes les pièces qu'il vend seront supprimées de l'inventaire", "Suppression Fournisseur", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            if (listView1.SelectedItems.Count > 0)
             {
-                if (DATABASE.Connected)// on verifie que la connexion est bien effective
+                DialogResult dialogResult = MessageBox.Show("Êtes - vous sûr de vouloir supprimer définitivement ce Fournisseur ? Toutes les pièces qu'il vend seront supprimées de l'inventaire", "Suppression Fournisseur", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    if (listView1.SelectedItems.Count > 0)
+                    if (DATABASE.Connected)// on verifie que la connexion est bien effective
                     {
+
                         ListViewItem element = listView1.SelectedItems[0];
                         string Siret = element.SubItems[0].Text;
                         MySqlCommand mySqlCommand = new MySqlCommand("DELETE FROM FOURNISSEUR WHERE Siret_Fournisseur=@siret", DATABASE.MySqlConnection);
@@ -63,10 +64,11 @@ namespace bdd
                         mySqlCommand.ExecuteNonQuery();
                         element.Remove();
                         mySqlCommand.Parameters.Clear();
+
+                        MessageBox.Show("Fournisseur supprimé avec succès.");
                     }
-                    MessageBox.Show("Fournisseur supprimé avec succès.");
+                    else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression du fournisseur"); }
                 }
-                else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression du fournisseur"); }
             }
             
         }
