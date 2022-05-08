@@ -75,3 +75,6 @@ C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.N
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuVelo.resources
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewVelo.resources
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.StockFournisseurVelo.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuVelo.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewVelo.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.StockFournisseurVelo.resources

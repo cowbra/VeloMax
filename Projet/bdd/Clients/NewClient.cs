@@ -214,5 +214,10 @@ namespace bdd
         {
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

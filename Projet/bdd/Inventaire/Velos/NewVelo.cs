@@ -23,6 +23,20 @@ namespace bdd
         private void Form1_Load(object sender, EventArgs e)
         {
             loadData();
+            listBox1.SelectedIndex = 0;
+            listBox2.SelectedIndex = 0;
+            listBox3.SelectedIndex = 0;
+            listBox4.SelectedIndex = 0;
+            listBox5.SelectedIndex = 0;
+            listBox6.SelectedIndex = 0;
+            listBox7.SelectedIndex = 0;
+            listBox8.SelectedIndex = 0;
+            listBox9.SelectedIndex = 0;
+            listBox10.SelectedIndex = 0;
+            listBox11.SelectedIndex = 0;
+            listBox12.SelectedIndex = 0;
+            listBox13.SelectedIndex = 0;
+            listBox14.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -212,6 +226,25 @@ namespace bdd
         private void listBox13_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            string[] subsDate = dateTimePicker1.Value.ToShortDateString().Split('/');
+            string dateTrans = subsDate[2] + "-" + subsDate[1] + "-" + subsDate[0];
+            textBox3.Text = dateTrans;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            string[] subsDate = dateTimePicker1.Value.ToShortDateString().Split('/');
+            string dateTrans = subsDate[2] + "-" + subsDate[1] + "-" + subsDate[0];
+            textBox4.Text = dateTrans;
+        }
+
+        private void listBox14_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
