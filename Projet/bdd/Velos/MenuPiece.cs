@@ -303,5 +303,23 @@ namespace bdd
         {
 
         }
+
+        private void stocksFournisseursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockFournisseurVelo stockFournisseur = new StockFournisseurVelo();
+            stockFournisseur.ShowDialog();
+        }
+
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DATABASE.Connected)
+            {
+                DialogResult dialogResult = MessageBox.Show("Êtes - vous sûr de vouloir supprimer définitivement cette Pièce ? Tous les liens entre les fournisseurs et cette pièce seront supprimés.", "Suppression Pièce", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    //SUPPRESSION PIECE
+                }
+            }
+        }
     }
 }
