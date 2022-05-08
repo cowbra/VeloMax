@@ -306,18 +306,34 @@ namespace bdd
 
         private void stocksFournisseursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StockFournisseurVelo stockFournisseur = new StockFournisseurVelo();
-            stockFournisseur.ShowDialog();
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem element = listView1.SelectedItems[0];
+                string Piece = element.SubItems[0].Text;
+                StockFournisseurVelo stockFournisseur = new StockFournisseurVelo(Piece);
+                stockFournisseur.ShowDialog();
+            }
         }
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DATABASE.Connected)
+            if (listView1.SelectedItems.Count > 0)
             {
                 DialogResult dialogResult = MessageBox.Show("Êtes - vous sûr de vouloir supprimer définitivement cette Pièce ? Tous les liens entre les fournisseurs et cette pièce seront supprimés.", "Suppression Pièce", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //SUPPRESSION PIECE
+                    if (DATABASE.Connected)// on verifie que la connexion est bien effective
+                    {
+                        ListViewItem element = listView1.SelectedItems[0];
+                        string Piece = element.SubItems[0].Text;
+                        MySqlCommand mySqlCommand = new MySqlCommand("DELETE FROM PIECE WHERE Identifiant_Piece =@idPiece", DATABASE.MySqlConnection);
+                        mySqlCommand.Parameters.AddWithValue("@idPiece", Piece);
+                        mySqlCommand.ExecuteNonQuery();
+                        element.Remove();
+                        mySqlCommand.Parameters.Clear();
+                        MessageBox.Show("Pièce supprimée avec succès.");
+                    }
+                    else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression de la pièce"); }
                 }
             }
         }
