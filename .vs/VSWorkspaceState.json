@@ -4,8 +4,10 @@
     "\\Projet",
     "\\Projet\\bdd",
     "\\Projet\\bdd\\Clients",
-    "\\Projet\\bdd\\Fournisseurs"
+    "\\Projet\\bdd\\Fournisseurs",
+    "\\Projet\\bdd\\Inventaire",
+    "\\Projet\\bdd\\Inventaire\\Pieces"
   ],
-  "SelectedNode": "\\Projet\\bdd\\BDD.cs",
+  "SelectedNode": "\\Projet\\bdd\\Inventaire\\Pieces\\NewPiece.cs",
   "PreviewInSolutionExplorer": false
 }
