@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace bdd
 {
@@ -69,12 +60,12 @@ namespace bdd
                 int h;//pour verifier format fournisseur
                 Int64 l;//pour verifier format quantite
                 if (listePieces.Contains(textBox1.Text) && radioButton2.Checked) MessageBox.Show("Cet identifiant de pièce existe déjà !");
-                
+
                 else if (Int64.TryParse(textBox2.Text, out l) == false) MessageBox.Show("Entrez un SIRET valide !");
                 else if (Convert.ToDouble(textBox2.Text) < 0) MessageBox.Show("Entrez un SIRET valide !");
 
                 else if (double.TryParse(textBox4.Text, out i) == false) MessageBox.Show("Entrez un prix valide !");
-                else if (Convert.ToDouble(textBox4.Text)<0) MessageBox.Show("Entrez un prix valide !");
+                else if (Convert.ToDouble(textBox4.Text) < 0) MessageBox.Show("Entrez un prix valide !");
 
                 else if (int.TryParse(textBox8.Text, out j) == false) MessageBox.Show("Entrez une quantité valide !");
                 else if (Convert.ToInt32(textBox8.Text) <= 0) MessageBox.Show("Entrez une quantité valide !");
@@ -103,8 +94,8 @@ namespace bdd
                     int delai = Convert.ToInt32(textBox5.Text);
                     int numFour = Convert.ToInt32(textBox3.Text);
                     double prix = Convert.ToDouble(textBox4.Text);
-                    string idPiece= listBox2.Text;
-                    
+                    string idPiece = listBox2.Text;
+
                     if (radioButton2.Checked)
                     {
                         Piece piece = new Piece(textBox1.Text, listBox1.Text, textBox6.Text, textBox7.Text);
@@ -125,7 +116,7 @@ namespace bdd
                             resultat = Lire.GetString(0);
                         }
                     }
-                    if (Convert.ToInt32(resultat) >0) MessageBox.Show("Ce fournisseur vend déjà cette pièce !");
+                    if (Convert.ToInt32(resultat) > 0) MessageBox.Show("Ce fournisseur vend déjà cette pièce !");
                     else
                     {
                         Fourni lien = new Fourni(siret, idPiece, quantite, delai, prix, numFour);
@@ -138,12 +129,13 @@ namespace bdd
                         // On laisse la fenetre de creation de fournisseur ouverte pour retenter une connexion à la bdd
                         else MessageBox.Show("Erreur de Connexion avec la Base de données.");
                     }
-                    
+
                 }
             }
 
 
-            if (listePieces.Contains(textBox1.Text) && radioButton2.Checked){
+            if (listePieces.Contains(textBox1.Text) && radioButton2.Checked)
+            {
                 MessageBox.Show("Cet identifiant de pièce existe déjà !");
             }
 
@@ -159,13 +151,13 @@ namespace bdd
         {
             if (radioButton2.Checked)
             {
-                radioButton1.Checked=false;
+                radioButton1.Checked = false;
 
-                textBox1.Enabled=true;
+                textBox1.Enabled = true;
                 textBox1.Visible = true;
 
-                label2.Visible=true;
-                listBox1.Enabled=true;
+                label2.Visible = true;
+                listBox1.Enabled = true;
                 listBox1.Visible = true;
 
                 listBox2.Enabled = false;
@@ -176,7 +168,7 @@ namespace bdd
                 label5.Visible = true;
                 label5.Enabled = true;
 
-                dateTimePicker1.Enabled=true;
+                dateTimePicker1.Enabled = true;
                 dateTimePicker1.Visible = true;
                 dateTimePicker2.Enabled = true;
                 dateTimePicker2.Visible = true;
@@ -215,7 +207,7 @@ namespace bdd
         {
             this.Close();
         }
-        
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {

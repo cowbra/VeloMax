@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace bdd
 {
@@ -27,22 +18,22 @@ namespace bdd
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
 
-        #region REQUETE
+            #region REQUETE
             string requeteSQL = "SELECT Identifiant_Piece, Description_Piece, DateDebut_Piece, DateFin_Piece, SUM(Quantite_Fournisseur) AS Quantite_Total_Piece FROM PIECE NATURAL JOIN FOURNIT";
 
             #region requetes_Filtres
             int compteur = 0;
-            if (checkBox1.Checked|| checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked || checkBox6.Checked || checkBox7.Checked || checkBox8.Checked || checkBox9.Checked || checkBox10.Checked || checkBox11.Checked || checkBox12.Checked)
+            if (checkBox1.Checked || checkBox2.Checked || checkBox3.Checked || checkBox4.Checked || checkBox5.Checked || checkBox6.Checked || checkBox7.Checked || checkBox8.Checked || checkBox9.Checked || checkBox10.Checked || checkBox11.Checked || checkBox12.Checked)
             {
                 requeteSQL += " WHERE Description_Piece=";
                 if (checkBox1.Checked)
                 {
                     requeteSQL += "'Cadre'";
-                    compteur ++;
+                    compteur++;
                 }
                 if (checkBox2.Checked)
                 {
-                    if (compteur>0) requeteSQL += " OR Description_Piece='Guidon'";
+                    if (compteur > 0) requeteSQL += " OR Description_Piece='Guidon'";
                     else requeteSQL += "'Guidon'";
                     compteur++;
                 }
@@ -128,7 +119,7 @@ namespace bdd
 
             //Requetes pour TRI
             #region TRI SQL
-            if (checkBox22.Checked || checkBox23.Checked || checkBox24.Checked )
+            if (checkBox22.Checked || checkBox23.Checked || checkBox24.Checked)
             {
                 compteur = 0;
                 requeteSQL += " ORDER BY ";
@@ -139,7 +130,7 @@ namespace bdd
                 }
                 if (checkBox23.Checked)
                 {
-                    if (compteur>0) requeteSQL += ",DateDebut_Piece DESC";
+                    if (compteur > 0) requeteSQL += ",DateDebut_Piece DESC";
                     else requeteSQL += "DateDebut_Piece DESC";
                     compteur++;
                 }
@@ -152,7 +143,7 @@ namespace bdd
             }
             #endregion
 
-        #endregion
+            #endregion
 
 
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
@@ -166,7 +157,7 @@ namespace bdd
                         string id = Lire["Identifiant_Piece"].ToString();
                         string type = Lire["Description_Piece"].ToString();
                         string date1 = Lire["DateDebut_Piece"].ToString();
-                        string date2 = Lire["DateFin_Piece"].ToString(); 
+                        string date2 = Lire["DateFin_Piece"].ToString();
                         string quantity = Lire["Quantite_Total_Piece"].ToString();
                         listView1.Items.Add(new ListViewItem(new[] { id, type, date1, date2, quantity }));
                     }
@@ -181,7 +172,7 @@ namespace bdd
             Actualiser();
         }
 
-        
+
 
         private void button3_Click(object sender, EventArgs e)
         {

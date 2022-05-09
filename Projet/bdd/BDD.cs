@@ -12,10 +12,10 @@ public class BDD
     private string username;
     private string password;
     private string database;
-	#endregion
-	public BDD()
-	{
-		this.connected = false;
+    #endregion
+    public BDD()
+    {
+        this.connected = false;
         this.host = "2.11.7.149";
         this.port = "3306";
         this.database = "VeloMax";
@@ -25,7 +25,7 @@ public class BDD
 
     }
 
-    public BDD(string username,string password)
+    public BDD(string username, string password)
     {
         this.connected = false;
         this.host = "2.11.7.149";
@@ -38,10 +38,10 @@ public class BDD
 
     #region Parametres_Attributs
     public bool Connected
-	{
-		get { return this.connected; }
-		set { this.connected = value; }
-	}
+    {
+        get { return this.connected; }
+        set { this.connected = value; }
+    }
 
     public MySqlConnection? MySqlConnection
     {
@@ -53,7 +53,7 @@ public class BDD
     {
         if (!this.connected)
         {
-            this.mySqlConnection = new MySqlConnection("SERVER=" + this.host + ";PORT=" + this.port + ";DATABASE=" + this.database + ";UID=" + this.username+ ";PWD=" + this.password+";");
+            this.mySqlConnection = new MySqlConnection("SERVER=" + this.host + ";PORT=" + this.port + ";DATABASE=" + this.database + ";UID=" + this.username + ";PWD=" + this.password + ";");
             try
             {
                 if (this.mySqlConnection.State == ConnectionState.Closed) this.mySqlConnection.Open();

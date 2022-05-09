@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 
 namespace bdd
@@ -11,7 +6,7 @@ namespace bdd
     public class Velo
     {
         #region Attributs
-        
+
         protected string nom;
         protected string grandeur;
         protected double prix;
@@ -35,8 +30,8 @@ namespace bdd
 
 
         #region Constructeur
-        public Velo(string nom,string grandeur,double prix,string typeVelo,string dateIntro,string dateFin,string cadre,string guidon,string freins,string selle,
-            string derailleurAvant,string derailleurArriere,string roueAvant,string roueArriere,string reflecteurs,string pedalier,string ordinateur, string panier) 
+        public Velo(string nom, string grandeur, double prix, string typeVelo, string dateIntro, string dateFin, string cadre, string guidon, string freins, string selle,
+            string derailleurAvant, string derailleurArriere, string roueAvant, string roueArriere, string reflecteurs, string pedalier, string ordinateur, string panier)
         {
             this.nom = nom;
             this.grandeur = grandeur;
