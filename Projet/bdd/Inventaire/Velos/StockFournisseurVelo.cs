@@ -19,6 +19,7 @@ namespace bdd
             InitializeComponent();
             DATABASE.Connect();
             Fill(id);
+            label2.Text = id;
         }
 
         private void StockFournisseurVelo_Load(object sender, EventArgs e)
