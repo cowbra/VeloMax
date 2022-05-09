@@ -63,6 +63,7 @@
             this.checkBox22 = new System.Windows.Forms.CheckBox();
             this.checkBox23 = new System.Windows.Forms.CheckBox();
             this.checkBox24 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -129,26 +130,26 @@
             this.modifierToolStripMenuItem,
             this.supprimerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(178, 70);
             // 
             // stocksFournisseursToolStripMenuItem
             // 
             this.stocksFournisseursToolStripMenuItem.Name = "stocksFournisseursToolStripMenuItem";
-            this.stocksFournisseursToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stocksFournisseursToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.stocksFournisseursToolStripMenuItem.Text = "Stocks Fournisseurs";
             this.stocksFournisseursToolStripMenuItem.Click += new System.EventHandler(this.stocksFournisseursToolStripMenuItem_Click);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
             // supprimerToolStripMenuItem
             // 
             this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
@@ -165,9 +166,9 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(887, 541);
+            this.button2.Location = new System.Drawing.Point(887, 529);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 45);
+            this.button2.Size = new System.Drawing.Size(155, 57);
             this.button2.TabIndex = 6;
             this.button2.Text = "Menu Principal";
             this.button2.UseVisualStyleBackColor = false;
@@ -431,12 +432,26 @@
             this.checkBox24.UseVisualStyleBackColor = true;
             this.checkBox24.CheckedChanged += new System.EventHandler(this.checkBox24_CheckedChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Sitka Small", 10.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label4.Location = new System.Drawing.Point(170, 65);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(847, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Faites un clic droit sur l\'ID d\'une pièce afin de Modifier, Supprimer ou voir les" +
+    " Stocks fournisseur de la pièce sélectionnée";
+            // 
             // MenuPiece
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1054, 596);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -493,5 +508,6 @@
         private TextBox textBox1;
         private Label label3;
         private ToolStripMenuItem stocksFournisseursToolStripMenuItem;
+        private Label label4;
     }
 }

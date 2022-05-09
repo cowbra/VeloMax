@@ -382,6 +382,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1026, 582);
             this.ControlBox = false;
             this.Controls.Add(this.button2);

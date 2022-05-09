@@ -16,6 +16,12 @@
     <Compile Update="Fournisseurs\MenuFournisseur.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Inventaire\Pieces\ModifierPieceFournisseur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Inventaire\Pieces\ModifierPiece.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
