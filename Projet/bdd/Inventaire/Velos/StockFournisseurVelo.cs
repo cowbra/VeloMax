@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace bdd
 {
@@ -35,7 +26,7 @@ namespace bdd
 
         private void Fill(string id)
         {
-            string requeteSQL = "SELECT Siret_Fournisseur,Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur FROM FOURNIT WHERE Identifiant_Piece ='"+id+"'";
+            string requeteSQL = "SELECT Siret_Fournisseur,Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur FROM FOURNIT WHERE Identifiant_Piece ='" + id + "'";
 
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {

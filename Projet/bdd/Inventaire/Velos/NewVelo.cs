@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 namespace bdd
 {
@@ -47,10 +38,10 @@ namespace bdd
         private void loadData()
         {
             string sql = "SELECT Identifiant_Piece FROM PIECE WHERE Description_Piece=";
-        #region SELECTIONS PIECES
+            #region SELECTIONS PIECES
             // Remplissage des listbox avec les id des pieces du type correspondant depuis la bdd
             #region Selection Cadre
-            MySqlCommand mySqlCommand = new MySqlCommand(sql+"'Cadre'", DATABASE.MySqlConnection);
+            MySqlCommand mySqlCommand = new MySqlCommand(sql + "'Cadre'", DATABASE.MySqlConnection);
             using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
             {
                 while (Lire.Read())
@@ -169,7 +160,7 @@ namespace bdd
                 }
             }
             #endregion
-        #endregion
+            #endregion
 
         }
 
@@ -244,7 +235,7 @@ namespace bdd
 
         private void listBox14_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
