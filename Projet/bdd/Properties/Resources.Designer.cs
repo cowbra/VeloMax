@@ -73,9 +73,39 @@ namespace bdd.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pieces {
+            get {
+                object obj = ResourceManager.GetObject("pieces", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap velo {
+            get {
+                object obj = ResourceManager.GetObject("velo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap velo_de_montagne {
             get {
                 object obj = ResourceManager.GetObject("velo-de-montagne", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap velomax {
+            get {
+                object obj = ResourceManager.GetObject("velomax", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

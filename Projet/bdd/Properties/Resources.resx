@@ -121,7 +121,16 @@
   <data name="bicycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Ressources\bicycle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="velomax" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\velomax.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="velo-de-montagne" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Ressources\velo-de-montagne.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pieces" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\pieces.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="velo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Ressources\velo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

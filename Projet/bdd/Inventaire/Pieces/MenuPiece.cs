@@ -331,7 +331,46 @@ namespace bdd
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem element = listView1.SelectedItems[0];
+                string IdPiece = element.SubItems[0].Text;
+                string DateIntro = element.SubItems[2].Text;
+                string DateFin = element.SubItems[3].Text;
 
+                //Recuperation des valeurs du form ModifierPiece
+                using(ModifierPiece modifier = new ModifierPiece())
+                {
+                    //Elements modifiables
+                    modifier.DateIntro = DateIntro;
+                    modifier.DateFin = DateFin;
+
+                    //Elements non modifiables
+                    modifier.IdPiece = IdPiece;
+
+                    //Si bouton cliqué = modifier
+                    if (modifier.ShowDialog() == DialogResult.Yes)
+                    {
+                        if (DATABASE.Connected)
+                        {
+                            MySqlCommand requete = new MySqlCommand("UPDATE PIECE SET DateDebut_Piece=@date1, DateFin_Piece=@date2 WHERE Identifiant_Piece=@id", DATABASE.MySqlConnection);
+                            requete.Parameters.AddWithValue("@id", IdPiece);
+                            requete.Parameters.AddWithValue("@date1", modifier.DateIntro);
+                            requete.Parameters.AddWithValue("@date2", modifier.DateFin);
+
+                            requete.ExecuteNonQuery();
+                            requete.Parameters.Clear();
+
+                            element.SubItems[2].Text = modifier.DateIntro;
+                            element.SubItems[3].Text = modifier.DateFin;
+                            MessageBox.Show("Pièce mise à jour.");
+                        }
+                        else { MessageBox.Show("Erreur de connexion avec la base de données."); }
+                    }
+                    else { MessageBox.Show("Modification annulée."); }
+                }
+
+            }
         }
     }
 }
