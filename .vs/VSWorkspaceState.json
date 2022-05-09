@@ -3,9 +3,8 @@
     "",
     "\\Projet",
     "\\Projet\\bdd",
-    "\\Projet\\bdd\\Clients",
-    "\\Projet\\bdd\\Velos"
+    "\\Projet\\bdd\\Clients"
   ],
-  "SelectedNode": "\\Projet\\bdd\\Velos\\MenuPiece.cs",
+  "SelectedNode": "\\Projet\\bdd\\bdd.sln",
   "PreviewInSolutionExplorer": false
 }
