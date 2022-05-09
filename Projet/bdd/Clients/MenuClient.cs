@@ -76,10 +76,11 @@ namespace bdd
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (DATABASE.Connected)// on verifie que la connexion est bien effective
+            if (listView1.SelectedItems.Count > 0)
             {
-                if (listView1.SelectedItems.Count > 0)
+                if (DATABASE.Connected)// on verifie que la connexion est bien effective
                 {
+
                     ListViewItem element = listView1.SelectedItems[0];
                     string ID = element.SubItems[0].Text;
                     MySqlCommand mySqlCommand = new MySqlCommand("DELETE FROM CLIENT WHERE ID_Client=@id", DATABASE.MySqlConnection);
@@ -87,10 +88,11 @@ namespace bdd
                     mySqlCommand.ExecuteNonQuery();
                     element.Remove();
                     mySqlCommand.Parameters.Clear();
+
+                    MessageBox.Show("Client supprimé avec succès.");
                 }
-                MessageBox.Show("Client supprimé avec succès.");
+                else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression du client"); }
             }
-            else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression du client"); }
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -111,6 +113,16 @@ namespace bdd
                 Actualiser("SELECT * FROM CLIENT WHERE Type_Client = 'Entreprise'");
             }
             else Actualiser();
+        }
+
+        private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

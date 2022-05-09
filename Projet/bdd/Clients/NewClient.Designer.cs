@@ -270,6 +270,7 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Programme Fidélio Client";
             this.groupBox2.Visible = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label10
             // 
@@ -293,7 +294,7 @@
             // textBox8
             // 
             this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(6, 445);
+            this.textBox8.Location = new System.Drawing.Point(6, 489);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(242, 22);
             this.textBox8.TabIndex = 4;
