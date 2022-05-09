@@ -3,8 +3,11 @@
     "",
     "\\Projet",
     "\\Projet\\bdd",
-    "\\Projet\\bdd\\Clients"
+    "\\Projet\\bdd\\Clients",
+    "\\Projet\\bdd\\Fournisseurs",
+    "\\Projet\\bdd\\Inventaire",
+    "\\Projet\\bdd\\Inventaire\\Pieces"
   ],
-  "SelectedNode": "\\Projet\\bdd\\bdd.sln",
+  "SelectedNode": "\\Projet\\bdd\\Inventaire\\Pieces\\NewPiece.cs",
   "PreviewInSolutionExplorer": false
 }

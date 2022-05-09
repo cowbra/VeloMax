@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.ComponentModel;
 using MySql.Data.MySqlClient;
 
 namespace bdd
@@ -14,7 +6,7 @@ namespace bdd
     public partial class MenuFournisseur : Form
     {
         BDD DATABASE = new BDD();
-        
+
         public MenuFournisseur()
         {
             InitializeComponent();
@@ -70,7 +62,7 @@ namespace bdd
                     else { MessageBox.Show("Erreur de connexion avec la base de données lors de la tentative de suppression du fournisseur"); }
                 }
             }
-            
+
         }
 
         private void Actualiser(string requeteSQL = "SELECT * FROM FOURNISSEUR")
