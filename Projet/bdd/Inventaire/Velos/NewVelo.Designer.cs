@@ -64,6 +64,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -85,7 +86,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fournisseurBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -202,6 +202,8 @@
             // 
             this.listBox13.FormattingEnabled = true;
             this.listBox13.ItemHeight = 17;
+            this.listBox13.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox13.Location = new System.Drawing.Point(658, 243);
             this.listBox13.Name = "listBox13";
             this.listBox13.Size = new System.Drawing.Size(237, 21);
@@ -212,6 +214,8 @@
             // 
             this.listBox12.FormattingEnabled = true;
             this.listBox12.ItemHeight = 17;
+            this.listBox12.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox12.Location = new System.Drawing.Point(658, 197);
             this.listBox12.Name = "listBox12";
             this.listBox12.Size = new System.Drawing.Size(237, 21);
@@ -222,6 +226,8 @@
             // 
             this.listBox11.FormattingEnabled = true;
             this.listBox11.ItemHeight = 17;
+            this.listBox11.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox11.Location = new System.Drawing.Point(186, 250);
             this.listBox11.Name = "listBox11";
             this.listBox11.Size = new System.Drawing.Size(237, 21);
@@ -232,6 +238,8 @@
             // 
             this.listBox10.FormattingEnabled = true;
             this.listBox10.ItemHeight = 17;
+            this.listBox10.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox10.Location = new System.Drawing.Point(658, 156);
             this.listBox10.Name = "listBox10";
             this.listBox10.Size = new System.Drawing.Size(237, 21);
@@ -242,6 +250,8 @@
             // 
             this.listBox9.FormattingEnabled = true;
             this.listBox9.ItemHeight = 17;
+            this.listBox9.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox9.Location = new System.Drawing.Point(658, 65);
             this.listBox9.Name = "listBox9";
             this.listBox9.Size = new System.Drawing.Size(237, 21);
@@ -252,6 +262,8 @@
             // 
             this.listBox8.FormattingEnabled = true;
             this.listBox8.ItemHeight = 17;
+            this.listBox8.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox8.Location = new System.Drawing.Point(658, 20);
             this.listBox8.Name = "listBox8";
             this.listBox8.Size = new System.Drawing.Size(237, 21);
@@ -262,6 +274,8 @@
             // 
             this.listBox7.FormattingEnabled = true;
             this.listBox7.ItemHeight = 17;
+            this.listBox7.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox7.Location = new System.Drawing.Point(658, 109);
             this.listBox7.Name = "listBox7";
             this.listBox7.Size = new System.Drawing.Size(237, 21);
@@ -272,6 +286,8 @@
             // 
             this.listBox6.FormattingEnabled = true;
             this.listBox6.ItemHeight = 17;
+            this.listBox6.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox6.Location = new System.Drawing.Point(186, 202);
             this.listBox6.Name = "listBox6";
             this.listBox6.Size = new System.Drawing.Size(237, 21);
@@ -282,6 +298,8 @@
             // 
             this.listBox5.FormattingEnabled = true;
             this.listBox5.ItemHeight = 17;
+            this.listBox5.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox5.Location = new System.Drawing.Point(186, 156);
             this.listBox5.Name = "listBox5";
             this.listBox5.Size = new System.Drawing.Size(237, 21);
@@ -292,6 +310,8 @@
             // 
             this.listBox4.FormattingEnabled = true;
             this.listBox4.ItemHeight = 17;
+            this.listBox4.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox4.Location = new System.Drawing.Point(186, 109);
             this.listBox4.Name = "listBox4";
             this.listBox4.Size = new System.Drawing.Size(237, 21);
@@ -302,6 +322,8 @@
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.ItemHeight = 17;
+            this.listBox3.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox3.Location = new System.Drawing.Point(186, 68);
             this.listBox3.Name = "listBox3";
             this.listBox3.Size = new System.Drawing.Size(237, 21);
@@ -312,6 +334,8 @@
             // 
             this.listBox2.FormattingEnabled = true;
             this.listBox2.ItemHeight = 17;
+            this.listBox2.Items.AddRange(new object[] {
+            "Sélectionner un élément"});
             this.listBox2.Location = new System.Drawing.Point(186, 24);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(237, 21);
@@ -449,6 +473,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Créer le modèle";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -485,29 +510,39 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(6, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(953, 169);
+            this.groupBox2.Size = new System.Drawing.Size(953, 165);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Créer un nouveau Modèle de Vélo";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Location = new System.Drawing.Point(393, 125);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(16, 17);
+            this.label32.TabIndex = 50;
+            this.label32.Text = "*";
             // 
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(372, 233);
+            this.textBox4.Location = new System.Drawing.Point(362, 231);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 25);
             this.textBox4.TabIndex = 49;
-            this.textBox4.Text = "Date 2";
             this.textBox4.Visible = false;
             // 
             // textBox3
             // 
             this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(416, 233);
+            this.textBox3.Location = new System.Drawing.Point(429, 243);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 25);
             this.textBox3.TabIndex = 48;
-            this.textBox3.Text = "Date 1";
             this.textBox3.Visible = false;
             // 
             // label30
@@ -523,14 +558,12 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker2.Location = new System.Drawing.Point(672, 122);
             this.dateTimePicker2.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(237, 25);
             this.dateTimePicker2.TabIndex = 46;
-            this.dateTimePicker2.Visible = false;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label29
@@ -546,14 +579,12 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Location = new System.Drawing.Point(672, 75);
             this.dateTimePicker1.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(237, 25);
             this.dateTimePicker1.TabIndex = 44;
-            this.dateTimePicker1.Visible = false;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label28
@@ -592,6 +623,7 @@
             this.listBox14.FormattingEnabled = true;
             this.listBox14.ItemHeight = 17;
             this.listBox14.Items.AddRange(new object[] {
+            "Sélectionner un élément",
             "VTT",
             "Course",
             "Classique",
@@ -656,13 +688,13 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 17;
             this.listBox1.Items.AddRange(new object[] {
+            "Sélectionner un élément",
             "Adultes",
             "Jeunes",
             "Hommes",
             "Dames",
             "Filles",
-            "Garçons",
-            ""});
+            "Garçons"});
             this.listBox1.Location = new System.Drawing.Point(150, 81);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(237, 21);
@@ -717,21 +749,11 @@
             this.label22.TabIndex = 45;
             this.label22.Text = "Ces champs sont obligatoires";
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label32.ForeColor = System.Drawing.Color.Red;
-            this.label32.Location = new System.Drawing.Point(393, 125);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(16, 17);
-            this.label32.TabIndex = 50;
-            this.label32.Text = "*";
-            // 
             // NewVelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(973, 583);
             this.ControlBox = false;
             this.Controls.Add(this.label23);
