@@ -1,0 +1,16 @@
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\bdd.exe
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\bdd.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\bdd.deps.json
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\bdd.runtimeconfig.json
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\bdd.pdb
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\BouncyCastle.Crypto.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\Google.Protobuf.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\K4os.Compression.LZ4.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\K4os.Compression.LZ4.Streams.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\K4os.Hash.xxHash.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\MySql.Data.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\Ubiety.Dns.Core.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\ZstdNet.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\Renci.SshNet.Async.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\Renci.SshNet.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Release\net6.0-windows\publish\SshNet.Security.Cryptography.dll
