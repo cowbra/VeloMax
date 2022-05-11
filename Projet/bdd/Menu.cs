@@ -47,5 +47,13 @@ namespace bdd
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            NewCommande commande = new NewCommande();
+            this.Hide();
+            commande.Show();
+        }
     }
 }

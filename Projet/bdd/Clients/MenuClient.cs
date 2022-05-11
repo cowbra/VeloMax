@@ -22,6 +22,9 @@ namespace bdd
             /// <summary>
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
+            /// 
+            if (checkBox1.Checked) requeteSQL = "SELECT * FROM CLIENT WHERE Type_Client = 'Particulier'";
+            else if (checkBox2.Checked) requeteSQL = "SELECT * FROM CLIENT WHERE Type_Client = 'Entreprise'";
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
                 listView1.Items.Clear();
@@ -122,7 +125,55 @@ namespace bdd
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem element = listView1.SelectedItems[0];
+                string IdClient = element.SubItems[0].Text;
+                string TypeClient = element.SubItems[1].Text;
+                string NomClient = element.SubItems[5].Text;
 
+                string Tel = element.SubItems[2].Text;
+                string Mail = element.SubItems[3].Text;
+                string Adresse = element.SubItems[4].Text;
+
+                //Recuperation des valeurs du form ModifierPiece
+                using (ModifierClient modifier = new ModifierClient())
+                {
+                    //Elements modifiables
+                    modifier.Tel = Tel;
+                    modifier.Mail = Mail;
+                    modifier.Adresse = Adresse;
+
+                    //Elements non modifiables
+                    modifier.IdClient = IdClient;
+                    modifier.TypeClient = TypeClient;
+                    modifier.NomClient = NomClient;
+
+                    //Si bouton cliqué = modifier
+                    if (modifier.ShowDialog() == DialogResult.Yes)
+                    {
+                        if (DATABASE.Connected)
+                        {
+                            MySqlCommand requete = new MySqlCommand("UPDATE CLIENT SET Tel_Client=@tel, Courriel_Client=@mail,Adresse_Client=@adresse WHERE ID_Client=@id", DATABASE.MySqlConnection);
+                            requete.Parameters.AddWithValue("@id", IdClient);
+                            requete.Parameters.AddWithValue("@tel", modifier.Tel);
+                            requete.Parameters.AddWithValue("@mail", modifier.Mail);
+                            requete.Parameters.AddWithValue("@adresse", modifier.Adresse);
+
+                            requete.ExecuteNonQuery();
+                            requete.Parameters.Clear();
+
+                            element.SubItems[2].Text = modifier.Tel;
+                            element.SubItems[3].Text = modifier.Mail;
+                            element.SubItems[4].Text = modifier.Adresse;
+                            MessageBox.Show("Client mis à jour avec succès.");
+                        }
+                        else { MessageBox.Show("Erreur de connexion avec la base de données."); }
+                    }
+                    else { MessageBox.Show("Modification annulée."); }
+                }
+
+            }
         }
     }
 }

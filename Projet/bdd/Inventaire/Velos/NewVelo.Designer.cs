@@ -86,6 +86,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fournisseurBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -124,7 +125,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(6, 200);
+            this.groupBox1.Location = new System.Drawing.Point(6, 230);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(953, 292);
             this.groupBox1.TabIndex = 0;
@@ -467,7 +468,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(820, 528);
+            this.button1.Location = new System.Drawing.Point(822, 546);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 43);
             this.button1.TabIndex = 1;
@@ -477,7 +478,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(7, 528);
+            this.button2.Location = new System.Drawing.Point(7, 546);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(156, 43);
             this.button2.TabIndex = 44;
@@ -732,7 +733,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(7, 496);
+            this.label23.Location = new System.Drawing.Point(8, 525);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(16, 17);
             this.label23.TabIndex = 46;
@@ -743,19 +744,32 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Times New Roman", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(29, 495);
+            this.label22.Location = new System.Drawing.Point(29, 525);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(189, 18);
             this.label22.TabIndex = 45;
             this.label22.Text = "Ces champs sont obligatoires";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label33.ForeColor = System.Drawing.Color.Blue;
+            this.label33.Location = new System.Drawing.Point(12, 195);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(723, 19);
+            this.label33.TabIndex = 47;
+            this.label33.Text = "Seules les pièces disponibles sont affichées. Pour créer un vélo avec une pièce i" +
+    "nexistante, la commander d\'abord. ";
             // 
             // NewVelo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(973, 583);
+            this.ClientSize = new System.Drawing.Size(973, 597);
             this.ControlBox = false;
+            this.Controls.Add(this.label33);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.groupBox2);
@@ -834,5 +848,6 @@
         private TextBox textBox3;
         private Label label31;
         private Label label32;
+        private Label label33;
     }
 }

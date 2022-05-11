@@ -4,10 +4,19 @@
     <_LastSelectedProfileId>C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Clients\ModifierClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Clients\MenuClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Clients\NewClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Commandes\NewCommande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Fournisseurs\ModifierFournisseur.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Fournisseurs\NewFournisseur.cs">
@@ -20,6 +29,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inventaire\Pieces\ModifierPiece.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Inventaire\Velos\ModifierVelo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inventaire\Velos\ListePiecesVelo.cs">
