@@ -21,7 +21,7 @@ namespace bdd
         {
             NewVelo velo = new NewVelo();
             velo.ShowDialog();
-            //Actualiser();
+            Actualiser();
         }
 
 
@@ -44,11 +44,11 @@ namespace bdd
             //Requete modifiee pour filtrer les donnees
             #region Requetes filtres
             int compteur = 0;
-            if(checkBox1.Checked || checkBox2.Checked || checkBox6.Checked || checkBox7.Checked || checkBox8.Checked || checkBox9.Checked ||
-                checkBox10.Checked || checkBox11.Checked || checkBox12.Checked || checkBox13.Checked )
+            if (checkBox1.Checked || checkBox2.Checked || checkBox6.Checked || checkBox7.Checked || checkBox8.Checked || checkBox9.Checked ||
+                checkBox10.Checked || checkBox11.Checked || checkBox12.Checked || checkBox13.Checked)
             {
                 requeteSQL += " WHERE ";
-                if (checkBox1.Checked || checkBox2.Checked || checkBox6.Checked || checkBox7.Checked )
+                if (checkBox1.Checked || checkBox2.Checked || checkBox6.Checked || checkBox7.Checked)
                 {
                     requeteSQL += " ( ";
                     if (checkBox1.Checked)
@@ -80,9 +80,9 @@ namespace bdd
                     requeteSQL += " ) ";
                 }
 
-                if ( checkBox8.Checked || checkBox9.Checked || checkBox10.Checked || checkBox11.Checked || checkBox12.Checked || checkBox13.Checked)
+                if (checkBox8.Checked || checkBox9.Checked || checkBox10.Checked || checkBox11.Checked || checkBox12.Checked || checkBox13.Checked)
                 {
-                    if (compteur>0) requeteSQL += " AND ( ";
+                    if (compteur > 0) requeteSQL += " AND ( ";
                     else requeteSQL += " ( ";
                     compteur = 0;
                     if (checkBox8.Checked)
@@ -127,7 +127,7 @@ namespace bdd
                     }
                     requeteSQL += " ) ";
                 }
-                    
+
             }
 
             #endregion
@@ -175,7 +175,7 @@ namespace bdd
                         string Type = Lire["Type_Bicyclette"].ToString();
                         string Date1 = Lire["DateIntroduction_Bicyclette"].ToString();
                         string Date2 = Lire["DateFin_Bicyclette"].ToString();
-                        listView1.Items.Add(new ListViewItem(new[] { Id, Nom, Grandeur, Prix, Type,Date1,Date2 }));
+                        listView1.Items.Add(new ListViewItem(new[] { Id, Nom, Grandeur, Prix, Type, Date1, Date2 }));
                     }
                 }
             }
@@ -251,6 +251,9 @@ namespace bdd
         {
             if (listView1.SelectedItems.Count > 0)
             {
+                string IdBicyclette = listView1.SelectedItems[0].SubItems[0].Text;
+                ListePiecesVelo velo = new ListePiecesVelo(IdBicyclette);
+                velo.ShowDialog();
             }
         }
 
@@ -258,6 +261,54 @@ namespace bdd
         {
             if (listView1.SelectedItems.Count > 0)
             {
+                ListViewItem element = listView1.SelectedItems[0];
+                string Id = element.SubItems[0].Text;
+                string Nom = element.SubItems[1].Text;
+                string Prix = element.SubItems[3].Text;
+                string Date = element.SubItems[6].Text;
+
+
+
+                //Recuperation des valeurs du form ModifierPiece
+                using (ModifierVelo modifier = new ModifierVelo())
+                {
+                    //Elements modifiables
+                    modifier.Nom = Nom;
+                    modifier.Prix = Prix;
+                    string[] subsDate = Date.Split(' ');
+                    string[] date2 =  subsDate[0].Split('/');
+                    Date = date2[2] + "-" + date2[1] + "-" + date2[0];
+                    MessageBox.Show(Date);
+                    modifier.Date = Date;
+
+                    //Elements non modifiables
+                    modifier.Id = Id;
+
+
+                    //Si bouton cliqué = modifier
+                    if (modifier.ShowDialog() == DialogResult.Yes)
+                    {
+                        if (DATABASE.Connected)
+                        {
+                            MySqlCommand requete = new MySqlCommand("UPDATE BICYCLETTE SET Nom_Bicyclette=@nom, Prix_Bicyclette=@prix,DateFin_Bicyclette=@date WHERE ID_Bicyclette=@id", DATABASE.MySqlConnection);
+                            requete.Parameters.AddWithValue("@id", Id);
+                            requete.Parameters.AddWithValue("@nom", modifier.Nom);
+                            requete.Parameters.AddWithValue("@prix", Convert.ToDouble(modifier.Prix));
+                            requete.Parameters.AddWithValue("@date", modifier.Date);
+
+                            requete.ExecuteNonQuery();
+                            requete.Parameters.Clear();
+
+                            element.SubItems[1].Text = modifier.Nom;
+                            element.SubItems[3].Text = modifier.Prix;
+                            element.SubItems[6].Text = modifier.Date;
+                            MessageBox.Show("Vélo mis à jour avec succès.");
+                        }
+                        else { MessageBox.Show("Erreur de connexion avec la base de données."); }
+                    }
+                    else { MessageBox.Show("Modification annulée."); }
+                }
+
             }
         }
 

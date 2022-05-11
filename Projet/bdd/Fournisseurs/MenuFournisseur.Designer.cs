@@ -87,6 +87,7 @@
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(12, 175);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";

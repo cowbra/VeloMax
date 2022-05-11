@@ -339,7 +339,7 @@ namespace bdd
                 string DateFin = element.SubItems[3].Text;
 
                 //Recuperation des valeurs du form ModifierPiece
-                using(ModifierPiece modifier = new ModifierPiece())
+                using (ModifierPiece modifier = new ModifierPiece())
                 {
                     //Elements modifiables
                     modifier.DateIntro = DateIntro;

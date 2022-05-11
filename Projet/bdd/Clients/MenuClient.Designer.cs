@@ -79,6 +79,7 @@
             this.columnHeader9,
             this.columnHeader10});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(12, 134);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
@@ -194,9 +195,9 @@
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(633, 13);
+            this.groupBox1.Location = new System.Drawing.Point(633, 60);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(350, 115);
+            this.groupBox1.Size = new System.Drawing.Size(350, 68);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtrer";

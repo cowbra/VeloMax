@@ -191,9 +191,9 @@ namespace bdd
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int i;
-            if (textBox1.Text == "")  MessageBox.Show("Veuillez entrer le nom du modèle !"); 
-            else if (listBox14.SelectedIndex==0) MessageBox.Show("Veuillez sélectionner le Type de vélo !");
+            double i;
+            if (textBox1.Text == "") MessageBox.Show("Veuillez entrer le nom du modèle !");
+            else if (listBox14.SelectedIndex == 0) MessageBox.Show("Veuillez sélectionner le Type de vélo !");
             else if (listBox1.SelectedIndex == 0) MessageBox.Show("Veuillez sélectionner la Grandeur du vélo !");
             else if (textBox3.Text == "") MessageBox.Show("Veuillez entrer la date d'introduction du modèle !");
             else if (textBox4.Text == "") MessageBox.Show("Veuillez entrer la date de fin de production du modèle !");
@@ -205,8 +205,8 @@ namespace bdd
             else if (listBox11.SelectedIndex == 0) MessageBox.Show("Veuillez sélectionner la Selle du vélo !");
             else if (textBox2.Text == "") MessageBox.Show("Veuillez entrer le Prix du modèle !");
 
-            else if (int.TryParse(textBox2.Text, out i) == false) MessageBox.Show("Entrez un Prix valide !");
-            else if (Convert.ToInt32(textBox2.Text) <= 0) MessageBox.Show("Entrez un Prix valide !");
+            else if (double.TryParse(textBox2.Text, out i) == false) MessageBox.Show("Entrez un Prix valide !");
+            else if (Convert.ToDouble(textBox2.Text) <= 0) MessageBox.Show("Entrez un Prix valide !");
 
             else
             {
@@ -219,7 +219,7 @@ namespace bdd
                     double prix = Convert.ToDouble(textBox2.Text);
                     string date1 = textBox3.Text;
                     string date2 = textBox4.Text;
-                    Velo velo = new Velo(nom,grandeur,prix,type,date1,date2);
+                    Velo velo = new Velo(nom, grandeur, prix, type, date1, date2);
 
                     // AJOUT DU MODELE A LA BDD
                     if (velo.AddToBdd())
@@ -381,6 +381,6 @@ namespace bdd
         {
 
         }
-#endregion
+        #endregion
     }
 }
