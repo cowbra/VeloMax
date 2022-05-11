@@ -2,12 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\Projet",
-    "\\Projet\\bdd",
-    "\\Projet\\bdd\\Clients",
-    "\\Projet\\bdd\\Inventaire",
-    "\\Projet\\bdd\\Inventaire\\Pieces",
-    "\\Projet\\bdd\\Inventaire\\Velos"
+    "\\Projet\\bdd"
   ],
-  "SelectedNode": "\\Projet\\bdd\\Inventaire\\Velos\\ListePiecesVelo.cs",
+  "SelectedNode": "\\Projet\\bdd\\bdd.sln",
   "PreviewInSolutionExplorer": false
 }
