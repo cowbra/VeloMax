@@ -1,7 +1,9 @@
 # bdd
 Projet bdd Esilv Sem6 A3
-## 1.Connexion à la base de données :
+## 1.Connexion Ã  la base de donnÃ©es :
 regardez sur discord
-## 2.Création de la base de données :
-Fichiers 'VERSION FINALE.sql' présent dans le dossier DataBase du Git
+## 2.CrÃ©ation de la base de donnÃ©es :
+Fichiers 'VERSION FINALE.sql' prÃ©sent dans le dossier DataBase du Git
 
+POUR HUGO:
+METTRE CLAUSE CASCADE DANS ASSEMBLER PAR
