@@ -80,3 +80,4 @@ C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Release\net6.0-windows\re
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Release\net6.0-windows\bdd.pdb
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Release\net6.0-windows\bdd.genruntimeconfig.cache
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Release\net6.0-windows\ref\bdd.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Release\net6.0-windows\bdd.ListePiecesVelo.resources
