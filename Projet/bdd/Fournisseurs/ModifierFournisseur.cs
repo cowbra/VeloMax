@@ -24,7 +24,7 @@
         {
             int i;
             if (int.TryParse(textBox4.Text, out i) == false) MessageBox.Show("Entrez un libelle valide (entre 1 et 4)!");
-            else if (Convert.ToInt16(textBox4.Text) < 1 || Convert.ToInt16(textBox4.Text)>4) MessageBox.Show("Entrez un libelle valide (entre 1 et 4)!");
+            else if (Convert.ToInt16(textBox4.Text) < 1 || Convert.ToInt16(textBox4.Text) > 4) MessageBox.Show("Entrez un libelle valide (entre 1 et 4)!");
             else DialogResult = DialogResult.Yes;
         }
 

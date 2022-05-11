@@ -84,3 +84,4 @@ C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierClient.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierFournisseur.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierVelo.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewCommande.resources

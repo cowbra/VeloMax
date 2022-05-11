@@ -276,7 +276,7 @@ namespace bdd
                     modifier.Nom = Nom;
                     modifier.Prix = Prix;
                     string[] subsDate = Date.Split(' ');
-                    string[] date2 =  subsDate[0].Split('/');
+                    string[] date2 = subsDate[0].Split('/');
                     Date = date2[2] + "-" + date2[1] + "-" + date2[0];
                     MessageBox.Show(Date);
                     modifier.Date = Date;
@@ -338,6 +338,11 @@ namespace bdd
         private void button3_Click(object sender, EventArgs e)
         {
             Actualiser();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -755,13 +755,12 @@
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label33.ForeColor = System.Drawing.Color.Blue;
-            this.label33.Location = new System.Drawing.Point(6, 180);
+            this.label33.Location = new System.Drawing.Point(12, 195);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(723, 38);
+            this.label33.Size = new System.Drawing.Size(723, 19);
             this.label33.TabIndex = 47;
             this.label33.Text = "Seules les pièces disponibles sont affichées. Pour créer un vélo avec une pièce i" +
-    "nexistante, la commander d\'abord. \r\nLe délai d\'approvisionnement estimé sera ens" +
-    "uite affiché";
+    "nexistante, la commander d\'abord. ";
             // 
             // NewVelo
             // 
