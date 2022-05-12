@@ -77,7 +77,6 @@ C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.N
 C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.StockFournisseurVelo.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuVelo.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewVelo.resources
-C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.StockFournisseurVelo.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierPiece.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierPieceFournisseur.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ListePiecesVelo.resources
@@ -95,3 +94,4 @@ C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Micr
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.StockFournisseurPiece.resources

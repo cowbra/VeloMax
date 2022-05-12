@@ -301,7 +301,7 @@ namespace bdd
             {
                 ListViewItem element = listView1.SelectedItems[0];
                 string Piece = element.SubItems[0].Text;
-                StockFournisseurVelo stockFournisseur = new StockFournisseurVelo(Piece);
+                StockFournisseurPiece stockFournisseur = new StockFournisseurPiece(Piece);
                 stockFournisseur.ShowDialog();
             }
         }
