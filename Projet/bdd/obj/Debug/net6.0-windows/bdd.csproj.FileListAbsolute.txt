@@ -95,3 +95,4 @@ C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Micr
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.StockFournisseurPiece.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuCommande.resources

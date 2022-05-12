@@ -14,6 +14,7 @@ namespace bdd
         protected int idClient;
         protected string adresse;
         protected string date;
+        protected double prix_total;
 
         #endregion
 
@@ -34,17 +35,39 @@ namespace bdd
             DATABASE.Connect();
             if (DATABASE.Connected == true)
             {
-                MySqlCommand requete = new MySqlCommand("INSERT INTO COMMANDE(Date_Commande,AdresseLivraison_Commande,ID_Client) VALUES(@date,@adresse,@id)", DATABASE.MySqlConnection);
+                MySqlCommand requete = new MySqlCommand("INSERT INTO COMMANDE(Date_Commande,AdresseLivraison_Commande,ID_Client,Prix_Commande) VALUES(@date,@adresse,@id,@prix)", DATABASE.MySqlConnection);
                 requete.Parameters.AddWithValue("@id", this.idClient);
                 requete.Parameters.AddWithValue("@adresse", this.adresse);
                 requete.Parameters.AddWithValue("@date", this.date);
+                requete.Parameters.AddWithValue("@prix", this.prix_total);
 
                 requete.ExecuteNonQuery();
                 requete.Parameters.Clear();
 
-                DATABASE.Disconnect();
+
                 return true;
             }
+            return false;
+        }
+
+        public bool UpdatePrixTotal(string id,double prix, int quantite)
+        {
+
+            BDD DATABASE = new BDD();
+            DATABASE.Connect();
+            if (DATABASE.Connected)
+            {
+                MySqlCommand requete = new MySqlCommand("UPDATE COMMANDE SET Prix_Commande=@prix WHERE ID_Commande=@id", DATABASE.MySqlConnection);
+                requete.Parameters.AddWithValue("@id", id);
+                requete.Parameters.AddWithValue("@prix",prix*quantite);
+
+                requete.ExecuteNonQuery();
+                requete.Parameters.Clear();
+
+                return true;
+
+            }
+            else { MessageBox.Show("Erreur de connexion avec la base de données."); }
             return false;
         }
 

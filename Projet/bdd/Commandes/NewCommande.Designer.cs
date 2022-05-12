@@ -74,6 +74,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -607,7 +608,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(277, 630);
+            this.textBox2.Location = new System.Drawing.Point(853, 584);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(250, 23);
             this.textBox2.TabIndex = 24;
@@ -616,7 +617,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(18, 633);
+            this.label7.Location = new System.Drawing.Point(594, 587);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(206, 20);
             this.label7.TabIndex = 23;
@@ -635,6 +636,16 @@
     "t commander de nouvelles pièces auprès des fournisseurs, le délai de livraison s" +
     "era mis à jour";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 633);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(140, 49);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "Annuler";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // NewCommande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -642,6 +653,7 @@
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1231, 694);
             this.ControlBox = false;
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label7);
@@ -718,5 +730,6 @@
         private TextBox textBox2;
         private Label label7;
         private Label label8;
+        private Button button2;
     }
 }
