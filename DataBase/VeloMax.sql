@@ -27,6 +27,10 @@ SET time_zone = "+00:00";
 -- Structure de la table `ACHAT_BICYCLETTE`
 --
 
+CREATE DATABASE IF NOT EXISTS VeloMax;
+USE VeloMax;
+
+
 CREATE TABLE `ACHAT_BICYCLETTE` (
   `ID_Commande` int(30) NOT NULL,
   `ID_Bicyclette` int(30) NOT NULL,
@@ -309,7 +313,8 @@ CREATE TABLE `COMMANDE` (
   `ID_Commande` int(30) NOT NULL,
   `Date_Commande` date NOT NULL,
   `AdresseLivraison_Commande` varchar(255) NOT NULL,
-  `ID_Client` int(30) NOT NULL
+  `ID_Client` int(30) NOT NULL,
+  `Prix_Commande` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
