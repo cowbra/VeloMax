@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : lun. 09 mai 2022 à 20:14
+-- Généré le : jeu. 12 mai 2022 à 14:06
 -- Version du serveur :  10.5.15-MariaDB-0+deb11u1
 -- Version de PHP : 7.4.28
 
@@ -16,8 +16,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-CREATE DATABASE IF NOT EXISTS`VeloMax`;
-USE `VeloMax`;
+
 --
 -- Base de données : `VeloMax`
 --
@@ -59,6 +58,160 @@ CREATE TABLE `ASSEMBLER_PAR` (
   `Identifiant_Piece` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `ASSEMBLER_PAR`
+--
+
+INSERT INTO `ASSEMBLER_PAR` (`ID_Bicyclette`, `Identifiant_Piece`) VALUES
+(1, 'C32'),
+(1, 'G7'),
+(1, 'R45'),
+(1, 'R46'),
+(1, 'P12'),
+(1, 'S88'),
+(1, 'DV133'),
+(1, 'DR56'),
+(1, 'F3'),
+(1, 'O2'),
+(2, 'C34'),
+(2, 'G7'),
+(2, 'R48'),
+(2, 'R47'),
+(2, 'P12'),
+(2, 'S88'),
+(2, 'DV17'),
+(2, 'DR87'),
+(2, 'F3'),
+(2, 'O2'),
+(3, 'C76'),
+(3, 'G7'),
+(3, 'R48'),
+(3, 'R47'),
+(3, 'P12'),
+(3, 'S88'),
+(3, 'DV17'),
+(3, 'DR87'),
+(3, 'F3'),
+(3, 'O2'),
+(4, 'C76'),
+(4, 'G7'),
+(4, 'R48'),
+(4, 'R32'),
+(4, 'P12'),
+(4, 'S88'),
+(4, 'DV87'),
+(4, 'DR86'),
+(4, 'F3'),
+(5, 'C43'),
+(5, 'G9'),
+(5, 'R19'),
+(5, 'R18'),
+(5, 'P34'),
+(5, 'S37'),
+(5, 'DV57'),
+(5, 'DR86'),
+(5, 'F9'),
+(5, 'R02'),
+(6, 'C44F'),
+(6, 'G9'),
+(6, 'R19'),
+(6, 'R18'),
+(6, 'P34'),
+(6, 'S35'),
+(6, 'DV57'),
+(6, 'DR86'),
+(6, 'F9'),
+(6, 'R02'),
+(7, 'C43'),
+(7, 'G9'),
+(7, 'R19'),
+(7, 'R18'),
+(7, 'P34'),
+(7, 'S37'),
+(7, 'DV57'),
+(7, 'DR87'),
+(7, 'F9'),
+(7, 'R02'),
+(7, 'O4'),
+(8, 'C43F'),
+(8, 'G9'),
+(8, 'R19'),
+(8, 'R18'),
+(8, 'P34'),
+(8, 'S35'),
+(8, 'DV57'),
+(8, 'DR87'),
+(8, 'F9'),
+(8, 'R02'),
+(8, 'O4'),
+(9, 'C01'),
+(9, 'G12'),
+(9, 'R1'),
+(9, 'R2'),
+(9, 'P1'),
+(9, 'S02'),
+(9, 'R09'),
+(9, 'S01'),
+(10, 'C02'),
+(10, 'G12'),
+(10, 'R1'),
+(10, 'R2'),
+(10, 'P1'),
+(10, 'S03'),
+(10, 'R09'),
+(10, 'S05'),
+(11, 'C15'),
+(11, 'G12'),
+(11, 'R11'),
+(11, 'R12'),
+(11, 'P15'),
+(11, 'S36'),
+(11, 'DV15'),
+(11, 'DR23'),
+(11, 'F9'),
+(11, 'R10'),
+(11, 'S74'),
+(12, 'C87'),
+(12, 'G12'),
+(12, 'R11'),
+(12, 'R12'),
+(12, 'P15'),
+(12, 'S36'),
+(12, 'DV41'),
+(12, 'DR76'),
+(12, 'F9'),
+(12, 'R10'),
+(12, 'S74'),
+(13, 'C87F'),
+(13, 'G12'),
+(13, 'R11'),
+(13, 'R12'),
+(13, 'P15'),
+(13, 'S34'),
+(13, 'DV41'),
+(13, 'DR76'),
+(13, 'F9'),
+(13, 'R10'),
+(13, 'S73'),
+(14, 'C25'),
+(14, 'G7'),
+(14, 'R44'),
+(14, 'R47'),
+(14, 'P12'),
+(14, 'S87'),
+(14, 'DV132'),
+(14, 'DR52'),
+(14, 'F3'),
+(15, 'C26'),
+(15, 'G7'),
+(15, 'R44'),
+(15, 'R47'),
+(15, 'P12'),
+(15, 'S87'),
+(15, 'DV133'),
+(15, 'DR52'),
+(15, 'F3');
+
 -- --------------------------------------------------------
 
 --
@@ -74,6 +227,27 @@ CREATE TABLE `BICYCLETTE` (
   `DateIntroduction_Bicyclette` date NOT NULL,
   `DateFin_Bicyclette` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `BICYCLETTE`
+--
+
+INSERT INTO `BICYCLETTE` (`ID_Bicyclette`, `Nom_Bicyclette`, `Grandeur_Bicyclette`, `Prix_Bicyclette`, `Type_Bicyclette`, `DateIntroduction_Bicyclette`, `DateFin_Bicyclette`) VALUES
+(1, 'Kilimandjaro', 'Adultes', 569, 'VTT', '2022-05-10', '2027-03-19'),
+(2, 'NorthPole', 'Adultes', 329, 'VTT', '2022-05-10', '2024-06-20'),
+(3, 'MontBlanc', 'Jeunes', 399, 'VTT', '2022-05-10', '2029-12-12'),
+(4, 'Hooligan', 'Jeunes', 199, 'VTT', '2022-02-16', '2023-03-02'),
+(5, 'Orléans', 'Hommes', 229, 'Course', '2021-02-16', '2022-10-02'),
+(6, 'Orléans', 'Dames', 229, 'Course', '2021-02-16', '2022-10-02'),
+(7, 'BlueJay', 'Hommes', 349, 'Course', '2020-11-11', '2022-05-21'),
+(8, 'BlueJay', 'Dames', 349.5, 'Course', '2020-11-11', '2022-11-11'),
+(9, 'Trail Explorer', 'Filles', 129, 'Classique', '2022-03-31', '2023-03-31'),
+(10, 'Trail Explorer', 'Garçons', 129, 'Classique', '2022-03-31', '2023-03-31'),
+(11, 'Night Hawk', 'Jeunes', 189, 'Classique', '2022-01-01', '2022-12-31'),
+(12, 'Tierra Verde', 'Hommes', 199, 'Classique', '2021-01-01', '2023-01-01'),
+(13, 'Tierra Verde', 'Dames', 199, 'Classique', '2021-01-01', '2023-01-01'),
+(14, 'Mud Zinger I', 'Jeunes', 279, 'BMX', '2021-07-07', '2022-12-27'),
+(15, 'Mud Zinger II', 'Adultes', 359, 'BMX', '2022-05-10', '2023-12-27');
 
 -- --------------------------------------------------------
 
@@ -181,7 +355,7 @@ CREATE TABLE `FOURNISSEUR` (
 --
 
 INSERT INTO `FOURNISSEUR` (`Siret_Fournisseur`, `NomEntreprise_Fournisseur`, `Contact_Fournisseur`, `Adresse_Fournisseur`, `Libelle_Fournisseur`) VALUES
-(27382698187536, 'PiecesFabrique', 'piecesfabrique@gmail.com', '9 avenue Richelieu, Caen', '4'),
+(27382698187536, 'PiecesFabriques', 'piecesfabrique@gmail.com', '9 avenue Richelieu, Caen', '4'),
 (27589698100017, 'Bikebuy', 'bikebuy@velo.com', '8 Avenue General Lecler, Calais', '1'),
 (39982698100017, 'BricoVelo', 'bricovelo@velo.com', '14 rue Victor Hugo, Argentan', '1'),
 (43282695524021, 'Bikeshop', 'bikeshop@gmail.com', '6 rue André, Paris', '2'),
@@ -592,7 +766,7 @@ ALTER TABLE `PIECE`
 -- AUTO_INCREMENT pour la table `BICYCLETTE`
 --
 ALTER TABLE `BICYCLETTE`
-  MODIFY `ID_Bicyclette` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID_Bicyclette` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `CLIENT`
@@ -621,13 +795,13 @@ ALTER TABLE `FIDELIO`
 --
 ALTER TABLE `ACHAT_BICYCLETTE`
   ADD CONSTRAINT `ACHAT_BICYCLETTE_ibfk_1` FOREIGN KEY (`ID_Commande`) REFERENCES `COMMANDE` (`ID_Commande`) ON DELETE CASCADE,
-  ADD CONSTRAINT `ACHAT_BICYCLETTE_ibfk_2` FOREIGN KEY (`ID_Bicyclette`) REFERENCES `BICYCLETTE` (`ID_Bicyclette`) ON DELETE CASCADE;
+  ADD CONSTRAINT `ACHAT_BICYCLETTE_ibfk_2` FOREIGN KEY (`ID_Bicyclette`) REFERENCES `BICYCLETTE` (`ID_Bicyclette`);
 
 --
 -- Contraintes pour la table `ACHAT_PIECE`
 --
 ALTER TABLE `ACHAT_PIECE`
-  ADD CONSTRAINT `ACHAT_PIECE_ibfk_1` FOREIGN KEY (`Identifiant_Piece`) REFERENCES `PIECE` (`Identifiant_Piece`) ON DELETE CASCADE,
+  ADD CONSTRAINT `ACHAT_PIECE_ibfk_1` FOREIGN KEY (`Identifiant_Piece`) REFERENCES `PIECE` (`Identifiant_Piece`),
   ADD CONSTRAINT `ACHAT_PIECE_ibfk_2` FOREIGN KEY (`ID_Commande`) REFERENCES `COMMANDE` (`ID_Commande`) ON DELETE CASCADE;
 
 --
