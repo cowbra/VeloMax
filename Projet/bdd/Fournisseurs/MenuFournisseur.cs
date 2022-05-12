@@ -1,5 +1,5 @@
-﻿using System.ComponentModel;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
+using System.ComponentModel;
 
 namespace bdd
 {
@@ -36,7 +36,56 @@ namespace bdd
 
         private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem element = listView1.SelectedItems[0];
+                string Siret = element.SubItems[0].Text;
+                string Nom = element.SubItems[1].Text;
+                string Contact = element.SubItems[2].Text;
+                string Adresse = element.SubItems[3].Text;
+                string Libelle = element.SubItems[4].Text;
 
+
+                //Recuperation des valeurs du form ModifierPiece
+                using (ModifierFournisseur modifier = new ModifierFournisseur())
+                {
+                    //Elements modifiables
+                    modifier.Nom = Nom;
+                    modifier.Contact = Contact;
+                    modifier.Adresse = Adresse;
+                    modifier.Libelle = Libelle;
+
+                    //Elements non modifiables
+                    modifier.Siret = Siret;
+
+
+                    //Si bouton cliqué = modifier
+                    if (modifier.ShowDialog() == DialogResult.Yes)
+                    {
+                        if (DATABASE.Connected)
+                        {
+                            MySqlCommand requete = new MySqlCommand("UPDATE FOURNISSEUR SET NomEntreprise_Fournisseur=@nom, Contact_Fournisseur=@contact,Adresse_Fournisseur=@adresse,Libelle_Fournisseur=@libelle WHERE Siret_Fournisseur=@id", DATABASE.MySqlConnection);
+                            requete.Parameters.AddWithValue("@id", Siret);
+                            requete.Parameters.AddWithValue("@nom", modifier.Nom);
+                            requete.Parameters.AddWithValue("@contact", modifier.Contact);
+                            requete.Parameters.AddWithValue("@adresse", modifier.Adresse);
+                            requete.Parameters.AddWithValue("@libelle", modifier.Libelle);
+
+                            requete.ExecuteNonQuery();
+                            requete.Parameters.Clear();
+
+                            element.SubItems[1].Text = modifier.Nom;
+                            element.SubItems[2].Text = modifier.Contact;
+                            element.SubItems[3].Text = modifier.Adresse;
+                            element.SubItems[4].Text = modifier.Libelle;
+                            MessageBox.Show("Fournisseur mis à jour avec succès.");
+                        }
+                        else { MessageBox.Show("Erreur de connexion avec la base de données."); }
+                    }
+                    else { MessageBox.Show("Modification annulée."); }
+                }
+
+            }
         }
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)

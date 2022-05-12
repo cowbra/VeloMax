@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace bdd
+﻿namespace bdd
 {
     public partial class ModifierPieceFournisseur : Form
     {
@@ -29,7 +19,7 @@ namespace bdd
             int k;
             int l;
             if (textBox1.Text == "" || Int32.TryParse(textBox1.Text, out i) == false) MessageBox.Show("Entrez un N° de produit dans le catalogue fournisseur valide !");
-            else if (Convert.ToInt64(textBox1.Text) < 0 ) MessageBox.Show("Entrez un N° de produit dans le catalogue fournisseur valide !");
+            else if (Convert.ToInt64(textBox1.Text) < 0) MessageBox.Show("Entrez un N° de produit dans le catalogue fournisseur valide !");
             else if (textBox2.Text == "" || Double.TryParse(textBox2.Text, out j) == false) MessageBox.Show("Entrez un prix valide !");
             else if (Convert.ToDouble(textBox2.Text) < 0) MessageBox.Show("Entrez un prix valide !");
             else if (textBox3.Text == "" || Int32.TryParse(textBox3.Text, out k) == false) MessageBox.Show("Entrez une quantité valide !");
@@ -38,7 +28,7 @@ namespace bdd
             else if (Convert.ToInt64(textBox4.Text) < 0) MessageBox.Show("Entrez un délai valide !");
 
             else { DialogResult = DialogResult.Yes; }
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
