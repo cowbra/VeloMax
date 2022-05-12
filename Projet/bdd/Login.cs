@@ -70,10 +70,12 @@ namespace bdd
             
             finally
             {
+#pragma warning disable CS8602 // Déréférencement d'une éventuelle référence null.
                 if (conn.State == ConnectionState.Open)
                 {
                     conn.Close();
                 }
+#pragma warning restore CS8602 // Déréférencement d'une éventuelle référence null.
             }
             return isConnected;
         }

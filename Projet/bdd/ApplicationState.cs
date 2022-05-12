@@ -26,7 +26,9 @@ namespace bdd
             }
             else
             {
+#pragma warning disable CS8603 // Existence possible d'un retour de référence null.
                 return default(T);
+#pragma warning restore CS8603 // Existence possible d'un retour de référence null.
             }
         }
     }

@@ -2,7 +2,6 @@
   "ExpandedNodes": [
     "",
     "\\Projet",
-<<<<<<< HEAD
     "\\Projet\\bdd",
     "\\Projet\\bdd\\Clients",
     "\\Projet\\bdd\\Commandes",
@@ -11,10 +10,5 @@
     "\\Projet\\bdd\\Inventaire\\Velos"
   ],
   "SelectedNode": "\\Projet\\bdd\\Commandes\\NewCommande.cs",
-=======
-    "\\Projet\\bdd"
-  ],
-  "SelectedNode": "\\Projet\\bdd\\bdd.sln",
->>>>>>> 2e51fa9d622a55289523cac109f6930201293949
   "PreviewInSolutionExplorer": false
 }
