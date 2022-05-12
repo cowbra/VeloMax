@@ -43,7 +43,7 @@
     <Compile Update="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Inventaire\Velos\StockFournisseurVelo.cs">
+    <Compile Update="Inventaire\Pieces\StockFournisseurPiece.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inventaire\Velos\NewVelo.cs">

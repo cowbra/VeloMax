@@ -2,10 +2,10 @@
 
 namespace bdd
 {
-    public partial class StockFournisseurVelo : Form
+    public partial class StockFournisseurPiece : Form
     {
         BDD DATABASE = new BDD();
-        public StockFournisseurVelo(string id)
+        public StockFournisseurPiece(string id)
         {
             InitializeComponent();
             DATABASE.Connect();

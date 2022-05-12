@@ -11,11 +11,22 @@ namespace bdd
             DATABASE.Connect();
             label1.Visible = false;
             label3.Visible = false;
+
+            if (DATABASE.Connected)
+            {
+                MySqlCommand mySqlCommand = new MySqlCommand("SELECT ID_Client FROM CLIENT", DATABASE.MySqlConnection);
+                using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+                {
+                    while (Lire.Read())
+                    {
+                        comboBox1.Items.Add(Lire["ID_Client"].ToString());
+                    }
+                }
+            }
         }
 
         private void MenuCommande_Load(object sender, EventArgs e)
         {
-
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -652,8 +663,257 @@ namespace bdd
         {
             Fill();
         }
+
         #endregion
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private int Select_Piece(string idPiece, int quantitee_Commandee)
+        {
+            ///DONNE LE MEILLEUR FOURNISSEUR POUR UNE PIECE SOUHAITEE///
+            ///RETOURNE LE TEMPS D'APPROVISIONNEMENT NECESSAIRE POUR LA COMMANDE
+            /// SI PIECE EN STOCK : 0 
+            /// SINON DELAI DU MEILLEUR FOURNISSEUR
+            /// 
+
+            #region recupere fournisseur
+            string sql = "SELECT FOURNIT.Siret_Fournisseur,Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur FROM FOURNIT,FOURNISSEUR WHERE Identifiant_Piece =@id GROUP BY FOURNIT.Siret_Fournisseur ORDER BY FOURNISSEUR.Libelle_Fournisseur, FOURNIT.Quantite_Fournisseur DESC, FOURNIT.Delai_Fournisseur ASC LIMIT 1";
+            
+            MySqlCommand mySqlCommand = new MySqlCommand(sql, DATABASE.MySqlConnection);
+            mySqlCommand.Parameters.AddWithValue("@id", idPiece);
+
+            string SIRET = "";
+            string NOM_F = "";
+            string NUM_CATALOGUE = "";
+            string PRIX = "";
+            string QUANTITE = "";
+            string DELAI = "";
+
+
+            using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+            {
+                while (Lire.Read())
+                {
+                    SIRET = Lire["Siret_Fournisseur"].ToString();
+                    NOM_F = Lire["Nom_Fournisseur"].ToString();
+                    NUM_CATALOGUE = Lire["NumProduit_Fournisseur"].ToString();
+                    PRIX = Lire["Prix_Fournisseur"].ToString();
+                    QUANTITE = Lire["Quantite_Fournisseur"].ToString();
+                    DELAI = Lire["Delai_Fournisseur"].ToString();
+                }
+            }
+            #endregion
+
+            // SI POUR CETTE PIECE PAS DE STOCK :
+            // SELECTIONNE LE MEILLEUR FOURNISSEUR PUIS AJOUTE DELAI APPROVISIONNEMENT AU DELAI LIVRAISON
+
+            if (Convert.ToInt32(QUANTITE) == 0)
+            {
+                // -> DELAI DE LIVRAISON = 7 jours + DELAI FOURNISSEUR 
+                //ICI pas besoin de modifier la quantité, car la quantité commandée au fournisseur sera livrée au client
+                // Voir alertes quantites par pieces pour commandee des pieces
+                return Convert.ToInt32(DELAI);
+            }
+
+            else if (Convert.ToInt32(QUANTITE) < quantitee_Commandee)
+            {
+                //RETIRER LE STOCK ACTUEL POUR LA PIECE ET LE RESTE SERA COMMANDE
+                // -> DELAI DE LIVRAISON = 7 jours + DELAI FOURNISSEUR
+                MySqlCommand requete = new MySqlCommand("UPDATE FOURNIT SET Quantite_Fournisseur=0 WHERE Siret_Fournisseur=@siret AND Identifiant_Piece=@id", DATABASE.MySqlConnection);
+                requete.Parameters.AddWithValue("@id", idPiece);
+                requete.Parameters.AddWithValue("@siret", SIRET);
+
+                requete.ExecuteNonQuery();
+                requete.Parameters.Clear();
+
+                return Convert.ToInt32(DELAI);
+            }
+            else
+            {
+                //RETIRER LE STOCK COMMANDE POUR LA PIECE 
+                // -> DELAI DE LIVRAISON = 7 jours CAR EN STOCK
+                MySqlCommand requete = new MySqlCommand("UPDATE FOURNIT SET Quantite_Fournisseur=@quantite WHERE Siret_Fournisseur=@siret AND Identifiant_Piece=@id", DATABASE.MySqlConnection);
+                requete.Parameters.AddWithValue("@id", idPiece);
+                requete.Parameters.AddWithValue("@quantite", Convert.ToInt32(QUANTITE) - quantitee_Commandee);
+                requete.Parameters.AddWithValue("@siret", SIRET);
+
+                requete.ExecuteNonQuery();
+                requete.Parameters.Clear();
+                return 0;
+            }
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string adresse = textBox2.Text;
+            int i;
+
+            if (comboBox1.SelectedItem == null) MessageBox.Show("Veuillez sélectionner l'ID du client !");
+            else if (int.TryParse(textBox1.Text, out i) == false) MessageBox.Show("Entrez une quantité valide !");
+            else if (Convert.ToInt32(textBox1.Text) <= 0) MessageBox.Show("Entrez une quantité valide !");
+            else if (adresse=="") MessageBox.Show("Entrez l'Adresse de Livraison !");
+            else if (listView1.SelectedItems.Count == 0) MessageBox.Show("Veuillez sélectionner un produit à Commander !");
+
+            else
+            {
+                int idClient = Convert.ToInt32(comboBox1.SelectedItem.ToString());
+                int quantiteCommandee = Convert.ToInt32(textBox1.Text);
+
+                //Creation de la commande
+                Commande commande = new Commande(idClient, adresse);
+                if (!DATABASE.Connected) DATABASE.Connect();
+                if (DATABASE.Connected)
+                {
+                    
+                    if (commande.AddToBdd())
+                    {
+                        //ON RECUPERE L'ID DE LA COMMANDE CREE POUR LES FOREIGN KEY
+                        string idCommande = "";
+                        MySqlCommand requete = new MySqlCommand("SELECT ID_Commande FROM COMMANDE ORDER BY ID_Commande DESC LIMIT 1", DATABASE.MySqlConnection);
+                        using (MySqlDataReader Lire = requete.ExecuteReader()) while (Lire.Read()) idCommande = Lire.GetString(0);
+
+
+                        //ON RECUPERE L'ID DU PRODUIT COMMANDE (PIECE OU VELO)
+                        ListViewItem element = listView1.SelectedItems[0];
+                        string Id = element.SubItems[0].Text;
+
+                        int delai_Livraison = 7;
+
+
+                        //CALCULER DELAI LIVRAISON
+                        #region SI COMMANDE DE PIECES
+                        if (radioButton1.Checked)
+                            //LA COMMANDE EST UNE PIECE
+                        {
+                            // delai de livraison de 7 jours + si necessairez deai approvisionnement piece fournisseur
+                            delai_Livraison += Select_Piece(Id, quantiteCommandee);
+
+                            TimeSpan duration = new System.TimeSpan(delai_Livraison, 0, 0, 0);
+                            DateTime dateLivraison = DateTime.Today.Add(duration);
+                            string[] subsDate = dateLivraison.ToString("d").Split('/');
+                            string date = subsDate[2] + "-" + subsDate[1] + "-" + subsDate[0];
+
+
+                            // ON FAIT LE LIEN ENTRE LA COMMANDE ET LE PRODUIT COMMANDé DANS LA BDD
+                            if (PieceLinkWithCommand_ToBdd(Convert.ToInt32(idCommande), Id, quantiteCommandee, date))
+                            {
+                                MessageBox.Show("Commande réussie");
+                                this.Close();
+                            }
+                            else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+             
+                        }
+                        #endregion
+
+                        #region SI COMMANDE DE VELO
+                        else
+                        // LA COMMANDE EST UN VELO
+                        {
+                            // on va checker les stocks pour toutes les pieces constituant le modele de velo
+                            // si 1 ou plusieurs pieces plus en stock, on prend le MAX des delais fournisseurs entre les differentes pieces manquantes
+
+                            List<string> pieces = new List<string>();
+                            List<int> delais = new List<int>();
+
+                            #region recuperation pieces du modele
+                            string requeteSQL = "SELECT * FROM PIECE NATURAL JOIN ASSEMBLER_PAR WHERE ID_Bicyclette =" + Id;
+                            if (DATABASE.Connected)// on verifie que la connexion est bien effective
+                            {
+                                listView1.Items.Clear();
+                                MySqlCommand mySqlCommand = new MySqlCommand(requeteSQL, DATABASE.MySqlConnection);
+                                using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+                                {
+                                    while (Lire.Read())
+                                    {
+                                        pieces.Add(Lire["Identifiant_Piece"].ToString());
+
+                                    }
+                                }
+                            }
+                            #endregion
+
+                            //AJOUT DES DELAIS FOURNISSEURS SI BESOIN POUR LES PECES
+                            //MISE A JOUR DES STOCKS EN FONCTION DES PIECES COMMANDEES
+                            foreach (string piece in pieces)
+                            {
+                                delais.Add(Select_Piece(piece, quantiteCommandee));
+                            }
+
+                            delai_Livraison += delais.Max();
+
+                            TimeSpan duration = new System.TimeSpan(delai_Livraison, 0, 0, 0);
+                            DateTime dateLivraison = DateTime.Today.Add(duration);
+                            string[] subsDate = dateLivraison.ToString("d").Split('/');
+                            string date = subsDate[2] + "-" + subsDate[1] + "-" + subsDate[0];
+
+                            // ON FAIT LE LIEN ENTRE LA COMMANDE ET LE PRODUIT COMMANDé DANS LA BDD
+                            if (VeloLinkWithCommand_ToBdd(Convert.ToInt32(idCommande), Convert.ToInt32(Id), quantiteCommandee, date))
+                            {
+                                MessageBox.Show("Commande réussie");
+                                this.Close();
+                            }
+                            else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+
+                        }
+
+
+                        #endregion
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erreur de Connexion avec la Base de données.");
+                        // On laisse la fenetre de creation de fournisseur ouverte pour retenter une connexion à la bdd
+                    }
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public bool PieceLinkWithCommand_ToBdd(int idC, string idP,int quantite,string date)
+        {
+            if (DATABASE.Connected)
+            {
+                MySqlCommand requete = new MySqlCommand("INSERT INTO ACHAT_PIECE(ID_Commande,Identifiant_Piece,NombreArticles,DateLivraison) VALUES(@idC,@idP,@nb,@date)", DATABASE.MySqlConnection);
+                requete.Parameters.AddWithValue("@idC", idC);
+                requete.Parameters.AddWithValue("@idP", idP);
+                requete.Parameters.AddWithValue("@nb", quantite);
+                requete.Parameters.AddWithValue("@date", date);
+
+                requete.ExecuteNonQuery();
+                requete.Parameters.Clear();
+
+                DATABASE.Disconnect();
+                return true;
+            }
+            return false;
+        }
+
+        public bool VeloLinkWithCommand_ToBdd(int idC, int idV, int quantite, string date)
+        {
+            if (DATABASE.Connected)
+            {
+                MySqlCommand requete = new MySqlCommand("INSERT INTO ACHAT_BICYCLETTE(ID_Commande,ID_Bicyclette,NombreArticles,DateLivraison) VALUES(@idC,@idB,@nb,@date)", DATABASE.MySqlConnection);
+                requete.Parameters.AddWithValue("@idC", idC);
+                requete.Parameters.AddWithValue("@idB", idV);
+                requete.Parameters.AddWithValue("@nb", quantite);
+                requete.Parameters.AddWithValue("@date", date);
+
+                requete.ExecuteNonQuery();
+                requete.Parameters.Clear();
+
+                DATABASE.Disconnect();
+                return true;
+            }
+            return false;
+        }
     }
 }

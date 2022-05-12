@@ -1,6 +1,6 @@
 ﻿namespace bdd
 {
-    partial class StockFournisseurVelo
+    partial class StockFournisseurPiece
     {
         /// <summary>
         /// Required designer variable.
