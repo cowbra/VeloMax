@@ -65,6 +65,9 @@
             this.checkBox27 = new System.Windows.Forms.CheckBox();
             this.checkBox23 = new System.Windows.Forms.CheckBox();
             this.checkBox24 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -76,9 +79,9 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 120);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(821, 100);
+            this.groupBox1.Size = new System.Drawing.Size(821, 92);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Choisissez le type d\'objets à commander";
@@ -98,7 +101,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(147, 40);
+            this.radioButton1.Location = new System.Drawing.Point(150, 40);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(152, 24);
             this.radioButton1.TabIndex = 0;
@@ -111,7 +114,7 @@
             // 
             this.groupBox2.Controls.Add(this.listView1);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.Location = new System.Drawing.Point(12, 124);
+            this.groupBox2.Location = new System.Drawing.Point(12, 232);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(821, 359);
             this.groupBox2.TabIndex = 1;
@@ -157,7 +160,7 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.checkBox1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(850, 124);
+            this.groupBox3.Location = new System.Drawing.Point(850, 232);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(359, 200);
             this.groupBox3.TabIndex = 11;
@@ -468,7 +471,7 @@
             this.groupBox4.Controls.Add(this.checkBox23);
             this.groupBox4.Controls.Add(this.checkBox24);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.groupBox4.Location = new System.Drawing.Point(850, 330);
+            this.groupBox4.Location = new System.Drawing.Point(850, 438);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(359, 153);
             this.groupBox4.TabIndex = 14;
@@ -535,19 +538,50 @@
             this.checkBox24.UseVisualStyleBackColor = true;
             this.checkBox24.CheckedChanged += new System.EventHandler(this.checkBox24_CheckedChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(457, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(268, 33);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Nouvelle Commande";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(892, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "label5";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(758, 633);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 49);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // NewCommande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1231, 643);
+            this.ClientSize = new System.Drawing.Size(1231, 694);
             this.ControlBox = false;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "NewCommande";
-            this.Text = "Form1";
+            this.Text = "Créer un commande";
             this.Load += new System.EventHandler(this.MenuCommande_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -557,6 +591,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -599,5 +634,8 @@
         private CheckBox checkBox25;
         private CheckBox checkBox26;
         private CheckBox checkBox27;
+        private Label label4;
+        private Label label5;
+        private Button button1;
     }
 }

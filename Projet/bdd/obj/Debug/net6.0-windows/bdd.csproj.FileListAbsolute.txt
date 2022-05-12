@@ -85,3 +85,13 @@ C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierFournisseur.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierVelo.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.NewCommande.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.Login.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
