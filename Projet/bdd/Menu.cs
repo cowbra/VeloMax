@@ -51,7 +51,7 @@ namespace bdd
         private void button4_Click(object sender, EventArgs e)
         {
 
-            NewCommande commande = new NewCommande();
+            MenuCommande commande = new MenuCommande();
             this.Hide();
             commande.Show();
         }

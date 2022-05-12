@@ -802,10 +802,39 @@ namespace bdd
                             // ON FAIT LE LIEN ENTRE LA COMMANDE ET LE PRODUIT COMMANDé DANS LA BDD
                             if (PieceLinkWithCommand_ToBdd(Convert.ToInt32(idCommande), Id, quantiteCommandee, date))
                             {
-                                MessageBox.Show("Commande réussie");
-                                this.Close();
+                                if (DATABASE.Connected)
+                                {
+                                    double prix = 0;
+                                    string sql = "SELECT Prix_Fournisseur FROM FOURNIT,FOURNISSEUR WHERE Identifiant_Piece =@id GROUP BY FOURNIT.Siret_Fournisseur ORDER BY FOURNISSEUR.Libelle_Fournisseur, FOURNIT.Quantite_Fournisseur DESC, FOURNIT.Delai_Fournisseur ASC LIMIT 1";
+
+                                    MySqlCommand mySqlCommand = new MySqlCommand(sql, DATABASE.MySqlConnection);
+                                    mySqlCommand.Parameters.AddWithValue("@id", Id);
+                                    using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+                                        while (Lire.Read())
+                                        {
+                                            prix = Convert.ToDouble(Lire["Prix_Fournisseur"].ToString());
+
+                                        }
+
+                                    if (commande.UpdatePrixTotal(idCommande, prix, quantiteCommandee))
+                                    {
+                                        MessageBox.Show("prix :" + prix.ToString());
+                                        MessageBox.Show("quantite :" + quantiteCommandee.ToString());
+                                        MessageBox.Show("Commande réussie");
+                                        this.Close();
+                                    }
+                                    else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+
+                                }
                             }
-                            else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+                            else
+                            {
+                                MessageBox.Show("Erreur de Connexion avec la Base de données.");
+                                MySqlCommand mySqlCommand = new MySqlCommand("DELETE FROM COMMANDE WHERE ID_Commande = @id", DATABASE.MySqlConnection);
+                                mySqlCommand.Parameters.AddWithValue("@id", idCommande);
+                                mySqlCommand.ExecuteNonQuery();
+                                mySqlCommand.Parameters.Clear();
+                            }
              
                         }
                         #endregion
@@ -854,10 +883,39 @@ namespace bdd
                             // ON FAIT LE LIEN ENTRE LA COMMANDE ET LE PRODUIT COMMANDé DANS LA BDD
                             if (VeloLinkWithCommand_ToBdd(Convert.ToInt32(idCommande), Convert.ToInt32(Id), quantiteCommandee, date))
                             {
-                                MessageBox.Show("Commande réussie");
-                                this.Close();
+                                if (DATABASE.Connected)
+                                {
+                                    double prix = 0;
+                                    string sql = "SELECT Prix_Bicyclette FROM BICYCLETTE WHERE ID_Bicyclette=@id";
+
+                                    MySqlCommand mySqlCommand = new MySqlCommand(sql, DATABASE.MySqlConnection);
+                                    mySqlCommand.Parameters.AddWithValue("@id", Id);
+                                    using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+                                    {
+                                        while (Lire.Read())
+                                        {
+                                            prix = Convert.ToDouble(Lire["Prix_Bicyclette"].ToString());
+
+                                        }
+                                    }
+
+                                    if (commande.UpdatePrixTotal(idCommande, prix, quantiteCommandee))
+                                    {
+                                        MessageBox.Show("Commande réussie");
+                                        this.Close();
+                                    }
+                                    else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+
+                                }
                             }
-                            else MessageBox.Show("Erreur de Connexion avec la Base de données.");
+
+                            else {
+                                MessageBox.Show("Erreur de Connexion avec la Base de données.");
+                                MySqlCommand mySqlCommand = new MySqlCommand("DELETE FROM COMMANDE WHERE ID_Commande = @id", DATABASE.MySqlConnection);
+                                mySqlCommand.Parameters.AddWithValue("@id", idCommande);
+                                mySqlCommand.ExecuteNonQuery();
+                                mySqlCommand.Parameters.Clear();
+                            }
 
                         }
 
@@ -869,6 +927,7 @@ namespace bdd
                     {
                         MessageBox.Show("Erreur de Connexion avec la Base de données.");
                         // On laisse la fenetre de creation de fournisseur ouverte pour retenter une connexion à la bdd
+
                     }
                 }
             }
@@ -891,7 +950,6 @@ namespace bdd
                 requete.ExecuteNonQuery();
                 requete.Parameters.Clear();
 
-                DATABASE.Disconnect();
                 return true;
             }
             return false;
@@ -910,10 +968,14 @@ namespace bdd
                 requete.ExecuteNonQuery();
                 requete.Parameters.Clear();
 
-                DATABASE.Disconnect();
                 return true;
             }
             return false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
