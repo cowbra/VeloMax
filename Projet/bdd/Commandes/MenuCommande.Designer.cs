@@ -45,6 +45,7 @@
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -184,6 +185,17 @@
             this.label2.Text = "Faites un clic droit sur une commande pour lamodifier, la supprimer ou voir les d" +
     "étails de la commande";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button3.Location = new System.Drawing.Point(212, 449);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(175, 43);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Statistiques Commandes";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // MenuCommande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -191,6 +203,7 @@
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(735, 504);
             this.ControlBox = false;
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
@@ -224,5 +237,6 @@
         private ColumnHeader columnHeader6;
         private Label label1;
         private Label label2;
+        private Button button3;
     }
 }

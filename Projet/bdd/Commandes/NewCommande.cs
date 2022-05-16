@@ -681,7 +681,7 @@ namespace bdd
 
             #region recupere fournisseur
             string sql = "SELECT FOURNIT.Siret_Fournisseur,Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur FROM FOURNIT,FOURNISSEUR WHERE Identifiant_Piece =@id GROUP BY FOURNIT.Siret_Fournisseur ORDER BY FOURNISSEUR.Libelle_Fournisseur, FOURNIT.Quantite_Fournisseur DESC, FOURNIT.Delai_Fournisseur ASC LIMIT 1";
-            
+
             MySqlCommand mySqlCommand = new MySqlCommand(sql, DATABASE.MySqlConnection);
             mySqlCommand.Parameters.AddWithValue("@id", idPiece);
 
@@ -756,7 +756,7 @@ namespace bdd
             if (comboBox1.SelectedItem == null) MessageBox.Show("Veuillez sélectionner l'ID du client !");
             else if (int.TryParse(textBox1.Text, out i) == false) MessageBox.Show("Entrez une quantité valide !");
             else if (Convert.ToInt32(textBox1.Text) <= 0) MessageBox.Show("Entrez une quantité valide !");
-            else if (adresse=="") MessageBox.Show("Entrez l'Adresse de Livraison !");
+            else if (adresse == "") MessageBox.Show("Entrez l'Adresse de Livraison !");
             else if (listView1.SelectedItems.Count == 0) MessageBox.Show("Veuillez sélectionner un produit à Commander !");
 
             else
@@ -771,7 +771,7 @@ namespace bdd
                 if (!DATABASE.Connected) DATABASE.Connect();
                 if (DATABASE.Connected)
                 {
-                    
+
                     if (commande.AddToBdd())
                     {
                         //ON RECUPERE L'ID DE LA COMMANDE CREE POUR LES FOREIGN KEY
@@ -790,7 +790,7 @@ namespace bdd
                         //CALCULER DELAI LIVRAISON
                         #region SI COMMANDE DE PIECES
                         if (radioButton1.Checked)
-                            //LA COMMANDE EST UNE PIECE
+                        //LA COMMANDE EST UNE PIECE
                         {
                             // delai de livraison de 7 jours + si necessairez deai approvisionnement piece fournisseur
                             delai_Livraison += Select_Piece(Id, quantiteCommandee);
@@ -818,7 +818,33 @@ namespace bdd
 
                                         }
 
-                                    if (commande.UpdatePrixTotal(idCommande, prix, quantiteCommandee))
+                                    ///CALCUL REDUCTION EN FONCTION DE LA REMISE COMPAGNIE
+                                    double reduction_Compagnie = 0;
+                                    
+                                    string sql2 = "select coalesce(RemiseCompagnie_Client, 0) as RemiseCompagnie_Client from CLIENT where ID_Client=@id";
+                                    MySqlCommand mySqlCommand2 = new MySqlCommand(sql2, DATABASE.MySqlConnection);
+                                    mySqlCommand2.Parameters.AddWithValue("@id", idClient);
+                                    using (MySqlDataReader Lire = mySqlCommand2.ExecuteReader())
+                                        while (Lire.Read())
+                                        {
+                                            reduction_Compagnie += Convert.ToDouble(Lire["RemiseCompagnie_Client"].ToString());
+                                        }
+                                    
+                                    ///CALCUL REDUCTION EN FONCTION DU FIDELIO
+                                    sql2 = "select coalesce(Rabais_Fidelio, 0) as Rabais_Fidelio from FIDELIO,CLIENT where FIDELIO.NumProgramme_Fidelio=CLIENT.NumProgramme_Fidelio AND ID_Client=@id";
+                                    MySqlCommand mySqlCommand3 = new MySqlCommand(sql2, DATABASE.MySqlConnection);
+                                    mySqlCommand3.Parameters.AddWithValue("@id", idClient);
+                                    using (MySqlDataReader Lire = mySqlCommand3.ExecuteReader())
+                                        while (Lire.Read())
+                                        {
+                                            reduction_Compagnie += Convert.ToDouble(Lire["Rabais_Fidelio"].ToString());
+                                        }
+                                    //MessageBox.Show(reduction_Compagnie.ToString());
+
+
+
+
+                                    if (commande.UpdatePrixTotal(idCommande, prix- reduction_Compagnie, quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
@@ -836,7 +862,7 @@ namespace bdd
                                 mySqlCommand.ExecuteNonQuery();
                                 mySqlCommand.Parameters.Clear();
                             }
-             
+
                         }
                         #endregion
 
@@ -896,14 +922,41 @@ namespace bdd
                                         while (Lire.Read())
                                         {
                                             prix = Convert.ToDouble(Lire["Prix_Bicyclette"].ToString());
-
                                         }
                                     }
 
-                                    if (commande.UpdatePrixTotal(idCommande, prix, quantiteCommandee))
+
+
+                                    ///CALCUL REDUCTION EN FONCTION DE LA REMISE COMPAGNIE
+                                    double reduction_Compagnie = 0;
+
+                                    string sql2 = "select coalesce(RemiseCompagnie_Client, 0) as RemiseCompagnie_Client from CLIENT where ID_Client=@id";
+                                    MySqlCommand mySqlCommand2 = new MySqlCommand(sql2, DATABASE.MySqlConnection);
+                                    mySqlCommand2.Parameters.AddWithValue("@id", idClient);
+                                    using (MySqlDataReader Lire = mySqlCommand2.ExecuteReader())
+                                        while (Lire.Read())
+                                        {
+                                            reduction_Compagnie += Convert.ToDouble(Lire["RemiseCompagnie_Client"].ToString());
+                                        }
+
+                                    ///CALCUL REDUCTION EN FONCTION DU FIDELIO
+                                    sql2 = "select coalesce(Rabais_Fidelio, 0) as Rabais_Fidelio from FIDELIO,CLIENT where FIDELIO.NumProgramme_Fidelio=CLIENT.NumProgramme_Fidelio AND ID_Client=@id";
+                                    MySqlCommand mySqlCommand3 = new MySqlCommand(sql2, DATABASE.MySqlConnection);
+                                    mySqlCommand3.Parameters.AddWithValue("@id", idClient);
+                                    using (MySqlDataReader Lire = mySqlCommand3.ExecuteReader())
+                                        while (Lire.Read())
+                                        {
+                                            reduction_Compagnie += Convert.ToDouble(Lire["Rabais_Fidelio"].ToString());
+                                        }
+                                    //MessageBox.Show(reduction_Compagnie.ToString());
+
+
+
+
+                                    if (commande.UpdatePrixTotal(idCommande, prix- reduction_Compagnie, quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
-                                        MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison+" jours");
+                                        MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
                                         this.Close();
                                     }
                                     else MessageBox.Show("Erreur de Connexion avec la Base de données.");
@@ -911,7 +964,8 @@ namespace bdd
                                 }
                             }
 
-                            else {
+                            else
+                            {
                                 MessageBox.Show("Erreur de Connexion avec la Base de données.");
                                 MySqlCommand mySqlCommand = new MySqlCommand("DELETE FROM COMMANDE WHERE ID_Commande = @id", DATABASE.MySqlConnection);
                                 mySqlCommand.Parameters.AddWithValue("@id", idCommande);
@@ -939,7 +993,7 @@ namespace bdd
         {
 
         }
-        public bool PieceLinkWithCommand_ToBdd(int idC, string idP,int quantite,string date)
+        public bool PieceLinkWithCommand_ToBdd(int idC, string idP, int quantite, string date)
         {
             if (DATABASE.Connected)
             {

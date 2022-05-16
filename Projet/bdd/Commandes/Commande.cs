@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 
 namespace bdd
@@ -51,7 +46,7 @@ namespace bdd
             return false;
         }
 
-        public bool UpdatePrixTotal(string id,double prix, int quantite)
+        public bool UpdatePrixTotal(string id, double prix, int quantite)
         {
 
             BDD DATABASE = new BDD();
@@ -60,7 +55,7 @@ namespace bdd
             {
                 MySqlCommand requete = new MySqlCommand("UPDATE COMMANDE SET Prix_Commande=@prix WHERE ID_Commande=@id", DATABASE.MySqlConnection);
                 requete.Parameters.AddWithValue("@id", id);
-                requete.Parameters.AddWithValue("@prix",prix*quantite);
+                requete.Parameters.AddWithValue("@prix", prix * quantite);
 
                 requete.ExecuteNonQuery();
                 requete.Parameters.Clear();
@@ -72,6 +67,6 @@ namespace bdd
             return false;
         }
 
-        
+
     }
 }

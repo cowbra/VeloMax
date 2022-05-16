@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 
 
 namespace bdd
@@ -33,7 +32,7 @@ namespace bdd
             this.idPiece = "null";
             this.prix = 0;
             this.numFournisseur = 0;
-            this.quantite=0;
+            this.quantite = 0;
             this.delai = 0;
         }
         public bool AddToBdd()

@@ -116,3 +116,4 @@ C:\Users\hugos\source\repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.M
 C:\Users\hugos\source\repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.Login.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.ModifierCommande.resources
 C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.AchatPiece.resources
+C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\obj\Debug\net6.0-windows\bdd.MenuStatistiques.resources

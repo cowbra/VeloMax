@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 
 namespace bdd
@@ -30,7 +22,7 @@ namespace bdd
                 this.Hide();
                 menu.Show();
             }
-            
+
 
 
         }
@@ -42,7 +34,7 @@ namespace bdd
 
         public static bool Check_USER_LOGIN(string id, string mdp)
         {
-            string conn_info = "Server=2.11.7.149;Port=3306;Database=VeloMax;Uid="+id+";PWD="+mdp;
+            string conn_info = "Server=2.11.7.149;Port=3306;Database=VeloMax;Uid=" + id + ";PWD=" + mdp;
             bool isConnected = false;
             MySqlConnection conn = null;
             try
@@ -51,14 +43,14 @@ namespace bdd
                 conn.Open();
                 isConnected = true;
             }
-            
+
             catch (MySqlException ex)
             {
                 isConnected = false;
                 switch (ex.Number)
                 {
                     case 1042: // Erreur de connexion avec le serveur spécifié (verifier hôte et port)
-                        MessageBox.Show("Serveur introuvable ! Vérifier votre connexion internet","SERVEUR INTROUVABLE");
+                        MessageBox.Show("Serveur introuvable ! Vérifier votre connexion internet", "SERVEUR INTROUVABLE");
                         break;
                     case 0: // Acces refusé, verifie login
                         MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect ! Veuillez vérifier vos identifiants.", "LOGIN FAILED");
@@ -67,7 +59,7 @@ namespace bdd
                         break;
                 }
             }
-            
+
             finally
             {
 #pragma warning disable CS8602 // Déréférencement d'une éventuelle référence null.
