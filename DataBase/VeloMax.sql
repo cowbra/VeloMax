@@ -16,13 +16,28 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-CREATE DATABASE IF NOT EXISTS`VeloMax`;
-USE `VeloMax`;
+
+
 --
 -- Base de données : `VeloMax`
 --
 
 -- --------------------------------------------------------
+
+
+CREATE DATABASE IF NOT EXISTS`VeloMax`;
+USE `VeloMax`;
+
+
+--
+-- Creation user lecture sur  : `VeloMax`
+--
+
+-- --------------------------------------------------------
+CREATE USER IF NOT EXISTS 'bozo'@'%' IDENTIFIED BY 'bozo';
+GRANT SELECT ON `VeloMax`.* TO 'bozo'@'%' IDENTIFIED BY 'bozo';
+
+
 
 --
 -- Structure de la table `ACHAT_BICYCLETTE`
