@@ -67,5 +67,24 @@ namespace bdd
                 }
             }
         }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void détailsDeLaCommandeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string typeObjet;
+            string idOnjet;
+            if (listView1.SelectedItems.Count > 0)
+            {
+                ListViewItem element = listView1.SelectedItems[0];
+                string idCommande = element.SubItems[0].Text;
+
+                //StockFournisseurPiece stockFournisseur = new StockFournisseurPiece(idCommande);
+                //stockFournisseur.ShowDialog();
+            }
+        }
     }
 }

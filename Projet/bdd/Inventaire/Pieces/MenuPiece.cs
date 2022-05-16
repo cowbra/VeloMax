@@ -5,11 +5,14 @@ namespace bdd
     public partial class MenuPiece : Form
     {
         BDD DATABASE = new BDD();
+        List<int> rouge = new List<int>();
+        List<int> orange = new List<int>();
         public MenuPiece()
         {
             InitializeComponent();
             DATABASE.Connect();
             Actualiser();
+            
         }
 
         private void Actualiser()
@@ -17,6 +20,10 @@ namespace bdd
             /// <summary>
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
+            /// 
+            rouge.Clear();
+            orange.Clear();
+            
 
             #region REQUETE
             string requeteSQL = "SELECT Identifiant_Piece, Description_Piece, DateDebut_Piece, DateFin_Piece, SUM(Quantite_Fournisseur) AS Quantite_Total_Piece FROM PIECE NATURAL JOIN FOURNIT";
@@ -162,7 +169,27 @@ namespace bdd
                         listView1.Items.Add(new ListViewItem(new[] { id, type, date1, date2, quantity }));
                     }
                 }
+                listView1.Items[4].BackColor = Color.Red;
             }
+            for (int i =0;i<listView1.Items.Count;i++) listView1.Items[i].BackColor = Color.White;
+            
+            
+
+
+            for (int i=0;i<listView1.Items.Count;i++)
+            {
+                if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) == 0) rouge.Add(i);
+                else if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) <= 5 && Convert.ToInt32(listView1.Items[i].SubItems[4].Text)>0) orange.Add(i);
+                
+
+
+            }
+            
+
+            foreach(int i in rouge) listView1.Items[i].BackColor = Color.OrangeRed;
+            foreach (int i in orange) listView1.Items[i].BackColor = Color.Orange;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -821,6 +821,7 @@ namespace bdd
                                         MessageBox.Show("prix :" + prix.ToString());
                                         MessageBox.Show("quantite :" + quantiteCommandee.ToString());
                                         MessageBox.Show("Commande réussie");
+                                        MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
                                         this.Close();
                                     }
                                     else MessageBox.Show("Erreur de Connexion avec la Base de données.");
@@ -902,6 +903,7 @@ namespace bdd
                                     if (commande.UpdatePrixTotal(idCommande, prix, quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
+                                        MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison+" jours");
                                         this.Close();
                                     }
                                     else MessageBox.Show("Erreur de Connexion avec la Base de données.");
@@ -976,6 +978,11 @@ namespace bdd
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
