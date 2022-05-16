@@ -38,15 +38,20 @@
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.détailsDeLaCommandeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 338);
+            this.button1.Location = new System.Drawing.Point(12, 449);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 43);
             this.button1.TabIndex = 0;
@@ -57,7 +62,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(438, 338);
+            this.button2.Location = new System.Drawing.Point(553, 447);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 45);
             this.button2.TabIndex = 8;
@@ -69,11 +74,11 @@
             // 
             this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 11.12727F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(12, 37);
+            this.groupBox1.Location = new System.Drawing.Point(12, 134);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(607, 295);
+            this.groupBox1.Size = new System.Drawing.Size(711, 295);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Commandes :";
@@ -85,13 +90,15 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
-            this.columnHeader5});
+            this.columnHeader5,
+            this.columnHeader6});
+            this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
             this.listView1.Location = new System.Drawing.Point(5, 20);
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(596, 270);
+            this.listView1.Size = new System.Drawing.Size(700, 270);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -121,12 +128,19 @@
             this.columnHeader5.Text = "Prix";
             this.columnHeader5.Width = 80;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Type";
+            this.columnHeader6.Width = 100;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.détailsDeLaCommandeToolStripMenuItem});
+            this.détailsDeLaCommandeToolStripMenuItem,
+            this.modifierToolStripMenuItem,
+            this.supprimerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(202, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(202, 70);
             // 
             // détailsDeLaCommandeToolStripMenuItem
             // 
@@ -135,21 +149,60 @@
             this.détailsDeLaCommandeToolStripMenuItem.Text = "Détails de la commande";
             this.détailsDeLaCommandeToolStripMenuItem.Click += new System.EventHandler(this.détailsDeLaCommandeToolStripMenuItem_Click);
             // 
+            // modifierToolStripMenuItem
+            // 
+            this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.modifierToolStripMenuItem.Text = "Modifier";
+            this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            this.supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            this.supprimerToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.supprimerToolStripMenuItem.Text = "Supprimer";
+            this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Rockwell", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(212, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(281, 26);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Affichage des Commandes";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(17, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(711, 20);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Faites un clic droit sur une commande pour lamodifier, la supprimer ou voir les d" +
+    "étails de la commande";
+            // 
             // MenuCommande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(631, 392);
+            this.ClientSize = new System.Drawing.Size(735, 504);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MenuCommande";
             this.Text = "Menu des Commandes";
+            this.Load += new System.EventHandler(this.MenuCommande_Load);
             this.groupBox1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -166,5 +219,10 @@
         private ColumnHeader columnHeader5;
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem détailsDeLaCommandeToolStripMenuItem;
+        private ToolStripMenuItem modifierToolStripMenuItem;
+        private ToolStripMenuItem supprimerToolStripMenuItem;
+        private ColumnHeader columnHeader6;
+        private Label label1;
+        private Label label2;
     }
 }

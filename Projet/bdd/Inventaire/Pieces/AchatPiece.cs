@@ -38,7 +38,27 @@ namespace bdd
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int i;
+            int j;
+            int k;
+            double l;
             if (comboBox2.SelectedItem == null) MessageBox.Show("Veuillez sélectionner l'ID du client !");
+            else if (textBox3.Text == "") MessageBox.Show("Entrez le N° de produit dans le catalogue du Fournisseur !");
+            else if (textBox4.Text == "") MessageBox.Show("Entrez le prix unitaire d'une pièce !");
+            else if (textBox8.Text == "") MessageBox.Show("Entrez la quantité de pièces fournies !");
+            else if (textBox5.Text == "") MessageBox.Show("Entrez le délai d'approvisionnement !");
+
+            else if (int.TryParse(textBox8.Text, out i) == false) MessageBox.Show("Entrez une quantité valide !");
+            else if (Convert.ToInt32(textBox8.Text) <= 0) MessageBox.Show("Entrez une quantité valide !");
+
+            else if (int.TryParse(textBox3.Text, out j) == false) MessageBox.Show("Entrez N° de catalogue valide !");
+            else if (Convert.ToInt32(textBox3.Text) <= 0) MessageBox.Show("Entrez N° de catalogue valide !");
+
+            else if (int.TryParse(textBox5.Text, out k) == false) MessageBox.Show("Entrez un délai d'approvisionnement valide !");
+            else if (Convert.ToInt32(textBox5.Text) <= 0) MessageBox.Show("Entrez un délai d'approvisionnement valide !");
+
+            else if (double.TryParse(textBox5.Text, out l) == false) MessageBox.Show("Entrez un prix valide !");
+            else if (Convert.ToDouble(textBox5.Text) <= 0) MessageBox.Show("Entrez un prix valide !");
 
             else
             {

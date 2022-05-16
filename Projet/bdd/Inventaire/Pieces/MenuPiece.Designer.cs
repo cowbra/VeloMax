@@ -66,6 +66,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -473,6 +474,17 @@
             this.button3.TabIndex = 19;
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button5.Location = new System.Drawing.Point(494, 473);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(171, 43);
+            this.button5.TabIndex = 21;
+            this.button5.Text = "Exportation XML stock faibles";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // MenuPiece
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -480,6 +492,7 @@
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1054, 596);
             this.ControlBox = false;
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
@@ -542,5 +555,6 @@
         private Label label5;
         private Button button4;
         private Button button3;
+        private Button button5;
     }
 }

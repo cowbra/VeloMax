@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 
 namespace bdd
 {
@@ -179,7 +180,7 @@ namespace bdd
             for (int i=0;i<listView1.Items.Count;i++)
             {
                 if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) == 0) rouge.Add(i);
-                else if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) <= 5 && Convert.ToInt32(listView1.Items[i].SubItems[4].Text)>0) orange.Add(i);
+                else if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) <= 10 && Convert.ToInt32(listView1.Items[i].SubItems[4].Text)>0) orange.Add(i);
                 
 
 
@@ -397,6 +398,57 @@ namespace bdd
                     else { MessageBox.Show("Modification annulée."); }
                 }
 
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List<Int64> SIRETS = new List<long>();
+            List<string> PIECES = new List<string>();
+            List<int> NUM_CATALOGUE = new List<int>();
+            List<double> PRIX = new List<double>();
+            List<int> QUANTITES = new List<int>();
+            List<int> DELAIS = new List<int>();
+
+            string req = "SELECT Siret_Fournisseur,Identifiant_Piece,Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur FROM FOURNIT WHERE Identifiant_Piece IN (SELECT Identifiant_Piece FROM PIECE NATURAL JOIN FOURNIT GROUP BY Identifiant_Piece HAVING SUM(Quantite_Fournisseur) <= 10);";
+            if (DATABASE.Connected)
+            {
+                int i = 0;
+                TextWriter writer = new StreamWriter("export.xml");
+
+                MySqlCommand mySqlCommand = new MySqlCommand(req, DATABASE.MySqlConnection);
+                using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+                {
+                    while (Lire.Read())
+                    {
+                        Int64 Siret = Convert.ToInt64(Lire["Siret_Fournisseur"].ToString());
+                        string Id = Lire["Identifiant_Piece"].ToString();
+                        int Num = Convert.ToInt32(Lire["NumProduit_Fournisseur"].ToString());
+                        double Prix = Convert.ToDouble(Lire["Prix_Fournisseur"].ToString());
+                        int Quantite = Convert.ToInt32(Lire["Quantite_Fournisseur"].ToString());
+                        int Delai = Convert.ToInt32(Lire["Delai_Fournisseur"].ToString());
+                        
+                        SIRETS.Add(Siret);
+                        PIECES.Add(Id);
+                        NUM_CATALOGUE.Add(Num);
+                        PRIX.Add(Prix);
+                        QUANTITES.Add(Quantite);
+                        DELAIS.Add(Delai);
+                    }
+                }
+
+
+
+                foreach (Int64 siret in SIRETS)
+                {
+                    Fourni f = new Fourni(siret,PIECES[i], QUANTITES[i], DELAIS[i], PRIX[i], NUM_CATALOGUE[i]);
+                    System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(f.GetType());
+                    x.Serialize(writer, f);
+
+
+                }
+                writer.Close();
+                MessageBox.Show("Fichier 'export.xml' exporté dans le dossier bin de la solution avec succès !");
             }
         }
     }
