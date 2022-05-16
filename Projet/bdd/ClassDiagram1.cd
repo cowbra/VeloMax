@@ -22,7 +22,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="bdd.Fourni">
-    <Position X="11.25" Y="4" Width="1.75" />
+    <Position X="11.5" Y="4" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAgABAAAAAAAAAAAAAAAAAAAAAAAABgAAAAIAAECAAA=</HashCode>
       <FileName>Inventaire\Pieces\Fourni.cs</FileName>
@@ -43,7 +43,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="bdd.Velo">
-    <Position X="13.75" Y="7" Width="1.5" />
+    <Position X="13.75" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAAEAAAAAAAAAgAIAAAAAAAAAAABAAAAAGAAAA=</HashCode>
       <FileName>Inventaire\Velos\Velo.cs</FileName>

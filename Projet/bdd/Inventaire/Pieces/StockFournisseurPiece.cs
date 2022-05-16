@@ -114,7 +114,7 @@ namespace bdd
             AchatPiece piece = new AchatPiece(label2.Text);
             piece.ShowDialog();
             Fill(label2.Text);
-            
+
         }
     }
 }

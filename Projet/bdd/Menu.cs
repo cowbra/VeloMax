@@ -55,5 +55,12 @@ namespace bdd
             this.Hide();
             commande.Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MenuStatistiques stats = new MenuStatistiques();
+            this.Hide();
+            stats.Show();
+        }
     }
 }

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 
 
 namespace bdd
@@ -41,7 +32,7 @@ namespace bdd
         {
 
         }
-         private void Actualiser()
+        private void Actualiser()
         {
             /// <summary>
             /// Méthode qui nous permet d'actualiser les commandes 
@@ -76,7 +67,7 @@ namespace bdd
 
         private void détailsDeLaCommandeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
             if (listView1.SelectedItems.Count > 0)
             {
                 ListViewItem element = listView1.SelectedItems[0];
@@ -87,17 +78,17 @@ namespace bdd
                 string PrixCommande = element.SubItems[4].Text;
                 string AdresseCommande = element.SubItems[3].Text;
 
-                string idObjet="";
-                string nbArticles="";
-                string dateLivraison="";
+                string idObjet = "";
+                string nbArticles = "";
+                string dateLivraison = "";
 
-                string infos = "ID COMMANDE : "+ idCommande+ "\n\nTYPE DE COMMANDE : " + typeCommande+ "\n\nDATE COMMANDE : " + dateCommande+ "\n\nCLIENT : " + IDCLIENTCommande;
+                string infos = "ID COMMANDE : " + idCommande + "\n\nTYPE DE COMMANDE : " + typeCommande + "\n\nDATE COMMANDE : " + dateCommande + "\n\nCLIENT : " + IDCLIENTCommande;
                 infos += "\n\nPRIX TOTAL : " + PrixCommande + "\n\nADRESSE DE LIVRAISON : " + AdresseCommande;
                 if (DATABASE.Connected)
                 {
                     if (typeCommande == "piece")
                     {
-                        string requeteSQL = "SELECT * FROM ACHAT_PIECE WHERE ID_Commande="+ idCommande;
+                        string requeteSQL = "SELECT * FROM ACHAT_PIECE WHERE ID_Commande=" + idCommande;
                         MySqlCommand mySqlCommand = new MySqlCommand(requeteSQL, DATABASE.MySqlConnection);
                         using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
                         {
@@ -201,6 +192,15 @@ namespace bdd
         private void MenuCommande_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string result = "MOYENNE DU MONTANT DES COMMANDES : ";
+            double somme = 0;
+            for (int i = 0; i < listView1.SelectedItems.Count; i++) somme += Convert.ToInt32(listView1.Items[i].SubItems[4].Text);
+            somme = somme / listView1.SelectedItems.Count;
+            result += somme.ToString();
         }
     }
 }

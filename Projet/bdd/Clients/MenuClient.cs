@@ -17,14 +17,24 @@ namespace bdd
 
         }
 
-        private void Actualiser(string requeteSQL = "SELECT * FROM CLIENT")
+        private void Actualiser()
         {
             /// <summary>
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
             /// 
-            if (checkBox1.Checked) requeteSQL = "SELECT * FROM CLIENT WHERE Type_Client = 'Particulier'";
-            else if (checkBox2.Checked) requeteSQL = "SELECT * FROM CLIENT WHERE Type_Client = 'Entreprise'";
+
+            string requeteSQL = "SELECT * FROM CLIENT";
+
+
+            if (checkBox4.Checked) requeteSQL += " natural join COMMANDE ";
+            if (checkBox1.Checked) requeteSQL += " WHERE Type_Client = 'Particulier'";
+            else if (checkBox2.Checked) requeteSQL += " WHERE Type_Client = 'Entreprise'";
+
+            if (checkBox4.Checked) requeteSQL += " group by ID_Client order by Prix_Commande";
+
+
+            MessageBox.Show(requeteSQL);
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
                 listView1.Items.Clear();
@@ -72,10 +82,6 @@ namespace bdd
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Actualiser();
-        }
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -103,7 +109,7 @@ namespace bdd
             if (checkBox1.Checked)
             {
                 checkBox2.Checked = false;
-                Actualiser("SELECT * FROM CLIENT WHERE Type_Client = 'Particulier'");
+                Actualiser();
             }
             else Actualiser();
         }
@@ -113,7 +119,7 @@ namespace bdd
             if (checkBox2.Checked)
             {
                 checkBox1.Checked = false;
-                Actualiser("SELECT * FROM CLIENT WHERE Type_Client = 'Entreprise'");
+                Actualiser();
             }
             else Actualiser();
         }
@@ -174,6 +180,20 @@ namespace bdd
                 }
 
             }
+        }
+
+
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked) checkBox4.Checked = false;
+            Actualiser();
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked) checkBox3.Checked = false;
+            Actualiser();
         }
     }
 }

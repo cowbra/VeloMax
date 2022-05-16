@@ -70,5 +70,8 @@
     <Compile Update="Inventaire\MenuGestion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Statistiques\MenuStatistiques.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

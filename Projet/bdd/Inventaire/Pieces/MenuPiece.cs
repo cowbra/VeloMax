@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 
 namespace bdd
 {
@@ -13,7 +12,7 @@ namespace bdd
             InitializeComponent();
             DATABASE.Connect();
             Actualiser();
-            
+
         }
 
         private void Actualiser()
@@ -24,7 +23,7 @@ namespace bdd
             /// 
             rouge.Clear();
             orange.Clear();
-            
+
 
             #region REQUETE
             string requeteSQL = "SELECT Identifiant_Piece, Description_Piece, DateDebut_Piece, DateFin_Piece, SUM(Quantite_Fournisseur) AS Quantite_Total_Piece FROM PIECE NATURAL JOIN FOURNIT";
@@ -172,22 +171,22 @@ namespace bdd
                 }
                 listView1.Items[4].BackColor = Color.Red;
             }
-            for (int i =0;i<listView1.Items.Count;i++) listView1.Items[i].BackColor = Color.White;
-            
-            
+            for (int i = 0; i < listView1.Items.Count; i++) listView1.Items[i].BackColor = Color.White;
 
 
-            for (int i=0;i<listView1.Items.Count;i++)
+
+
+            for (int i = 0; i < listView1.Items.Count; i++)
             {
                 if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) == 0) rouge.Add(i);
-                else if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) <= 10 && Convert.ToInt32(listView1.Items[i].SubItems[4].Text)>0) orange.Add(i);
-                
+                else if (Convert.ToInt32(listView1.Items[i].SubItems[4].Text) <= 10 && Convert.ToInt32(listView1.Items[i].SubItems[4].Text) > 0) orange.Add(i);
+
 
 
             }
-            
 
-            foreach(int i in rouge) listView1.Items[i].BackColor = Color.OrangeRed;
+
+            foreach (int i in rouge) listView1.Items[i].BackColor = Color.OrangeRed;
             foreach (int i in orange) listView1.Items[i].BackColor = Color.Orange;
 
 
@@ -427,7 +426,7 @@ namespace bdd
                         double Prix = Convert.ToDouble(Lire["Prix_Fournisseur"].ToString());
                         int Quantite = Convert.ToInt32(Lire["Quantite_Fournisseur"].ToString());
                         int Delai = Convert.ToInt32(Lire["Delai_Fournisseur"].ToString());
-                        
+
                         SIRETS.Add(Siret);
                         PIECES.Add(Id);
                         NUM_CATALOGUE.Add(Num);
@@ -441,11 +440,9 @@ namespace bdd
 
                 foreach (Int64 siret in SIRETS)
                 {
-                    Fourni f = new Fourni(siret,PIECES[i], QUANTITES[i], DELAIS[i], PRIX[i], NUM_CATALOGUE[i]);
+                    Fourni f = new Fourni(siret, PIECES[i], QUANTITES[i], DELAIS[i], PRIX[i], NUM_CATALOGUE[i]);
                     System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(f.GetType());
                     x.Serialize(writer, f);
-
-
                 }
                 writer.Close();
                 MessageBox.Show("Fichier 'export.xml' exporté dans le dossier bin de la solution avec succès !");
