@@ -198,9 +198,9 @@ namespace bdd
         {
             string result = "MOYENNE DU MONTANT DES COMMANDES : ";
             double somme = 0;
-            for(int i = 0; i < listView1.SelectedItems.Count; i++) somme += Convert.ToInt32(listView1.Items[i].SubItems[4].Text);
+            for (int i = 0; i < listView1.SelectedItems.Count; i++) somme += Convert.ToInt32(listView1.Items[i].SubItems[4].Text);
             somme = somme / listView1.SelectedItems.Count;
-            result+=somme.ToString();
+            result += somme.ToString();
         }
     }
 }

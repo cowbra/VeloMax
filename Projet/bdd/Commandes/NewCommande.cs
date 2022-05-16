@@ -820,7 +820,7 @@ namespace bdd
 
                                     ///CALCUL REDUCTION EN FONCTION DE LA REMISE COMPAGNIE
                                     double reduction_Compagnie = 0;
-                                    
+
                                     string sql2 = "select coalesce(RemiseCompagnie_Client, 0) as RemiseCompagnie_Client from CLIENT where ID_Client=@id";
                                     MySqlCommand mySqlCommand2 = new MySqlCommand(sql2, DATABASE.MySqlConnection);
                                     mySqlCommand2.Parameters.AddWithValue("@id", idClient);
@@ -829,7 +829,7 @@ namespace bdd
                                         {
                                             reduction_Compagnie += Convert.ToDouble(Lire["RemiseCompagnie_Client"].ToString());
                                         }
-                                    
+
                                     ///CALCUL REDUCTION EN FONCTION DU FIDELIO
                                     sql2 = "select coalesce(Rabais_Fidelio, 0) as Rabais_Fidelio from FIDELIO,CLIENT where FIDELIO.NumProgramme_Fidelio=CLIENT.NumProgramme_Fidelio AND ID_Client=@id";
                                     MySqlCommand mySqlCommand3 = new MySqlCommand(sql2, DATABASE.MySqlConnection);
@@ -844,7 +844,7 @@ namespace bdd
 
 
 
-                                    if (commande.UpdatePrixTotal(idCommande, prix- reduction_Compagnie, quantiteCommandee))
+                                    if (commande.UpdatePrixTotal(idCommande, prix - reduction_Compagnie, quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
@@ -953,7 +953,7 @@ namespace bdd
 
 
 
-                                    if (commande.UpdatePrixTotal(idCommande, prix- reduction_Compagnie, quantiteCommandee))
+                                    if (commande.UpdatePrixTotal(idCommande, prix - reduction_Compagnie, quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");

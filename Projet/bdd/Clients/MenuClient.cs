@@ -26,12 +26,12 @@ namespace bdd
 
             string requeteSQL = "SELECT * FROM CLIENT";
 
-            
-            if(checkBox4.Checked) requeteSQL += " natural join COMMANDE ";
+
+            if (checkBox4.Checked) requeteSQL += " natural join COMMANDE ";
             if (checkBox1.Checked) requeteSQL += " WHERE Type_Client = 'Particulier'";
             else if (checkBox2.Checked) requeteSQL += " WHERE Type_Client = 'Entreprise'";
 
-            if(checkBox4.Checked) requeteSQL += " group by ID_Client order by Prix_Commande";
+            if (checkBox4.Checked) requeteSQL += " group by ID_Client order by Prix_Commande";
 
 
             MessageBox.Show(requeteSQL);
