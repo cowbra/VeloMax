@@ -763,9 +763,11 @@ namespace bdd
             {
                 int idClient = Convert.ToInt32(comboBox1.SelectedItem.ToString());
                 int quantiteCommandee = Convert.ToInt32(textBox1.Text);
+                string type = "piece";
+                if (radioButton2.Checked) type = "bicyclette";
 
                 //Creation de la commande
-                Commande commande = new Commande(idClient, adresse);
+                Commande commande = new Commande(idClient, adresse, type);
                 if (!DATABASE.Connected) DATABASE.Connect();
                 if (DATABASE.Connected)
                 {
@@ -818,8 +820,6 @@ namespace bdd
 
                                     if (commande.UpdatePrixTotal(idCommande, prix, quantiteCommandee))
                                     {
-                                        MessageBox.Show("prix :" + prix.ToString());
-                                        MessageBox.Show("quantite :" + quantiteCommandee.ToString());
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
                                         this.Close();

@@ -1,16 +1,18 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
+
 
 namespace bdd
 {
-    internal class Fourni
+    public class Fourni
     {
         #region Attributs
-        protected Int64 siret;
-        protected string idPiece;
-        protected int quantite;
-        protected int delai;
-        protected double prix;
-        protected int numFournisseur;
+        public Int64 siret;
+        public string idPiece;
+        public int quantite;
+        public int delai;
+        public double prix;
+        public int numFournisseur;
 
         #endregion
 
@@ -25,7 +27,15 @@ namespace bdd
             this.numFournisseur = numFournisseur;
 
         }
-
+        private Fourni()
+        {
+            this.siret = 0;
+            this.idPiece = "null";
+            this.prix = 0;
+            this.numFournisseur = 0;
+            this.quantite=0;
+            this.delai = 0;
+        }
         public bool AddToBdd()
         {
             BDD DATABASE = new BDD();
