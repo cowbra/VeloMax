@@ -108,5 +108,13 @@ namespace bdd
 
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AchatPiece piece = new AchatPiece(label2.Text);
+            piece.ShowDialog();
+            Fill(label2.Text);
+            
+        }
     }
 }

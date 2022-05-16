@@ -40,7 +40,6 @@
             this.stocksFournisseursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -64,6 +63,9 @@
             this.checkBox23 = new System.Windows.Forms.CheckBox();
             this.checkBox24 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,6 +84,7 @@
             // listView1
             // 
             this.listView1.Activation = System.Windows.Forms.ItemActivation.TwoClick;
+            this.listView1.BackColor = System.Drawing.Color.White;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
@@ -93,7 +96,7 @@
             this.listView1.Location = new System.Drawing.Point(12, 98);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(653, 425);
+            this.listView1.Size = new System.Drawing.Size(653, 372);
             this.listView1.TabIndex = 7;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -154,16 +157,6 @@
             this.supprimerToolStripMenuItem.Text = "Supprimer";
             this.supprimerToolStripMenuItem.Click += new System.EventHandler(this.supprimerToolStripMenuItem_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(12, 60);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 32);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Actualiser";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -178,10 +171,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(384, 19);
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(373, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 21);
+            this.label1.Size = new System.Drawing.Size(260, 24);
             this.label1.TabIndex = 9;
             this.label1.Text = "Menu de gestion des Pièces";
             // 
@@ -436,14 +429,49 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Sitka Small", 10.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Sitka Small", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label4.Location = new System.Drawing.Point(170, 65);
+            this.label4.Location = new System.Drawing.Point(12, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(847, 20);
+            this.label4.Size = new System.Drawing.Size(971, 24);
             this.label4.TabIndex = 14;
             this.label4.Text = "Faites un clic droit sur l\'ID d\'une pièce afin de Modifier, Supprimer ou voir les" +
     " Stocks fournisseur de la pièce sélectionnée";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(40, 476);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(398, 40);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Pièces dont la quantité totale est inférieure ou égale à 5\r\nPièces dont le stock " +
+    "est nulle";
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Red;
+            this.button4.Enabled = false;
+            this.button4.ForeColor = System.Drawing.Color.Red;
+            this.button4.Location = new System.Drawing.Point(12, 497);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(22, 22);
+            this.button4.TabIndex = 20;
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button3.Enabled = false;
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button3.Location = new System.Drawing.Point(12, 476);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(22, 22);
+            this.button3.TabIndex = 19;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // MenuPiece
             // 
@@ -452,12 +480,14 @@
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.ClientSize = new System.Drawing.Size(1054, 596);
             this.ControlBox = false;
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "MenuPiece";
@@ -485,7 +515,6 @@
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem modifierToolStripMenuItem;
         private ToolStripMenuItem supprimerToolStripMenuItem;
-        private Button button3;
         private Button button2;
         private Label label1;
         private GroupBox groupBox1;
@@ -510,5 +539,8 @@
         private Label label3;
         private ToolStripMenuItem stocksFournisseursToolStripMenuItem;
         private Label label4;
+        private Label label5;
+        private Button button4;
+        private Button button3;
     }
 }
