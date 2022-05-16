@@ -15,18 +15,18 @@ namespace bdd
         protected string adresse;
         protected string date;
         protected double prix_total;
+        protected string type;
 
         #endregion
 
-        public Commande(int idCLient, string adresse)
+        public Commande(int idCLient, string adresse, string type)
         {
             this.idClient = idCLient;
             this.adresse = adresse;
 
             string[] subsDate = DateTime.Today.ToString("d").Split('/');
             this.date = subsDate[2] + "-" + subsDate[1] + "-" + subsDate[0];
-
-
+            this.type = type;
         }
 
         public bool AddToBdd()
@@ -35,11 +35,12 @@ namespace bdd
             DATABASE.Connect();
             if (DATABASE.Connected == true)
             {
-                MySqlCommand requete = new MySqlCommand("INSERT INTO COMMANDE(Date_Commande,AdresseLivraison_Commande,ID_Client,Prix_Commande) VALUES(@date,@adresse,@id,@prix)", DATABASE.MySqlConnection);
+                MySqlCommand requete = new MySqlCommand("INSERT INTO COMMANDE(Date_Commande,AdresseLivraison_Commande,ID_Client,Prix_Commande,Type_Commande) VALUES(@date,@adresse,@id,@prix,@type)", DATABASE.MySqlConnection);
                 requete.Parameters.AddWithValue("@id", this.idClient);
                 requete.Parameters.AddWithValue("@adresse", this.adresse);
                 requete.Parameters.AddWithValue("@date", this.date);
                 requete.Parameters.AddWithValue("@prix", this.prix_total);
+                requete.Parameters.AddWithValue("@type", this.type);
 
                 requete.ExecuteNonQuery();
                 requete.Parameters.Clear();

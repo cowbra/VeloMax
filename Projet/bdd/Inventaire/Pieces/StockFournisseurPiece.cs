@@ -26,7 +26,7 @@ namespace bdd
 
         private void Fill(string id)
         {
-            string requeteSQL = "SELECT Siret_Fournisseur,Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur FROM FOURNIT WHERE Identifiant_Piece ='" + id + "'";
+            string requeteSQL = "SELECT Siret_Fournisseur,Nom_Fournisseur,NumProduit_Fournisseur,Prix_Fournisseur,Quantite_Fournisseur,Delai_Fournisseur FROM FOURNIT WHERE Identifiant_Piece ='" + id + "' ORDER BY Quantite_Fournisseur";
 
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
@@ -107,6 +107,14 @@ namespace bdd
                 }
 
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AchatPiece piece = new AchatPiece(label2.Text);
+            piece.ShowDialog();
+            Fill(label2.Text);
+            
         }
     }
 }

@@ -114,11 +114,13 @@ namespace bdd
 
         }
 
-        private void Actualiser(string requeteSQL = "SELECT * FROM FOURNISSEUR")
+        private void Actualiser()
         {
             /// <summary>
             /// Méthode qui nous permet d'actualiser les fournisseurs 
             /// </summary>
+            /// 
+            string requeteSQL = "SELECT * FROM FOURNISSEUR ORDER BY Libelle_Fournisseur";
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
                 listView1.Items.Clear();
@@ -138,10 +140,7 @@ namespace bdd
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Actualiser();
-        }
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {

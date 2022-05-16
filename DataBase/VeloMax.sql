@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : jeu. 12 mai 2022 à 14:06
+-- Généré le : lun. 09 mai 2022 à 20:14
 -- Version du serveur :  10.5.15-MariaDB-0+deb11u1
 -- Version de PHP : 7.4.28
 
@@ -17,20 +17,31 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+
 --
 -- Base de données : `VeloMax`
 --
 
 -- --------------------------------------------------------
 
+
+CREATE DATABASE IF NOT EXISTS`VeloMax`;
+USE `VeloMax`;
+
+
+--
+-- Creation user lecture sur  : `VeloMax`
+--
+
+-- --------------------------------------------------------
+CREATE USER IF NOT EXISTS 'bozo'@'%' IDENTIFIED BY 'bozo';
+GRANT SELECT ON `VeloMax`.* TO 'bozo'@'%' IDENTIFIED BY 'bozo';
+
+
+
 --
 -- Structure de la table `ACHAT_BICYCLETTE`
 --
-
-CREATE DATABASE IF NOT EXISTS VeloMax;
-USE VeloMax;
-
-
 CREATE TABLE `ACHAT_BICYCLETTE` (
   `ID_Commande` int(30) NOT NULL,
   `ID_Bicyclette` int(30) NOT NULL,
@@ -314,7 +325,8 @@ CREATE TABLE `COMMANDE` (
   `Date_Commande` date NOT NULL,
   `AdresseLivraison_Commande` varchar(255) NOT NULL,
   `ID_Client` int(30) NOT NULL,
-  `Prix_Commande` double DEFAULT NULL
+  `Prix_Commande` double DEFAULT NULL,
+  `Type_Commande` enum('piece','bicyclette') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
