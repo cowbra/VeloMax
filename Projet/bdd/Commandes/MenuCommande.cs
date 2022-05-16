@@ -19,14 +19,14 @@ namespace bdd
         {
             InitializeComponent();
             DATABASE.Connect();
-            //Actualiser();
+            Actualiser();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             NewCommande commande = new NewCommande();
             commande.ShowDialog();
-            //Actualiser();
+            Actualiser();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -35,6 +35,37 @@ namespace bdd
             DATABASE.Disconnect();
             this.Close();
             menu.Show();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+         private void Actualiser()
+        {
+            /// <summary>
+            /// Méthode qui nous permet d'actualiser les commandes 
+            /// </summary>
+            /// 
+
+            string requeteSQL = "SELECT * FROM COMMANDE";
+            if (DATABASE.Connected)// on verifie que la connexion est bien effective
+            {
+                listView1.Items.Clear();
+                MySqlCommand mySqlCommand = new MySqlCommand(requeteSQL, DATABASE.MySqlConnection);
+                using (MySqlDataReader Lire = mySqlCommand.ExecuteReader())
+                {
+                    while (Lire.Read())
+                    {
+                        string Id = Lire["ID_Commande"].ToString();
+                        string Date = Lire["Date_Commande"].ToString();
+                        string Adresse = Lire["AdresseLivraison_Commande"].ToString();
+                        string IdClient = Lire["ID_Client"].ToString();
+                        string Prix = Lire["Prix_Commande"].ToString();
+                        listView1.Items.Add(new ListViewItem(new[] { Id, IdClient, Date, Adresse, Prix }));
+                    }
+                }
+            }
         }
     }
 }
