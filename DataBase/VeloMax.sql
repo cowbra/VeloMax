@@ -43,6 +43,7 @@ GRANT SELECT ON `VeloMax`.* TO 'bozo'@'%' IDENTIFIED BY 'bozo';
 -- Structure de la table `ACHAT_BICYCLETTE`
 --
 
+
 CREATE TABLE `ACHAT_BICYCLETTE` (
   `ID_Commande` int(30) NOT NULL,
   `ID_Bicyclette` int(30) NOT NULL,
@@ -150,7 +151,8 @@ CREATE TABLE `COMMANDE` (
   `ID_Commande` int(30) NOT NULL,
   `Date_Commande` date NOT NULL,
   `AdresseLivraison_Commande` varchar(255) NOT NULL,
-  `ID_Client` int(30) NOT NULL
+  `ID_Client` int(30) NOT NULL,
+  `Prix_Commande` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -238,7 +240,7 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (64126254620004, 'C87F', 'roadsport', 481, 72, 4, 70),
 (64189454720036, 'C25', '2roues', 31, 154.12, 12, 20),
 (64189454720036, 'C26', '2roues', 56466, 75.4, 8, 12),
-(43282695524021, 'C01', 'Bikeshop', 27, 95, 3, 20),
+(43282695524021, 'C01', 'Bikeshop', 27, 95, 2, 20),
 (43282695524021, 'G7', 'Bikeshop', 143, 20, 15, 30),
 (27589698100017, 'G9', 'Bikebuy', 547, 25, 20, 40),
 (64189454720036, 'G12', '2roues', 869, 30, 10, 28),
@@ -265,7 +267,7 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (43282695524021, 'DR23', 'Bikeshop', 24021, 28, 15, 20),
 (64126254620004, 'DR76', 'roadsport', 67614, 45, 4, 20),
 (64189454720036, 'DR52', '2roues', 572, 37.8, 7, 15),
-(27589698100017, 'C01', 'Bikebuy', 47, 10, 4, 5),
+(27589698100017, 'C01', 'Bikebuy', 47, 10, 0, 5),
 (27382698187536, 'R45', 'PiecesFabrique', 14, 12, 5, 10),
 (27589698100017, 'R48', 'Bikebuy', 45516, 20, 10, 20),
 (43282695524021, 'R19', 'Bikeshop', 9845, 14.35, 4, 10),
@@ -291,16 +293,16 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (64126254620004, 'R18', 'roadsport', 5625, 45, 3, 7),
 (64189454720036, 'R2', '2roues', 778, 22, 4, 12),
 (67822698100036, 'R12', 'VeloFabrik', 542, 28.9, 2, 7),
-(27382698187536, 'C01', 'PiecesFabrique', 123, 389.99, 5, 8),
-(39982698100017, 'C01', 'BricoVelo', 5, 599.99, 14, 4),
-(67822698100036, 'C01', 'VeloFabrik', 85, 700.01, 11, 9),
+(27382698187536, 'C01', 'PiecesFabrique', 123, 389.99, 0, 8),
+(39982698100017, 'C01', 'BricoVelo', 5, 599.99, 2, 4),
+(67822698100036, 'C01', 'VeloFabrik', 85, 700.01, 1, 9),
 (67822698100036, 'C02', 'VeloFabrik', 78, 495.99, 14, 20),
 (39982698100017, 'C02', 'BricoVelo', 95, 567.89, 7, 14),
 (67822698100036, 'C15', 'VeloFabrik', 141, 989.7, 3, 4),
 (39982698100017, 'C15', 'BricoVelo', 13, 666.67, 6, 11),
 (87551075487408, 'C15', 'roadtogo', 1, 300, 21, 6),
 (87551075487408, 'C25', 'roadtogo', 65, 171.5, 15, 6),
-(64126254620004, 'C25', 'roadsport', 6459, 199, 28, 29),
+(64126254620004, 'C25', 'roadsport', 6459, 199, 26, 29),
 (43282695524021, 'C26', 'Bikeshop', 752, 187, 19, 8),
 (27382698187536, 'C26', 'PiecesFabrique', 71, 189.5, 7, 24),
 (87551075487408, 'C32', 'roadtogo', 91265, 113.7, 8, 9),
@@ -619,7 +621,7 @@ ALTER TABLE `CLIENT`
 -- AUTO_INCREMENT pour la table `COMMANDE`
 --
 ALTER TABLE `COMMANDE`
-  MODIFY `ID_Commande` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Commande` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `FIDELIO`
