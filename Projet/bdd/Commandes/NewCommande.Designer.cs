@@ -629,13 +629,13 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.Indigo;
-            this.label8.Location = new System.Drawing.Point(12, 76);
+            this.label8.Location = new System.Drawing.Point(18, 66);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(1161, 20);
+            this.label8.Size = new System.Drawing.Size(920, 40);
             this.label8.TabIndex = 25;
             this.label8.Text = "Le délai de livraison pour les produits en stock est de 7 jours environ. S\'il fau" +
-    "t commander de nouvelles pièces auprès des fournisseurs, le délai de livraison s" +
-    "era mis à jour";
+    "t commander de nouvelles pièces auprès des fournisseurs,\r\n le délai de livraison" +
+    " sera mis à jour";
             // 
             // button2
             // 

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>bdd</id>
+    <version>1.0.0</version>
+    <authors>bdd</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0">
+        <dependency id="Microsoft.Extensions.Configuration.UserSecrets" version="5.0.0" exclude="Build,Analyzers" />
+        <dependency id="MySql.Data" version="8.0.29" exclude="Build,Analyzers" />
+        <dependency id="Renci.SshNet.Async" version="1.4.0" exclude="Build,Analyzers" />
+        <dependency id="SSH.NET" version="2020.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+    <contentFiles>
+      <files include="any/net6.0-windows7.0/Ressources/velomax.ico" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\bdd.runtimeconfig.json" target="lib\net6.0-windows7.0\bdd.runtimeconfig.json" />
+    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\bdd.dll" target="lib\net6.0-windows7.0\bdd.dll" />
+    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\Ressources\velomax.ico" target="content\Ressources\velomax.ico" />
+    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\Ressources\velomax.ico" target="contentFiles\any\net6.0-windows7.0\Ressources\velomax.ico" />
+  </files>
+</package>
