@@ -8,6 +8,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>8a00c2d7-537e-40d6-9da7-2e064dc49ba4</UserSecretsId>
     <ApplicationIcon>Ressources\velomax.ico</ApplicationIcon>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

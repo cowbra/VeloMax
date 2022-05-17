@@ -86,11 +86,11 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "ID";
-            this.columnHeader1.Width = 50;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Type";
+            this.columnHeader2.Width = 80;
             // 
             // columnHeader3
             // 
@@ -105,15 +105,17 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Adresse";
-            this.columnHeader5.Width = 120;
+            this.columnHeader5.Width = 150;
             // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Nom";
+            this.columnHeader6.Width = 80;
             // 
             // columnHeader7
             // 
             this.columnHeader7.Text = "Prenom";
+            this.columnHeader7.Width = 80;
             // 
             // columnHeader8
             // 
@@ -122,12 +124,12 @@
             // columnHeader9
             // 
             this.columnHeader9.Text = "Compagnie";
-            this.columnHeader9.Width = 80;
+            this.columnHeader9.Width = 120;
             // 
             // columnHeader10
             // 
             this.columnHeader10.Text = "Remise Compagnie";
-            this.columnHeader10.Width = 70;
+            this.columnHeader10.Width = 120;
             // 
             // contextMenuStrip1
             // 
