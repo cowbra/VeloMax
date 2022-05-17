@@ -53,8 +53,9 @@ namespace bdd
                         string Adresse = Lire["AdresseLivraison_Commande"].ToString();
                         string IdClient = Lire["ID_Client"].ToString();
                         string Prix = Lire["Prix_Commande"].ToString();
+                        string Quantite = Lire["NB_articles_Commande"].ToString();
                         string Tipe = Lire["Type_Commande"].ToString();
-                        listView1.Items.Add(new ListViewItem(new[] { Id, IdClient, Date, Adresse, Prix, Tipe }));
+                        listView1.Items.Add(new ListViewItem(new[] { Id, IdClient, Date, Adresse, Prix, Quantite, Tipe }));
                     }
                 }
             }
@@ -72,14 +73,14 @@ namespace bdd
             {
                 ListViewItem element = listView1.SelectedItems[0];
                 string idCommande = element.SubItems[0].Text;
-                string typeCommande = element.SubItems[5].Text;
+                string typeCommande = element.SubItems[6].Text;
                 string dateCommande = element.SubItems[2].Text;
                 string IDCLIENTCommande = element.SubItems[1].Text;
                 string PrixCommande = element.SubItems[4].Text;
                 string AdresseCommande = element.SubItems[3].Text;
+                string nbArticles = element.SubItems[5].Text;
 
                 string idObjet = "";
-                string nbArticles = "";
                 string dateLivraison = "";
 
                 string infos = "ID COMMANDE : " + idCommande + "\n\nTYPE DE COMMANDE : " + typeCommande + "\n\nDATE COMMANDE : " + dateCommande + "\n\nCLIENT : " + IDCLIENTCommande;
@@ -95,7 +96,6 @@ namespace bdd
                             while (Lire.Read())
                             {
                                 idObjet = Lire["Identifiant_Piece"].ToString();
-                                nbArticles = Lire["NombreArticles"].ToString();
                                 dateLivraison = Lire["DateLivraison"].ToString();
                             }
                         }
@@ -109,7 +109,6 @@ namespace bdd
                             while (Lire.Read())
                             {
                                 idObjet = Lire["ID_Bicyclette"].ToString();
-                                nbArticles = Lire["NombreArticles"].ToString();
                                 dateLivraison = Lire["DateLivraison"].ToString();
                             }
                         }
@@ -197,10 +196,19 @@ namespace bdd
         private void button3_Click(object sender, EventArgs e)
         {
             string result = "MOYENNE DU MONTANT DES COMMANDES : ";
-            double somme = 0;
-            for (int i = 0; i < listView1.SelectedItems.Count; i++) somme += Convert.ToInt32(listView1.Items[i].SubItems[4].Text);
-            somme = somme / listView1.SelectedItems.Count;
-            result += somme.ToString();
+            double moyennePrix = 0;
+            double moyenneQuantite = 0;
+            for (int i = 0; i < listView1.Items.Count; i++)
+            {
+                moyennePrix += Convert.ToDouble(listView1.Items[i].SubItems[4].Text);
+                moyenneQuantite += Convert.ToDouble(listView1.Items[i].SubItems[5].Text);
+
+            }
+            
+            moyennePrix = Math.Round(moyennePrix / listView1.Items.Count, 2);
+            moyenneQuantite = Math.Round(moyenneQuantite / listView1.Items.Count);
+            result += moyennePrix.ToString()+"\n\nMOYENNE DU NOMBRE D'ARTICLES PAR COMMANDE : "+ moyenneQuantite.ToString();
+            MessageBox.Show(result);
         }
     }
 }

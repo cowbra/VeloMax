@@ -39,6 +39,7 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.détailsDeLaCommandeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button2.Location = new System.Drawing.Point(553, 447);
+            this.button2.Location = new System.Drawing.Point(645, 448);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(175, 45);
             this.button2.TabIndex = 8;
@@ -79,7 +80,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(711, 295);
+            this.groupBox1.Size = new System.Drawing.Size(814, 295);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Commandes :";
@@ -92,6 +93,7 @@
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
+            this.columnHeader7,
             this.columnHeader6});
             this.listView1.ContextMenuStrip = this.contextMenuStrip1;
             this.listView1.FullRowSelect = true;
@@ -99,7 +101,7 @@
             this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(700, 270);
+            this.listView1.Size = new System.Drawing.Size(803, 270);
             this.listView1.TabIndex = 10;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -133,6 +135,11 @@
             // 
             this.columnHeader6.Text = "Type";
             this.columnHeader6.Width = 100;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "quantité";
+            this.columnHeader7.Width = 120;
             // 
             // contextMenuStrip1
             // 
@@ -201,7 +208,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.ClientSize = new System.Drawing.Size(735, 504);
+            this.ClientSize = new System.Drawing.Size(853, 504);
             this.ControlBox = false;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
@@ -238,5 +245,6 @@
         private Label label1;
         private Label label2;
         private Button button3;
+        private ColumnHeader columnHeader7;
     }
 }
