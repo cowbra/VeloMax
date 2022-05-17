@@ -116,7 +116,7 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "ID PIECE";
+            this.columnHeader3.Text = "ID BICYCLETTE";
             this.columnHeader3.Width = 100;
             // 
             // columnHeader4

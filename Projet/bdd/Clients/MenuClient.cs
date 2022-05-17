@@ -34,7 +34,7 @@ namespace bdd
             if (checkBox4.Checked) requeteSQL += " group by ID_Client order by Prix_Commande";
 
 
-            MessageBox.Show(requeteSQL);
+            //wMessageBox.Show(requeteSQL);
             if (DATABASE.Connected)// on verifie que la connexion est bien effective
             {
                 listView1.Items.Clear();
