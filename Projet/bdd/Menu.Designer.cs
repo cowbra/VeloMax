@@ -98,9 +98,9 @@
             // 
             this.pictureBox1.BackgroundImage = global::bdd.Properties.Resources.velomax;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(197, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(188, 22);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(397, 386);
+            this.pictureBox1.Size = new System.Drawing.Size(406, 386);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
