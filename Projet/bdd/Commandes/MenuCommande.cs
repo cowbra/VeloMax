@@ -204,10 +204,10 @@ namespace bdd
                 moyenneQuantite += Convert.ToDouble(listView1.Items[i].SubItems[5].Text);
 
             }
-            
+
             moyennePrix = Math.Round(moyennePrix / listView1.Items.Count, 2);
             moyenneQuantite = Math.Round(moyenneQuantite / listView1.Items.Count);
-            result += moyennePrix.ToString()+"\n\nMOYENNE DU NOMBRE D'ARTICLES PAR COMMANDE : "+ moyenneQuantite.ToString();
+            result += moyennePrix.ToString() + "\n\nMOYENNE DU NOMBRE D'ARTICLES PAR COMMANDE : " + moyenneQuantite.ToString();
             MessageBox.Show(result);
         }
     }

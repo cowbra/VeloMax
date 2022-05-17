@@ -30,8 +30,8 @@ namespace bdd
 
         private void Fill()
         {
-            string req1 = "select Identifiant_Piece,sum(NombreArticles) AS Quantite_vendue from ACHAT_PIECE group by Identifiant_Piece";
-            string req2 = "select ID_Bicyclette,sum(NombreArticles) AS Quantite_vendue from ACHAT_BICYCLETTE group by ID_Bicyclette";
+            string req1 = "SELECT Identifiant_Piece, SUM(NB_articles_Commande) as Quantite_vendue FROM ACHAT_PIECE NATURAL JOIN COMMANDE WHERE Type_Commande = 'piece' GROUP BY Identifiant_Piece order by Quantite_vendue DESC";
+            string req2 = "SELECT ID_Bicyclette, SUM(NB_articles_Commande) as Quantite_vendue FROM ACHAT_BICYCLETTE NATURAL JOIN COMMANDE WHERE Type_Commande = 'bicyclette' GROUP BY ID_Bicyclette order by Quantite_vendue desc";
             string req3 = "select ID_Client,NumProgramme_Fidelio,DateFin_Fidelio from CLIENT where NumProgramme_Fidelio is not null ORDER by NumProgramme_Fidelio";
 
             listView1.Items.Clear();

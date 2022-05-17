@@ -32,7 +32,14 @@ namespace bdd
             else if (checkBox2.Checked) requeteSQL += " WHERE Type_Client = 'Entreprise'";
 
             if (checkBox4.Checked) requeteSQL += " group by ID_Client order by Prix_Commande";
+            else if (checkBox3.Checked)
+            {
+                requeteSQL = "SELECT ID_Client, Type_Client, Tel_Client, Courriel_Client, Adresse_Client, Nom_Client, Prenom_Client, NomCompagnie_Client, RemiseCompagnie_Client, NumProgramme_Fidelio, DateDebut_Fidelio, DateFin_Fidelio, SUM(NB_articles_Commande) FROM CLIENT NATURAL JOIN COMMANDE";
 
+                if (checkBox1.Checked) requeteSQL += " WHERE Type_Client = 'Particulier'";
+                else if (checkBox2.Checked) requeteSQL += " WHERE Type_Client = 'Entreprise'";
+                requeteSQL += "  GROUP BY ID_Client ORDER BY SUM(NB_articles_Commande) DESC";
+            }
 
             //wMessageBox.Show(requeteSQL);
             if (DATABASE.Connected)// on verifie que la connexion est bien effective

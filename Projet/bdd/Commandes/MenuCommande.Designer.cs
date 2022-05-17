@@ -38,8 +38,8 @@
             this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
-            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader7 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.détailsDeLaCommandeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modifierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,32 +114,32 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "ID CLIENT";
-            this.columnHeader2.Width = 100;
+            this.columnHeader2.Width = 90;
             // 
             // columnHeader3
             // 
             this.columnHeader3.Text = "Date Commande";
-            this.columnHeader3.Width = 150;
+            this.columnHeader3.Width = 140;
             // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Adresse de Livraison";
-            this.columnHeader4.Width = 180;
+            this.columnHeader4.Width = 170;
             // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "Prix";
             this.columnHeader5.Width = 80;
             // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "NB d\'articles achetés";
+            this.columnHeader7.Width = 150;
+            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Type";
             this.columnHeader6.Width = 100;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "quantité";
-            this.columnHeader7.Width = 120;
             // 
             // contextMenuStrip1
             // 

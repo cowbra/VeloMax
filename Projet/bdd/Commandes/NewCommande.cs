@@ -844,7 +844,7 @@ namespace bdd
 
 
 
-                                    if (commande.UpdatePrixTotal(idCommande, Math.Round(prix - reduction_Compagnie,2), quantiteCommandee))
+                                    if (commande.UpdatePrixTotal(idCommande, Math.Round(prix - reduction_Compagnie, 2), quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
@@ -953,7 +953,7 @@ namespace bdd
 
 
 
-                                    if (commande.UpdatePrixTotal(idCommande, Math.Round(prix - reduction_Compagnie,2), quantiteCommandee))
+                                    if (commande.UpdatePrixTotal(idCommande, Math.Round(prix - reduction_Compagnie, 2), quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");

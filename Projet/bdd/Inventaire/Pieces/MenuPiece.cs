@@ -169,7 +169,6 @@ namespace bdd
                         listView1.Items.Add(new ListViewItem(new[] { id, type, date1, date2, quantity }));
                     }
                 }
-                listView1.Items[4].BackColor = Color.Red;
             }
             for (int i = 0; i < listView1.Items.Count; i++) listView1.Items[i].BackColor = Color.White;
 
