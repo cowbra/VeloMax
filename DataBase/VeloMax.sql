@@ -77,7 +77,8 @@ INSERT INTO `ACHAT_PIECE` (`ID_Commande`, `Identifiant_Piece`, `DateLivraison`) 
 (5, 'C43F', '2022-05-24'),
 (6, 'O2', '2022-05-24'),
 (7, 'R2', '2022-05-24'),
-(8, 'F9', '2022-06-13');
+(8, 'F9', '2022-06-13'),
+(11, 'C01', '2022-05-24');
 
 -- --------------------------------------------------------
 
@@ -312,7 +313,8 @@ INSERT INTO `CLIENT` (`ID_Client`, `Type_Client`, `Tel_Client`, `Courriel_Client
 (3, 'Entreprise', '0147855472', 'Dekatlon@free.fr', '108, rue de rhodes\r\n34000 Montpellier', 'Ben', NULL, 'Dekatlon', 0.1, NULL, NULL, NULL),
 (4, 'Entreprise', '0346580184', '1tersport@gmail.com', '14, rue de joncquilles\r\n34000 Lille', 'Philippe', NULL, '1tersp0rt', 0.15, NULL, NULL, NULL),
 (5, 'Entreprise', '0784949901', 'g0sp0rt@gmail.com', '4, rue Carnot \r\n34000 Paris', 'Emmanuel', NULL, 'g0sp0rt', 0.12, NULL, NULL, NULL),
-(6, 'Particulier', '0978440144', 'pierre@test.fr', '7 rue de l eglise\r\n13003 Cambray', 'Thalis', 'Pierre', NULL, NULL, 1, '2022-01-03', '2023-01-03');
+(6, 'Particulier', '0978440144', 'pierre@test.fr', '7 rue de l eglise\r\n13003 Cambray', 'Thalis', 'Pierre', NULL, NULL, 1, '2022-01-03', '2023-01-03'),
+(7, 'Particulier', '0123498490', 'abcd.ef@ghij.com', '45 rue du temple 85400 bonneville', 'Tadjer', 'Guillaume', NULL, NULL, 3, '2022-02-09', '2024-02-09');
 
 --
 -- Déclencheurs `CLIENT`
@@ -357,7 +359,8 @@ INSERT INTO `COMMANDE` (`ID_Commande`, `Date_Commande`, `AdresseLivraison_Comman
 (7, '2022-05-17', 'Chantilly', 3, 1030.95, 45, 'piece'),
 (8, '2022-05-17', 'Apremont', 1, 10962.5, 250, 'piece'),
 (9, '2022-05-17', 'Caen', 5, 698.76, 2, 'bicyclette'),
-(10, '2022-05-17', 'Gouvieux', 4, 2275.4, 4, 'bicyclette');
+(10, '2022-05-17', 'Gouvieux', 4, 2275.4, 4, 'bicyclette'),
+(11, '2022-05-17', '7 Rue Paul Robert, 75008 Paris', 5, 599.87, 1, 'piece');
 
 -- --------------------------------------------------------
 
@@ -409,7 +412,7 @@ INSERT INTO `FOURNISSEUR` (`Siret_Fournisseur`, `NomEntreprise_Fournisseur`, `Co
 (64126254620004, 'roadsport', 'roadsport@gmail.com', '6 rue St Louis, Paris', '2'),
 (64189454720036, '2roues', '2roues@gmail.com', '45 rue du temple, Nogent', '2'),
 (67822698100036, 'VeloFabrik', 'velofabrik@gmail.com', '4 rue Carnot, Lille', '3'),
-(87551075487408, 'roadtogo', 'roadtogo@gmail.com', '2 avenue de la piscine, Caen', '4');
+(87551075487408, 'roadtogo', 'roadtogo@gmail.com', '2 avenue de la piscine, Caen', '3');
 
 -- --------------------------------------------------------
 
@@ -498,7 +501,7 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (64189454720036, 'R2', '2roues', 778, 22, 4, 12),
 (67822698100036, 'R12', 'VeloFabrik', 542, 28.9, 2, 7),
 (27382698187536, 'C01', 'PiecesFabrique', 123, 389.99, 5, 8),
-(39982698100017, 'C01', 'BricoVelo', 5, 599.99, 14, 4),
+(39982698100017, 'C01', 'BricoVelo', 5, 599.99, 13, 4),
 (67822698100036, 'C01', 'VeloFabrik', 85, 700.01, 11, 9),
 (67822698100036, 'C02', 'VeloFabrik', 78, 495.99, 14, 20),
 (39982698100017, 'C02', 'BricoVelo', 95, 567.89, 7, 14),
@@ -819,13 +822,13 @@ ALTER TABLE `BICYCLETTE`
 -- AUTO_INCREMENT pour la table `CLIENT`
 --
 ALTER TABLE `CLIENT`
-  MODIFY `ID_Client` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_Client` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `COMMANDE`
 --
 ALTER TABLE `COMMANDE`
-  MODIFY `ID_Commande` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `ID_Commande` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `FIDELIO`
