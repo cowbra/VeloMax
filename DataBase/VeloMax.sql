@@ -42,12 +42,20 @@ GRANT SELECT ON `VeloMax`.* TO 'bozo'@'%' IDENTIFIED BY 'bozo';
 --
 -- Structure de la table `ACHAT_BICYCLETTE`
 --
+
 CREATE TABLE `ACHAT_BICYCLETTE` (
   `ID_Commande` int(30) NOT NULL,
   `ID_Bicyclette` int(30) NOT NULL,
-  `NombreArticles` int(30) NOT NULL,
   `DateLivraison` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `ACHAT_BICYCLETTE`
+--
+
+INSERT INTO `ACHAT_BICYCLETTE` (`ID_Commande`, `ID_Bicyclette`, `DateLivraison`) VALUES
+(9, 8, '2022-05-24'),
+(10, 1, '2022-05-24');
 
 -- --------------------------------------------------------
 
@@ -58,9 +66,18 @@ CREATE TABLE `ACHAT_BICYCLETTE` (
 CREATE TABLE `ACHAT_PIECE` (
   `ID_Commande` int(30) NOT NULL,
   `Identifiant_Piece` varchar(15) NOT NULL,
-  `NombreArticles` int(30) NOT NULL,
   `DateLivraison` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `ACHAT_PIECE`
+--
+
+INSERT INTO `ACHAT_PIECE` (`ID_Commande`, `Identifiant_Piece`, `DateLivraison`) VALUES
+(5, 'C43F', '2022-05-24'),
+(6, 'O2', '2022-05-24'),
+(7, 'R2', '2022-05-24'),
+(8, 'F9', '2022-06-13');
 
 -- --------------------------------------------------------
 
@@ -326,8 +343,21 @@ CREATE TABLE `COMMANDE` (
   `AdresseLivraison_Commande` varchar(255) NOT NULL,
   `ID_Client` int(30) NOT NULL,
   `Prix_Commande` double DEFAULT NULL,
+  `NB_articles_Commande` int(11) NOT NULL,
   `Type_Commande` enum('piece','bicyclette') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `COMMANDE`
+--
+
+INSERT INTO `COMMANDE` (`ID_Commande`, `Date_Commande`, `AdresseLivraison_Commande`, `ID_Client`, `Prix_Commande`, `NB_articles_Commande`, `Type_Commande`) VALUES
+(5, '2022-05-17', 'paris', 2, 374.19, 3, 'piece'),
+(6, '2022-05-17', 'rouen', 3, 1279.25, 5, 'piece'),
+(7, '2022-05-17', 'Chantilly', 3, 1030.95, 45, 'piece'),
+(8, '2022-05-17', 'Apremont', 1, 10962.5, 250, 'piece'),
+(9, '2022-05-17', 'Caen', 5, 698.76, 2, 'bicyclette'),
+(10, '2022-05-17', 'Gouvieux', 4, 2275.4, 4, 'bicyclette');
 
 -- --------------------------------------------------------
 
@@ -404,7 +434,7 @@ CREATE TABLE `FOURNIT` (
 INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseur`, `NumProduit_Fournisseur`, `Prix_Fournisseur`, `Quantite_Fournisseur`, `Delai_Fournisseur`) VALUES
 (27382698187536, 'C32', 'PiecesFabrique', 12, 100.3, 5, 20),
 (27382698187536, 'C34', 'PiecesFabrique', 55, 80.5, 3, 15),
-(39982698100017, 'C76', 'BricoVelo', 3, 92, 8, 30),
+(39982698100017, 'C76', 'BricoVelo', 3, 92, 4, 30),
 (64189454720036, 'C43', '2roues', 9, 150, 6, 40),
 (64189454720036, 'C43F', '2roues', 777, 112.5, 2, 40),
 (67822698100036, 'C44F', 'VeloFabrik', 20, 135, 10, 65),
@@ -418,9 +448,9 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (43282695524021, 'G7', 'Bikeshop', 143, 20, 15, 30),
 (27589698100017, 'G9', 'Bikebuy', 547, 25, 20, 40),
 (64189454720036, 'G12', '2roues', 869, 30, 10, 28),
-(27382698187536, 'F3', 'PiecesFabrique', 41, 25, 30, 40),
+(27382698187536, 'F3', 'PiecesFabrique', 41, 25, 23, 40),
 (67822698100036, 'F9', 'VeloFabrik', 8, 40, 40, 50),
-(67822698100036, 'S88', 'VeloFabrik', 333, 10, 100, 30),
+(67822698100036, 'S88', 'VeloFabrik', 333, 10, 95, 30),
 (87551075487408, 'S37', 'roadtogo', 472, 15, 75, 45),
 (67822698100036, 'S35', 'VeloFabrik', 1112, 12.5, 40, 20),
 (39982698100017, 'S02', 'BricoVelo', 1113, 9.8, 3, 5),
@@ -429,7 +459,7 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (27589698100017, 'S34', 'Bikebuy', 111172, 15, 10, 40),
 (27382698187536, 'S87', 'PiecesFabrique', 2221, 9, 14, 25),
 (27382698187536, 'DV133', 'PiecesFabrique', 888, 30, 30, 25),
-(27589698100017, 'DV17', 'Bikebuy', 7452, 37.2, 40, 50),
+(27589698100017, 'DV17', 'Bikebuy', 7452, 37.2, 39, 50),
 (39982698100017, 'DV87', 'BricoVelo', 874, 40, 5, 10),
 (43282695524021, 'DV57', 'Bikeshop', 356, 22, 15, 20),
 (64126254620004, 'DV15', 'roadsport', 96, 22, 30, 50),
@@ -451,7 +481,7 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (67822698100036, 'R02', 'VeloFabrik', 154, 14, 10, 22),
 (87551075487408, 'R09', 'roadtogo', 95245, 12.5, 2, 5),
 (27589698100017, 'R10', 'Bikebuy', 453, 20, 12, 40),
-(39982698100017, 'P12', 'BricoVelo', 2165, 42.5, 12, 30),
+(39982698100017, 'P12', 'BricoVelo', 2165, 42.5, 9, 30),
 (64126254620004, 'P34', 'roadsport', 354, 52, 7, 3),
 (64189454720036, 'P1', '2roues', 5447, 32.75, 8, 13),
 (67822698100036, 'P15', 'VeloFabrik', 3205, 27, 4, 7),
@@ -476,18 +506,18 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (39982698100017, 'C15', 'BricoVelo', 13, 666.67, 6, 11),
 (87551075487408, 'C15', 'roadtogo', 1, 300, 21, 6),
 (87551075487408, 'C25', 'roadtogo', 65, 171.5, 15, 6),
-(64126254620004, 'C25', 'roadsport', 6459, 199, 28, 29),
+(64126254620004, 'C25', 'roadsport', 6459, 199, 26, 29),
 (43282695524021, 'C26', 'Bikeshop', 752, 187, 19, 8),
 (27382698187536, 'C26', 'PiecesFabrique', 71, 189.5, 7, 24),
-(87551075487408, 'C32', 'roadtogo', 91265, 113.7, 8, 9),
+(87551075487408, 'C32', 'roadtogo', 91265, 113.7, 4, 9),
 (64126254620004, 'C32', 'roadsport', 69504, 99.95, 7, 4),
 (87551075487408, 'C34', 'roadtogo', 42, 91.75, 12, 12),
 (43282695524021, 'C32', 'Bikeshop', 6491079, 79.79, 4, 15),
-(64126254620004, 'C34', 'roadsport', 6549184, 80.88, 13, 3),
+(64126254620004, 'C34', 'roadsport', 6549184, 80.88, 9, 3),
 (87551075487408, 'C43', 'roadtogo', 9842, 150, 13, 7),
 (27382698187536, 'C43', 'PiecesFabrique', 90964, 139.95, 3, 15),
 (87551075487408, 'C43F', 'roadtogo', 6540, 110, 7, 5),
-(27382698187536, 'C43F', 'PiecesFabrique', 70, 124.85, 16, 19),
+(27382698187536, 'C43F', 'PiecesFabrique', 70, 124.85, 11, 19),
 (27589698100017, 'C44F', 'Bikebuy', 25800, 140, 8, 6),
 (87551075487408, 'C44F', 'roadtogo', 9719182, 139.98, 3, 5),
 (43282695524021, 'C76', 'Bikeshop', 6519925, 93.17, 4, 14),
@@ -499,8 +529,8 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (64189454720036, 'DR23', '2roues', 9519, 30.16, 7, 4),
 (39982698100017, 'DR23', 'BricoVelo', 981981, 75.74, 3, 4),
 (39982698100017, 'DR52', 'BricoVelo', 817, 29, 4, 16),
-(64126254620004, 'DR52', 'roadsport', 725, 28.74, 19, 7),
-(64189454720036, 'DR56', '2roues', 614, 41.98, 7, 5),
+(64126254620004, 'DR52', 'roadsport', 725, 28.74, 17, 7),
+(64189454720036, 'DR56', '2roues', 614, 41.98, 3, 5),
 (87551075487408, 'DR56', 'roadtogo', 6519, 30.18, 2, 14),
 (87551075487408, 'DR76', 'roadtogo', 761, 49.99, 5, 17),
 (43282695524021, 'DR76', 'Bikeshop', 51841, 39.98, 18, 7),
@@ -515,7 +545,7 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (39982698100017, 'S05', 'BricoVelo', 23, 6.72, 17, 2),
 (27382698187536, 'S34', 'PiecesFabrique', 1166, 12.5, 26, 10),
 (64189454720036, 'S34', '2roues', 765, 17.6, 30, 45),
-(27589698100017, 'S35', 'Bikebuy', 6431, 17, 80, 30),
+(27589698100017, 'S35', 'Bikebuy', 6431, 17, 78, 30),
 (64126254620004, 'S35', 'roadsport', 542, 14.27, 27, 12),
 (67822698100036, 'S36', 'VeloFabrik', 121, 7.5, 60, 20),
 (27589698100017, 'S37', 'Bikebuy', 7679, 9.99, 12, 38),
@@ -526,16 +556,16 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (64126254620004, 'S74', 'roadsport', 98, 27.45, 18, 10),
 (27382698187536, 'S74', 'PiecesFabrique', 4445, 27.89, 34, 12),
 (64126254620004, 'S87', 'roadsport', 1897, 12, 15, 5),
-(67822698100036, 'S87', 'VeloFabrik', 6667, 17.12, 20, 6),
+(67822698100036, 'S87', 'VeloFabrik', 6667, 17.12, 18, 6),
 (87551075487408, 'S88', 'roadtogo', 78678, 6.87, 40, 20),
 (27382698187536, 'S88', 'PiecesFabrique', 56756, 12.87, 44, 3),
 (39982698100017, 'S88', 'BricoVelo', 3221, 17.15, 60, 30),
 (64189454720036, 'DR86', '2roues', 329, 29.99, 24, 12),
 (43282695524021, 'DR86', 'Bikeshop', 6439, 40, 72, 21),
-(64189454720036, 'DR87', '2roues', 17, 30, 20, 20),
+(64189454720036, 'DR87', '2roues', 17, 30, 17, 20),
 (27382698187536, 'DV132', 'PiecesFabrique', 2457, 20, 12, 32),
-(64189454720036, 'DV132', '2roues', 1294, 27, 56, 17),
-(27589698100017, 'DV133', 'Bikebuy', 6783, 23, 50, 7),
+(64189454720036, 'DV132', '2roues', 1294, 27, 54, 17),
+(27589698100017, 'DV133', 'Bikebuy', 6783, 23, 46, 7),
 (43282695524021, 'DV133', 'Bikeshop', 8734, 27.72, 28, 10),
 (27589698100017, 'DV15', 'Bikebuy', 29, 19.99, 20, 7),
 (39982698100017, 'DV17', 'BricoVelo', 1348, 40, 32, 12),
@@ -544,49 +574,49 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (43282695524021, 'DV41', 'Bikeshop', 334, 12.5, 30, 12),
 (27382698187536, 'DV41', 'PiecesFabrique', 82789, 18.67, 35, 2),
 (27589698100017, 'DV57', 'Bikebuy', 8782, 25, 12, 7),
-(64189454720036, 'DV57', '2roues', 87662, 32.57, 60, 40),
+(64189454720036, 'DV57', '2roues', 87662, 32.57, 58, 40),
 (67822698100036, 'DV87', 'VeloFabrik', 2862, 32.78, 12, 27),
 (43282695524021, 'DV87', 'Bikeshop', 6454, 37.89, 5, 7),
 (64189454720036, 'DV15', '2roues', 9521, 25.97, 7, 27),
 (64189454720036, 'F3', '2roues', 951572, 29.97, 26, 16),
 (43282695524021, 'F3', 'Bikeshop', 18927, 24.99, 7, 31),
 (39982698100017, 'F3', 'BricoVelo', 91951, 27.01, 2, 10),
-(64189454720036, 'F9', '2roues', 7537, 43.95, 75, 8),
-(43282695524021, 'F9', 'Bikeshop', 737027025, 43.03, 83, 20),
+(64189454720036, 'F9', '2roues', 7537, 43.95, 73, 8),
+(43282695524021, 'F9', 'Bikeshop', 737027025, 43.03, 0, 20),
 (43282695524021, 'G12', 'Bikeshop', 7185, 32.99, 12, 15),
 (27382698187536, 'G12', 'PiecesFabrique', 65, 29.99, 14, 4),
 (64189454720036, 'G7', '2roues', 72, 19.99, 4, 5),
-(87551075487408, 'G7', 'roadtogo', 5675670, 22.02, 72, 20),
-(87551075487408, 'G9', 'roadtogo', 59154, 24.99, 55, 5),
+(87551075487408, 'G7', 'roadtogo', 5675670, 22.02, 65, 20),
+(87551075487408, 'G9', 'roadtogo', 59154, 24.99, 53, 5),
 (64189454720036, 'G9', '2roues', 93271012, 33.01, 7, 14),
-(64189454720036, 'O2', '2roues', 9195, 255.95, 10, 18),
-(43282695524021, 'O2', 'Bikeshop', 9871, 247.99, 13, 4),
+(64189454720036, 'O2', '2roues', 9195, 255.95, 6, 18),
+(43282695524021, 'O2', 'Bikeshop', 9871, 247.99, 7, 4),
 (43282695524021, 'O4', 'Bikeshop', 614, 76.49, 6, 7),
-(27382698187536, 'O4', 'PiecesFabrique', 241, 82.02, 16, 24),
+(27382698187536, 'O4', 'PiecesFabrique', 241, 82.02, 14, 24),
 (27382698187536, 'R19', 'PiecesFabrique', 199492, 15.01, 17, 6),
 (43282695524021, 'P1', 'Bikeshop', 76578, 35, 42, 50),
 (64126254620004, 'P12', 'roadsport', 6874332, 41.23, 8, 4),
 (27589698100017, 'P1', 'Bikebuy', 567884, 42.78, 17, 23),
 (87551075487408, 'P1', 'roadtogo', 2375, 32.17, 20, 30),
-(27382698187536, 'P12', 'PiecesFabrique', 651, 23.72, 9, 9),
+(27382698187536, 'P12', 'PiecesFabrique', 651, 23.72, 5, 9),
 (27382698187536, 'P15', 'PiecesFabrique', 44024, 29.99, 7, 13),
 (64126254620004, 'P15', 'roadsport', 12, 32.63, 12, 2),
 (64189454720036, 'P15', '2roues', 752, 27.95, 4, 27),
 (39982698100017, 'P15', 'BricoVelo', 6399, 27, 32, 30),
-(43282695524021, 'P34', 'Bikeshop', 2025077, 55.59, 782, 28),
+(43282695524021, 'P34', 'Bikeshop', 2025077, 55.59, 780, 28),
 (87551075487408, 'P34', 'roadtogo', 6785, 52.1, 40, 12),
 (27382698187536, 'P34', 'PiecesFabrique', 757, 53.01, 7, 7),
-(67822698100036, 'R48', 'VeloFabrik', 73892, 26, 60, 21),
+(67822698100036, 'R48', 'VeloFabrik', 73892, 26, 59, 21),
 (39982698100017, 'R48', 'BricoVelo', 1657, 23.65, 10, 10),
-(27382698187536, 'R02', 'PiecesFabrique', 420, 17.05, 244, 13),
-(64126254620004, 'R47', 'roadsport', 376, 32, 40, 12),
+(27382698187536, 'R02', 'PiecesFabrique', 420, 17.05, 242, 13),
+(64126254620004, 'R47', 'roadsport', 376, 32, 37, 12),
 (64189454720036, 'R02', '2roues', 805, 15.51, 75, 7),
 (27382698187536, 'R47', 'PiecesFabrique', 54, 36.5, 3, 17),
-(27589698100017, 'R46', 'Bikebuy', 4568, 27.98, 38, 32),
+(27589698100017, 'R46', 'Bikebuy', 4568, 27.98, 34, 32),
 (64126254620004, 'R45', 'roadsport', 351, 11.99, 10, 5),
 (64189454720036, 'R09', '2roues', 237, 12.99, 72, 14),
-(87551075487408, 'R45', 'roadtogo', 1499, 15.67, 30, 15),
-(27589698100017, 'R44', 'Bikebuy', 6865, 17, 90, 60),
+(87551075487408, 'R45', 'roadtogo', 1499, 15.67, 26, 15),
+(27589698100017, 'R44', 'Bikebuy', 6865, 17, 88, 60),
 (39982698100017, 'R44', 'BricoVelo', 7862, 22.12, 25, 24),
 (64126254620004, 'R32', 'roadsport', 1111, 39.32, 22, 14),
 (43282695524021, 'R09', 'Bikeshop', 2047, 13.99, 879, 9),
@@ -595,10 +625,10 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (64189454720036, 'R46', '2roues', 514740, 14.99, 29, 9),
 (27589698100017, 'R2', 'Bikebuy', 7873, 24.7, 5, 3),
 (43282695524021, 'R2', 'Bikeshop', 450720, 23.01, 19, 19),
-(67822698100036, 'R2', 'VeloFabrik', 6445, 32.1, 60, 20),
+(67822698100036, 'R2', 'VeloFabrik', 6445, 32.1, 15, 20),
 (43282695524021, 'R18', 'Bikeshop', 9000080, 49.99, 19, 5),
 (39982698100017, 'R12', 'BricoVelo', 257, 35.78, 30, 8),
-(27382698187536, 'R18', 'PiecesFabrique', 5001, 50.01, 35, 19),
+(27382698187536, 'R18', 'PiecesFabrique', 5001, 50.01, 33, 19),
 (27382698187536, 'R12', 'PiecesFabrique', 902, 32.41, 20, 6),
 (64189454720036, 'R12', '2roues', 8652000, 29.99, 41, 7),
 (27382698187536, 'R11', 'PiecesFabrique', 3478, 15, 40, 8),
@@ -606,7 +636,7 @@ INSERT INTO `FOURNIT` (`Siret_Fournisseur`, `Identifiant_Piece`, `Nom_Fournisseu
 (64189454720036, 'R1', '2roues', 98409, 9.99, 21, 7),
 (67822698100036, 'R10', 'VeloFabrik', 678654, 17, 50, 43),
 (43282695524021, 'R1', 'Bikeshop', 782038, 12.01, 9, 8),
-(64189454720036, 'R19', '2roues', 78607070, 14.99, 19, 15);
+(64189454720036, 'R19', '2roues', 78607070, 14.99, 17, 15);
 
 --
 -- Déclencheurs `FOURNIT`
@@ -795,7 +825,7 @@ ALTER TABLE `CLIENT`
 -- AUTO_INCREMENT pour la table `COMMANDE`
 --
 ALTER TABLE `COMMANDE`
-  MODIFY `ID_Commande` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Commande` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `FIDELIO`

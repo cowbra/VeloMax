@@ -767,7 +767,7 @@ namespace bdd
                 if (radioButton2.Checked) type = "bicyclette";
 
                 //Creation de la commande
-                Commande commande = new Commande(idClient, adresse, type);
+                Commande commande = new Commande(idClient, adresse, type, quantiteCommandee);
                 if (!DATABASE.Connected) DATABASE.Connect();
                 if (DATABASE.Connected)
                 {
@@ -844,7 +844,7 @@ namespace bdd
 
 
 
-                                    if (commande.UpdatePrixTotal(idCommande, prix - reduction_Compagnie, quantiteCommandee))
+                                    if (commande.UpdatePrixTotal(idCommande, Math.Round(prix - reduction_Compagnie,2), quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
@@ -953,7 +953,7 @@ namespace bdd
 
 
 
-                                    if (commande.UpdatePrixTotal(idCommande, prix - reduction_Compagnie, quantiteCommandee))
+                                    if (commande.UpdatePrixTotal(idCommande, Math.Round(prix - reduction_Compagnie,2), quantiteCommandee))
                                     {
                                         MessageBox.Show("Commande réussie");
                                         MessageBox.Show("Délai de Livraison estimé : " + delai_Livraison + " jours");
@@ -997,10 +997,9 @@ namespace bdd
         {
             if (DATABASE.Connected)
             {
-                MySqlCommand requete = new MySqlCommand("INSERT INTO ACHAT_PIECE(ID_Commande,Identifiant_Piece,NombreArticles,DateLivraison) VALUES(@idC,@idP,@nb,@date)", DATABASE.MySqlConnection);
+                MySqlCommand requete = new MySqlCommand("INSERT INTO ACHAT_PIECE(ID_Commande,Identifiant_Piece,DateLivraison) VALUES(@idC,@idP,@date)", DATABASE.MySqlConnection);
                 requete.Parameters.AddWithValue("@idC", idC);
                 requete.Parameters.AddWithValue("@idP", idP);
-                requete.Parameters.AddWithValue("@nb", quantite);
                 requete.Parameters.AddWithValue("@date", date);
 
                 requete.ExecuteNonQuery();
@@ -1015,10 +1014,9 @@ namespace bdd
         {
             if (DATABASE.Connected)
             {
-                MySqlCommand requete = new MySqlCommand("INSERT INTO ACHAT_BICYCLETTE(ID_Commande,ID_Bicyclette,NombreArticles,DateLivraison) VALUES(@idC,@idB,@nb,@date)", DATABASE.MySqlConnection);
+                MySqlCommand requete = new MySqlCommand("INSERT INTO ACHAT_BICYCLETTE(ID_Commande,ID_Bicyclette,DateLivraison) VALUES(@idC,@idB,@date)", DATABASE.MySqlConnection);
                 requete.Parameters.AddWithValue("@idC", idC);
                 requete.Parameters.AddWithValue("@idB", idV);
-                requete.Parameters.AddWithValue("@nb", quantite);
                 requete.Parameters.AddWithValue("@date", date);
 
                 requete.ExecuteNonQuery();
