@@ -5,5 +5,4 @@ regardez sur discord
 ## 2.Création de la base de données :
 Fichiers 'VERSION FINALE.sql' présent dans le dossier DataBase du Git
 
-POUR HUGO:
-METTRE CLAUSE CASCADE DANS ASSEMBLER PAR
+
