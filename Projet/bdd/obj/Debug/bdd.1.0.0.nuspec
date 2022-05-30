@@ -23,9 +23,9 @@
     </contentFiles>
   </metadata>
   <files>
-    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\bdd.runtimeconfig.json" target="lib\net6.0-windows7.0\bdd.runtimeconfig.json" />
-    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\bdd.dll" target="lib\net6.0-windows7.0\bdd.dll" />
-    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\Ressources\velomax.ico" target="content\Ressources\velomax.ico" />
-    <file src="C:\Users\Cowbra\Source\Repos\cowbra\bdd\Projet\bdd\Ressources\velomax.ico" target="contentFiles\any\net6.0-windows7.0\Ressources\velomax.ico" />
+    <file src="C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\bdd.runtimeconfig.json" target="lib\net6.0-windows7.0\bdd.runtimeconfig.json" />
+    <file src="C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\bin\Debug\net6.0-windows\bdd.dll" target="lib\net6.0-windows7.0\bdd.dll" />
+    <file src="C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\Ressources\velomax.ico" target="content\Ressources\velomax.ico" />
+    <file src="C:\Users\hugos\Source\Repos\cowbra\bdd\Projet\bdd\Ressources\velomax.ico" target="contentFiles\any\net6.0-windows7.0\Ressources\velomax.ico" />
   </files>
 </package>

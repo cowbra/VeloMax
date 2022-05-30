@@ -23,8 +23,6 @@ namespace bdd
                 menu.Show();
             }
 
-
-
         }
 
         private void Login_Load(object sender, EventArgs e)
@@ -34,7 +32,7 @@ namespace bdd
 
         public static bool Check_USER_LOGIN(string id, string mdp)
         {
-            string conn_info = "Server=2.11.7.149;Port=3306;Database=VeloMax;Uid=" + id + ";PWD=" + mdp;
+            string conn_info = "Server=90.0.90.157;Port=3306;Database=VeloMax;Uid=" + id + ";PWD=" + mdp;
             bool isConnected = false;
             MySqlConnection conn = null;
             try
