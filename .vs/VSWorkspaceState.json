@@ -5,10 +5,11 @@
     "\\Projet\\bdd",
     "\\Projet\\bdd\\Clients",
     "\\Projet\\bdd\\Commandes",
+    "\\Projet\\bdd\\Fournisseurs",
     "\\Projet\\bdd\\Inventaire",
     "\\Projet\\bdd\\Inventaire\\Pieces",
     "\\Projet\\bdd\\Inventaire\\Velos"
   ],
-  "SelectedNode": "\\Projet\\bdd\\BDD.cs",
+  "SelectedNode": "\\Projet\\bdd\\Commandes\\NewCommande.cs",
   "PreviewInSolutionExplorer": false
 }

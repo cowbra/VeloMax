@@ -18,7 +18,7 @@ namespace bdd
         public BDD()
         {
             this.connected = false;
-            this.host = "2.11.7.149";
+            this.host = "90.0.90.157";
             this.port = "3306";
             this.database = "VeloMax";
             //this.username = "projet_bdd";
@@ -32,7 +32,7 @@ namespace bdd
         public BDD(string username, string password)
         {
             this.connected = false;
-            this.host = "2.11.7.149";
+            this.host = "90.0.90.157";
             this.port = "3306";
             this.database = "VeloMax";
             this.username = username;
