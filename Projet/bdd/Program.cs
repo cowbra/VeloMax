@@ -8,8 +8,9 @@ namespace bdd
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            ApplicationState.SetValue("host", "localhost");
+            ApplicationState.SetValue("port", "3306");
+
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
         }

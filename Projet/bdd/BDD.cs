@@ -18,11 +18,9 @@ namespace bdd
         public BDD()
         {
             this.connected = false;
-            this.host = "90.0.90.157";
-            this.port = "3306";
+            this.host = ApplicationState.GetValue<string>("host"); ;
+            this.port = ApplicationState.GetValue<string>("port"); ;
             this.database = "VeloMax";
-            //this.username = "projet_bdd";
-            //this.password = "Hugo13Lounes03Hugo!";
             this.username = ApplicationState.GetValue<string>("user");
             this.password = ApplicationState.GetValue<string>("password");
             this.mySqlConnection = null;
@@ -32,8 +30,8 @@ namespace bdd
         public BDD(string username, string password)
         {
             this.connected = false;
-            this.host = "90.0.90.157";
-            this.port = "3306";
+            this.host = ApplicationState.GetValue<string>("host"); ;
+            this.port = ApplicationState.GetValue<string>("port"); ;
             this.database = "VeloMax";
             this.username = username;
             this.password = password;
